@@ -26,8 +26,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -252,6 +251,7 @@ upstream project repos (though https clones work too):</p>
 <ol class="arabic">
 <li><p class="first">Use your browser to visit <a class="reference external" href="https://github.com/thesofproject">https://github.com/thesofproject</a> and do a
 fork of the <code class="docutils literal notranslate"><span class="pre">sof-docs</span></code> repo to your personal GitHub account.)</p>
+<img alt="../../_images/fork-sof-docs.png" src="../../_images/fork-sof-docs.png" />
 </li>
 <li><p class="first">At a command prompt, create the working folder and clone the acrn-hypervisor
 repository to your local computer (and if you have publishing rights, the
@@ -284,16 +284,16 @@ git config --global user.email <span class="s2">&quot;david.developer@company.co
 <ul class="simple">
 <li>Python 3.6.3</li>
 <li>Doxygen version 1.8.13</li>
-<li>Sphinx version 1.6.7</li>
-<li>Breathe version 4.7.3</li>
+<li>Sphinx version 1.7.5</li>
+<li>Breathe version 4.9.1</li>
 <li>docutils version 0.14</li>
-<li>sphinx_rtd_theme version 0.2.4</li>
+<li>sphinx_rtd_theme version 0.4.0</li>
 </ul>
 <p>The SOF documentation makes use of additional Sphinx extensions used for
 creating drawings:</p>
 <ul class="simple">
 <li>sphinxcontrib-plantuml</li>
-<li>sphinx.ext.graphviz</li>
+<li>sphinx.ext.graphviz  (included with Sphinx)</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -379,7 +379,7 @@ so it’s best to verify the locally generated html before publishing.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 13, 2018.
 
     </p>
   </div> 
@@ -414,16 +414,11 @@ so it’s best to verify the locally generated html before publishing.</p>
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 
