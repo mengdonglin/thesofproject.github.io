@@ -5,14 +5,28 @@
    max-width: none;
 }
 
-/* (temporarily) add an under development tagline to the bread crumb
+/* (temporarily) add an under development tagline to the bread crumb */
 .wy-breadcrumbs::after {
    content: " (Content under development)";
    background-color: #FFFACD;
    color: red;
-   font-weight: bold;
+   font-weight: bold
 }
-*/
+
+.rst-versions .rst-current-version {
+   padding: 5px;
+   background-color: #2980B9;
+   color: #80FF80;
+}
+
+.rst-versions .rst-other-versions {
+   padding: 5px;
+}
+
+div.rst-other-versions dl {
+   margin-bottom: 0;
+}
+
 
 /* code block highlight color in rtd changed to lime green, no no no */
 
@@ -21,6 +35,11 @@
 }
 .rst-content tt.literal, .rst-content code.literal {
     color: #000000;
+}
+
+/* SOF theme color is indigo */
+.wy-side-nav-search {
+    background-color: #33335b;
 }
 
 /* Make the version number more visible */
@@ -36,7 +55,7 @@ div > p + ul, div > p + ol {
 /* add some space before the figure caption */
 p.caption  {
 #    border-top: 1px solid;
-    margin-top: 1em;
+     margin-top: 1em;
 }
 
 /* add a colon after the figure/table number (before the caption) */
