@@ -1,0 +1,577 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; SOF Project 0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/sof-favicon-16x16.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="SOF Project 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Booting up CAVS ADSP" href="index.html"/>
+        <link rel="next" title="Apollolake Boot Process" href="apollolake/index.html"/>
+        <link rel="prev" title="Booting up CAVS ADSP" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SOF Project
+          
+
+          
+            
+            <img src="../../_static/logo_sof_white_200w.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to the SOF Project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#components">Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#sof-architecture">SOF Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#sof-driver-architecture">SOF Driver Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#faq">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Getting Started Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../build-guide/build-from-scratch.html">Build from scratch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#set-up-build-environment">Set up build environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-toolchain-from-source">Build toolchain from source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-firmware-binaries">Build firmware binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-topology-and-tools">Build topology and tools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-linux-kernel">Build Linux kernel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build-guide/build-with-docker.html">Build with docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-with-docker.html#set-up-docker">Set up Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#get-docker">Get Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#set-proxy">Set Proxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#set-usergroup">Set usergroup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#get-docker-image">Get Docker image</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-with-docker.html#id2">Build with Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#build-firmware-binaries">Build firmware binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#build-topology-and-tools">Build topology and tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Booting up CAVS ADSP</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ipc-communication-with-dsp-rom">IPC Communication with DSP ROM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loading-binaries-to-adsp-memory">Loading Binaries to ADSP Memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booting-with-boot-loader">Booting with Boot Loader</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="apollolake/index.html">Apollolake Boot Process</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apollolake/apl-boot-rom.html">Apollolake Boot ROM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apollolake/apl-boot-ldr.html">Apollolake Boot Loader</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build/build-docker.html">Build Sound Open Firmware from a Docker Container</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build/build-docker.html#setup-docker">Setup Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build/build-docker.html#prepare-docker-image-choose-one">Prepare Docker image (choose one)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-docker.html#build-docker-image">1. Build Docker image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-docker.html#pull-docker-image-from-docker-hub">2. Pull Docker image from Docker hub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-docker.html#import-docker-image-from-tarball">3. Import Docker image from tarball</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../build/build-docker.html#use-docker-container-to-build-sof">Use Docker container to build SOF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build/build-from-scratch.html">Build From Scratch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#currently-supported-targets">Currently Supported Targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#create-the-build-environment">Create the build environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-xtensa-cross-compiler-choose-one">Install the xtensa cross compiler (choose one)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-alsa-lib-alsa-utils-alsa-plugins">Install alsa-lib alsa-utils alsa-plugins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-image-builder">Install the image builder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#build-sof-firmware-source-code-and-build-an-image">Build SOF firmware source code and build an image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#build-tools-and-topology-from-sound-open-firmware-tools">Build tools and topology from sound-open-firmware-tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#build-your-kernel">Build your kernel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#set-up-target-machine">Set up target machine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-kernel">Install the kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-rmbox-tools">Install the rmbox tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#set-up-user-group">Set up user group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#enable-and-test-with-sof">Enable and test with SOF</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#create-a-vm">Create a VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-qemu-vms">Install the Qemu VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#create-a-new-ubuntu-vm">Create a new Ubuntu VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#update-the-qemu-scripts">Update the qemu scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#update-the-kernel-on-your-vm">Update the kernel on your VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#run-the-driver-and-firmware-on-vms">Run the driver and firmware on VMs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html">Set up SOF on Minnowboard Turbot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#minnowboard-resources">Minnowboard resources</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#about-turbot">About Turbot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#schematic">Schematic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#bios">BIOS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#development">Development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#hardware-rework-connect-external-audio-codec">Hardware Rework &amp; Connect External Audio Codec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#update-bios-and-insert-oem-key">Update BIOS and Insert OEM Key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#install-linux">Install Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#set-up-sof">Set Up SOF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#kernel-build">Kernel build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#contact-for-help">Contact for Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/setup_up_2_board.html">Set up SOF on Up Squared board with Hifiberry DAC+ (STD)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_up_2_board.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_up_2_board.html#setup-instructions">Setup Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#flash-the-3-6-bios-version-on-the-up-squared-board">1. Flash the 3.6 BIOS version on the Up squared board.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#install-ubilinux-or-ubuntu">2. Install Ubilinux or Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#update-kernel">3. Update kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#firmware">4. Firmware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#topology">5. Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#add-acpi-support-for-hifiberry-dac">6. Add ACPI support for Hifiberry dac+</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#add-sst-drivers-to-blacklist-dsp-conf">7. Add sst drivers to blacklist-dsp.conf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_up_2_board.html#reboot">8. Reboot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../platforms/index.html">Supported Platforms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../platforms/intel-cavs/apollolake/apl-memory.html">APL Memory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../platforms/intel-cavs/cannonlake/index.html">Intel Cannon Lake</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../platforms/intel-cavs/cannonlake/cnl-memory.html">CNL Memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../platforms/intel-cavs/cannonlake/cnl-config.html">CNL Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer_guides/porting.html">Porting Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/porting.html#architecture-porting-guide">Architecture Porting Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/porting.html#platform-porting-guide">Platform Porting Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developer_guides/drivers/index.html">Drivers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/drivers/dma/index.html">DMA Drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dma/index.html#intro">Intro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dma/index.html#programming-flows">Programming Flows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dma/index.html#supported-devices">Supported Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/drivers/dai/index.html">DAI Drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dai/index.html#intro">Intro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dai/index.html#programming-flows">Programming Flows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developer_guides/unit_tests.html">Unit Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/unit_tests.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/unit_tests.html#enabling-unit-tests">Enabling unit tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../developer_guides/unit_tests.html#example-running-tests-for-apl">Example: Running tests for APL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/unit_tests.html#preparing-cmocka-package">Preparing cmocka package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/unit_tests.html#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../howtos/index.html#technical-notes">Technical Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../howtos/tech/placeholder.html">Work in Progress</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../howtos/index.html#process-notes">Process Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../howtos/process/docbuild.html">SOF documentation generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/process/docbuild.html#documentation-overview">Documentation overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/process/docbuild.html#set-up-the-documentation-working-folders">Set up the documentation working folders</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/process/docbuild.html#installing-the-documentation-tools">Installing the documentation tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/process/docbuild.html#documentation-presentation-theme">Documentation presentation theme</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/process/docbuild.html#running-the-documentation-processors">Running the documentation processors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/process/docbuild.html#publishing-content">Publishing content</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributing to the Project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/contribute_guidelines.html">Contribution Guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/contribute_guidelines.html#licensing">Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/contribute_guidelines.html#developer-certification-of-origin-dco">Developer Certification of Origin (DCO)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../contribute/contribute_guidelines.html#dco-sign-off-methods">DCO Sign-Off Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/contribute_guidelines.html#prerequisites">Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/doc_guidelines.html">Documentation Guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#headings">Headings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#content-highlighting">Content Highlighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#lists">Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#multi-column-lists">Multi-column lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#file-names-and-commands">File names and Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#internal-cross-reference-linking">Internal Cross-Reference Linking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#non-ascii-characters">Non-ASCII Characters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#code-and-command-examples">Code and Command Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/doc_guidelines.html#tabs-spaces-and-indenting">Tabs, spaces, and indenting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/dox-source-code.html">Documenting the Source Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/dox-source-code.html#basic-rules">Basic Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/dox-source-code.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/dma-drivers-api.html">DMA Drivers API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/dai-drivers-api.html">DAI Drivers API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/platform-api.html">Platform API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/uapi.html">uAPI</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SOF Project</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Getting Started Guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Booting up CAVS ADSP</a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<span id="cavs-dsp-boot-overview"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>There are two main DSP boot flows:</p>
+<ul class="simple">
+<li><strong>Cold boot</strong> performed when the host CPU exits an Sx state. FW binaries are
+loaded into DSP memory and full state re-initialization is required. This
+flow is also referred as <em>Purge Flow</em> in the figures below.</li>
+<li><strong>RTD3 boot</strong> when the DSP state is restored from the DSP internal memory.
+This flow is available on platforms with access to Isolated Memory Region
+(IMR) allocated for the DSP.</li>
+</ul>
+<div class="section" id="ipc-communication-with-dsp-rom">
+<h2>IPC Communication with DSP ROM<a class="headerlink" href="#ipc-communication-with-dsp-rom" title="Permalink to this headline">¶</a></h2>
+<p>Once the master DSP core (#0) is powered up and reset by the host driver, an
+IPC communication with the DSP ROM is required in order to set the boot
+options (see Boot Path Control Messages for details and list of platforms that
+require this step). It is a one-way message that does not require a response
+from the DSP.</p>
+<p>There may be some specific requirements about the order of the DSP core reset,
+sending IPC message, and the DSP core unstall operations. It is assumed that
+the following order is required unless specified otherwise by Boot Path
+Control Message in case of a specific platform:</p>
+<ol class="arabic simple">
+<li>Power up and reset the DSP Core 0,</li>
+<li>Send ROM Control IPC,</li>
+<li>Unstall DSP Core 0.</li>
+</ol>
+<p>The ROM Control IPC message includes “purge” parameter that should be set to 1
+in case of the cold boot. Otherwise it may be set to 0 after coming out of
+RTD3 to attempt quicker state restore flow. In the latter case, the driver
+just waits for FW Ready notification (no library loading is needed).</p>
+<p>The flow is illustrated in the next figure.</p>
+</div>
+<div class="section" id="loading-binaries-to-adsp-memory">
+<h2>Loading Binaries to ADSP Memory<a class="headerlink" href="#loading-binaries-to-adsp-memory" title="Permalink to this headline">¶</a></h2>
+<p>The ADSP FW binary code may be divided into:</p>
+<ul class="simple">
+<li>The Base FW binary file, which contains FW infrastructure code (Base FW
+module) required by all the platforms, optionally followed by other modules,</li>
+<li>Set of libraries (modules) containing additional processing modules code
+that may be optionally loaded into ADSP FW memory based on the platform’s
+requirements and configuration.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This section contains general information about the structure of
+binaries necessary to understand the loading process. For a complete
+documentation refer to FW Binaries documentation.</p>
+</div>
+<p>There are two main parts of the main binary:</p>
+<ul class="simple">
+<li>Manifest,</li>
+<li>Modules binary code.</li>
+</ul>
+<div class="section" id="determining-part-of-binary-to-be-loaded">
+<h3>Determining Part of Binary to be Loaded<a class="headerlink" href="#determining-part-of-binary-to-be-loaded" title="Permalink to this headline">¶</a></h3>
+<p>The binary begins with the Manifest that is loaded into the DSP memory. The
+Manifest contains <code class="docutils literal"><span class="pre">preload_page_count</span></code> parameter that determines part of the
+binary to be loaded by the driver during the boot process. The preload size is
+expressed in pages, where size of the page is 4096 bytes for all platforms. If
+IMR is available and allocated for the DSP on the platform, the preload size
+includes the entire binary. Otherwise it includes only the critical part of
+the binary while other parts (so called loadable modules) may be loaded on
+demand when needed (see Load Multiple Modules IPC) to limit SRAM usage and
+save the power.</p>
+<p>For example, the Base FW binary file may be setup in a way that
+<code class="docutils literal"><span class="pre">preload_page_count</span></code> includes size of the Manifest as well as size of the
+following Base FW module (it is always module 0 in the Base FW binary) since
+its presence in the DSP memory is absolutely necessary for the boot to
+complete. If the Base FW module is followed by other modules code, they may be
+either included in the preload or not, depending on the platform memory
+availability.</p>
+<p>The <code class="docutils literal"><span class="pre">preload_page_count</span></code> is one of the <code class="docutils literal"><span class="pre">AdspFwBinaryHeader</span></code> parameters.
+The header starts with “$AM1” tag (0x314D4124) and is located at offset 0x2000
+of the binary file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All the binary file offsets specified by the Manifest are computed
+relatively to the beginning of the Manifest.</p>
+</div>
+</div>
+<div class="section" id="preparing-dma-to-transfer-binaries">
+<h3>Preparing DMA to Transfer Binaries<a class="headerlink" href="#preparing-dma-to-transfer-binaries" title="Permalink to this headline">¶</a></h3>
+<p>The driver programs the DMA engine that is used to transfer the binaries into
+the DSP memory. It is either dedicated Code Load DMA if available, or one of
+the HD/A host output DMAs otherwise. In the latter case the ROM Control IPC is
+required since the DMA identifier must be passed to the DSP ROM in order to
+program the DMA on the DSP side.</p>
+<p>Note that the DMA buffers are managed independently on the host side and the
+DSP side.</p>
+</div>
+<div class="section" id="loading-binaries">
+<h3>Loading Binaries<a class="headerlink" href="#loading-binaries" title="Permalink to this headline">¶</a></h3>
+<p>Once the DMA is ready, the driver loads the Base FW binary, waits for the FW
+Ready IPC notification and then loads additional binaries (libraries/modules).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Loading additional modules must be finished before any stream is
+opened for the first time and the DMA is reclaimed for HD/A streaming.</p>
+</div>
+<p>The complete flow is illustrated in the next figure.</p>
+<div class="figure" id="id1">
+<p class="caption"><span class="caption-number">Figure 3 </span><span class="caption-text">Loading FW Binaries to ADSP Memory</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The details of <em>_write(….binary)</em> step are illustrated in the next figure.</p>
+<div class="figure" id="id2">
+<p class="caption"><span class="caption-number">Figure 4 </span><span class="caption-text">Writing a Binary</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="booting-with-boot-loader">
+<h2>Booting with Boot Loader<a class="headerlink" href="#booting-with-boot-loader" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id3">
+<p class="caption"><span class="caption-number">Figure 5 </span><span class="caption-text">SOF Boot Loader Flow</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, SOF Project.
+      Last updated on Aug 16, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
