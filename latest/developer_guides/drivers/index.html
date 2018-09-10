@@ -26,30 +26,20 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="SOF Project 0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Developer Guides" href="../index.html"/>
-        <link rel="next" title="DMA Drivers" href="dma/index.html"/>
-        <link rel="prev" title="Porting Guides" href="../porting.html"/> 
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DMA Drivers" href="dma/index.html" />
+    <link rel="prev" title="Porting Guides" href="../porting.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -66,7 +56,7 @@
 
           
             
-            <img src="../../_static/logo_sof_white_200w.png" class="logo" />
+            <img src="../../_static/logo_sof_white_200w.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -106,116 +96,44 @@
 <li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#faq">FAQ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html">Build from scratch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#set-up-build-environment">Set up build environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#build-toolchain-from-source">Build toolchain from source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#build-firmware-binaries">Build firmware binaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#build-topology-and-tools">Build topology and tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#building-sof">Building SOF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html">Build SOF from scratch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#build-linux-kernel">Build Linux kernel</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build-guide/build-from-scratch.html#build-linux-kernel">Build Linux kernel</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html">Build with docker</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#set-up-docker">Set up Docker</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#get-docker">Get Docker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#set-proxy">Set Proxy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#set-usergroup">Set usergroup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#get-docker-image">Get Docker image</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#id2">Build with Docker</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#build-firmware-binaries">Build firmware binaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#build-topology-and-tools">Build topology and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html">Build SOF with Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#set-up-docker">Set up Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build-guide/build-with-docker.html#id1">Build with Docker</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/cavs-dsp-boot-overview.html#ipc-communication-with-dsp-rom">IPC Communication with DSP ROM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/cavs-dsp-boot-overview.html#loading-binaries-to-adsp-memory">Loading Binaries to ADSP Memory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/cavs-dsp-boot-overview.html#booting-with-boot-loader">Booting with Boot Loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#setting-up-sof-on-hardware">Setting up SOF on hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on MinnowBoard Turbot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">MinnowBoard resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#development">Development</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/cavs-boot/apollolake/index.html">Apollolake Boot Process</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/apollolake/apl-boot-rom.html">Apollolake Boot ROM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/apollolake/apl-boot-ldr.html">Apollolake Boot Loader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html">Set up SOF on Up Squared board with Hifiberry DAC+ (STD)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#setup-instructions">Setup Instructions</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/build/build-docker.html">Build Sound Open Firmware from a Docker Container</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build/build-docker.html#setup-docker">Setup Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build/build-docker.html#prepare-docker-image-choose-one">Prepare Docker image (choose one)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-docker.html#build-docker-image">1. Build Docker image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-docker.html#pull-docker-image-from-docker-hub">2. Pull Docker image from Docker hub</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-docker.html#import-docker-image-from-tarball">3. Import Docker image from tarball</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build/build-docker.html#use-docker-container-to-build-sof">Use Docker container to build SOF</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html">Build From Scratch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#currently-supported-targets">Currently Supported Targets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#create-the-build-environment">Create the build environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#install-the-xtensa-cross-compiler-choose-one">Install the xtensa cross compiler (choose one)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#install-alsa-lib-alsa-utils-alsa-plugins">Install alsa-lib alsa-utils alsa-plugins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#install-the-image-builder">Install the image builder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#build-sof-firmware-source-code-and-build-an-image">Build SOF firmware source code and build an image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#build-tools-and-topology-from-sound-open-firmware-tools">Build tools and topology from sound-open-firmware-tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#build-your-kernel">Build your kernel</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#set-up-target-machine">Set up target machine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#install-the-kernel">Install the kernel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#install-the-rmbox-tools">Install the rmbox tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#set-up-user-group">Set up user group</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#enable-and-test-with-sof">Enable and test with SOF</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#create-a-vm">Create a VM</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#install-the-qemu-vms">Install the Qemu VMs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#create-a-new-ubuntu-vm">Create a new Ubuntu VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#update-the-qemu-scripts">Update the qemu scripts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#update-the-kernel-on-your-vm">Update the kernel on your VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/build/build-from-scratch.html#run-the-driver-and-firmware-on-vms">Run the driver and firmware on VMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_ktest_environment.html">Set up a Ktest-based environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_ktest_environment.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_ktest_environment.html#prerequisites-on-the-target-device">Prerequisites on the target device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_ktest_environment.html#configure-ssh-without-password">Configure SSH without password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_ktest_environment.html#create-a-linux-development-environment">Create a linux development environment</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on Minnowboard Turbot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">Minnowboard resources</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#about-turbot">About Turbot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#schematic">Schematic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#bios">BIOS</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#development">Development</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#hardware-rework-connect-external-audio-codec">Hardware Rework &amp; Connect External Audio Codec</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#update-bios-and-insert-oem-key">Update BIOS and Insert OEM Key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#install-linux">Install Linux</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#set-up-sof">Set Up SOF</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#kernel-build">Kernel build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#contact-for-help">Contact for Help</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html">Set up SOF on Up Squared board with Hifiberry DAC+ (STD)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#setup-instructions">Setup Instructions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#flash-the-3-6-bios-version-on-the-up-squared-board">1. Flash the 3.6 BIOS version on the Up squared board.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#install-ubilinux-or-ubuntu">2. Install Ubilinux or Ubuntu</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#update-kernel">3. Update kernel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#firmware">4. Firmware</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#topology">5. Topology</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#add-acpi-support-for-hifiberry-dac">6. Add ACPI support for Hifiberry dac+</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#add-sst-drivers-to-blacklist-dsp-conf">7. Add sst drivers to blacklist-dsp.conf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_up_2_board.html#reboot">8. Reboot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#other-guides">Other guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/apollolake/index.html">Apollolake Boot Process</a></li>
 </ul>
 </li>
 </ul>
@@ -267,6 +185,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../unit_tests.html#preparing-cmocka-package">Preparing cmocka package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../unit_tests.html#wrapping-objects-for-unit-tests">Wrapping objects for unit tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../unit_tests.html#notes">Notes</a></li>
 </ul>
 </li>
@@ -339,7 +258,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">SOF Project</a>
@@ -347,9 +266,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -393,7 +313,8 @@
             
   <div class="section" id="drivers">
 <span id="id1"></span><h1>Drivers<a class="headerlink" href="#drivers" title="Permalink to this headline">¶</a></h1>
-<p>Location: <em>src/drivers</em></p>
+<p>All drivers are located at: <em>src/drivers</em>
+The following drivers are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dma/index.html">DMA Drivers</a></li>
@@ -404,9 +325,7 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -416,7 +335,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Aug 16, 2018.
+      Last updated on Sep 10, 2018.
 
     </p>
   </div> 
@@ -438,6 +357,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -450,19 +370,13 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

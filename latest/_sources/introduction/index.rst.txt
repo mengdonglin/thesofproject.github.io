@@ -10,7 +10,7 @@ audio drivers as a community project.
 
 The firmware and SDK are intended for developers who are interested in audio or signal processing on modern DSPs or who are interested in microkernels that run on small but powerful processors.
 
-SOF currently targets the Cadence xtensa architecture DSPs found on some Intel-based devices such as the Minnowboard MAX. |SOF| is modular and generic so it can be ported to other DSP architectures or host platforms.
+SOF currently targets the Cadence xtensa architecture DSPs found on some Intel-based devices such as the MinnowBoard MAX. |SOF| is modular and generic so it can be ported to other DSP architectures or host platforms.
 
 .. contents:: 
    :local:
@@ -62,7 +62,7 @@ The ASoC driver architecture for |SOF| is shown in the diagram below. The driver
 
 #. **Generic IPC driver.** The IPC driver is the messaging bridge between the host and DSP and defines the messaging ABI and protocol. It is architecture and platform generic code.
 
-#. **DSP Platform Driver.** The platform driver is a platform specific driver that abstracts the low level platform DSP hardware into a common generic API that is used by the upper layers. This includes code that will initialise the DSP and boot the firmware.
+#. **DSP Platform Driver.** The platform driver is a platform specific driver that abstracts the low level platform DSP hardware into a common generic API that is used by the upper layers. This includes code that will initialize the DSP and boot the firmware.
 
 
    ..	figure::  images/driver-arch-diag.png
@@ -96,7 +96,7 @@ No. The firmware BSD and MIT licensed code means you can keep code changes priva
 
 **What host platforms are supported?**
 
-|SOF| currently supports the Intel Baytrail and Cherrytrail based platforms. This includes devices like the Minnowboard MAX and the ASUS T100 laptop, but should also include any Baytrail or Cherrytrail based devices that have the audio DSP enabled in the BIOS.
+|SOF| currently supports the Intel Baytrail and Cherrytrail based platforms. This includes devices like the MinnowBoard MAX and the ASUS T100 laptop, but should also include any Baytrail or Cherrytrail based devices that have the audio DSP enabled in the BIOS.
 
 The code has also been designed to easily port to other host platform architectures like ARM, MIPS etc.
 
@@ -113,14 +113,14 @@ Please join the developer mailing where new development features and patches are
 
 **Who is working on |SOF|?**
 
-Currently Intel is sponsoring development work on the Minnowboard MAX and other Intel-based platforms.
+Currently Intel is sponsoring development work on the MinnowBoard MAX and other Intel-based platforms.
 
 
 **How do I add support for DSP architecture X?**
 
 It's straightforward enough to add support for a new DSP architecture. New architectures usually requires support in the GNU tool chain, although other tool chains can be used, too. It also helps to have qemu support for the architecture in order to provide an emulator.
 
-The main work in adding the new architecture is duplicating and porting the src/arch directory to your new architecture. The code in the architecture directory mainly deals with architecture abstraction and initialisation of any architecture IP like MMU, IRQs and caches alongside providing optimised version of common C functions (memcpy, memset, etc) for that architecture. Adding a new architecture also usually means adding a new host platform too.
+The main work in adding the new architecture is duplicating and porting the src/arch directory to your new architecture. The code in the architecture directory mainly deals with architecture abstraction and initialization of any architecture IP like MMU, IRQs and caches alongside providing optimized version of common C functions (memcpy, memset, etc) for that architecture. Adding a new architecture also usually means adding a new host platform too.
 
 
 **How do I add support for host platform X?**
@@ -130,7 +130,7 @@ Adding a new host platform is a lot simpler than adding a new DSP architecture. 
 
 **How do I port to other OSes?**
 
-There is nothing stopping the firmware working with non Linux based OSes providing a driver exists or can be written for that OS. The main area for potential optimisation in porting to another OS is aligning the IPC (Inter processor Communication) mechanism to the audio driver flow for that OS. Sound Open Firmware has IPC optimised for the ALSA driver flow, but it's easy enough to reuse this IPC on other OSes or add a completely new IPC for the OS of your choice. The IPC ABI is defined in src/include/uapi/ and the IPC IO logic lives in src/ipc/.
+There is nothing stopping the firmware working with non Linux based OSes providing a driver exists or can be written for that OS. The main area for potential optimization in porting to another OS is aligning the IPC (Inter processor Communication) mechanism to the audio driver flow for that OS. Sound Open Firmware has IPC optimized for the ALSA driver flow, but it's easy enough to reuse this IPC on other OSes or add a completely new IPC for the OS of your choice. The IPC ABI is defined in src/include/uapi/ and the IPC IO logic lives in src/ipc/.
 
 The current upstream IPC uses a memory mapped doorbell and mailbox to pass messages between the host and DSP. Non memory mapped IO (like I2C) can also be supported by adding new doorbell and mailbox driver in your platform code.
 

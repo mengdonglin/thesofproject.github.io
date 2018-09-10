@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Set up SOF on Minnowboard Turbot &mdash; SOF Project 0.1 documentation</title>
+  <title>Set up SOF on MinnowBoard Turbot &mdash; SOF Project 0.1 documentation</title>
   
 
   
@@ -26,30 +26,20 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="SOF Project 0.1 documentation" href="../../index.html"/>
-        <link rel="up" title="Getting Started Guide" href="../index.html"/>
-        <link rel="next" title="Set up SOF on Up Squared board with Hifiberry DAC+ (STD)" href="setup_up_2_board.html"/>
-        <link rel="prev" title="Build From Scratch" href="../build/build-from-scratch.html"/> 
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Set up SOF on Up Squared board with Hifiberry DAC+ (STD)" href="setup_up_2_board.html" />
+    <link rel="prev" title="Build SOF with Docker" href="../build-guide/build-with-docker.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -66,7 +56,7 @@
 
           
             
-            <img src="../../_static/logo_sof_white_200w.png" class="logo" />
+            <img src="../../_static/logo_sof_white_200w.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -106,116 +96,44 @@
 <li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#faq">FAQ</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Getting Started Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../build-guide/build-from-scratch.html">Build from scratch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#set-up-build-environment">Set up build environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-toolchain-from-source">Build toolchain from source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-firmware-binaries">Build firmware binaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-topology-and-tools">Build topology and tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Getting Started Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#building-sof">Building SOF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-from-scratch.html">Build SOF from scratch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-linux-kernel">Build Linux kernel</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-from-scratch.html#build-linux-kernel">Build Linux kernel</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../build-guide/build-with-docker.html">Build with docker</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-with-docker.html#set-up-docker">Set up Docker</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#get-docker">Get Docker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#set-proxy">Set Proxy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#set-usergroup">Set usergroup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#get-docker-image">Get Docker image</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-with-docker.html#id2">Build with Docker</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#build-firmware-binaries">Build firmware binaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#build-topology-and-tools">Build topology and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build-guide/build-with-docker.html">Build SOF with Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#set-up-docker">Set up Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build-guide/build-with-docker.html#id1">Build with Docker</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../cavs-boot/cavs-dsp-boot-overview.html">Overview</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../cavs-boot/cavs-dsp-boot-overview.html#ipc-communication-with-dsp-rom">IPC Communication with DSP ROM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cavs-boot/cavs-dsp-boot-overview.html#loading-binaries-to-adsp-memory">Loading Binaries to ADSP Memory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cavs-boot/cavs-dsp-boot-overview.html#booting-with-boot-loader">Booting with Boot Loader</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#setting-up-sof-on-hardware">Setting up SOF on hardware</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Set up SOF on MinnowBoard Turbot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#minnowboard-resources">MinnowBoard resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#development">Development</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../cavs-boot/apollolake/index.html">Apollolake Boot Process</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../cavs-boot/apollolake/apl-boot-rom.html">Apollolake Boot ROM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cavs-boot/apollolake/apl-boot-ldr.html">Apollolake Boot Loader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_up_2_board.html">Set up SOF on Up Squared board with Hifiberry DAC+ (STD)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#setup-instructions">Setup Instructions</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../build/build-docker.html">Build Sound Open Firmware from a Docker Container</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../build/build-docker.html#setup-docker">Setup Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../build/build-docker.html#prepare-docker-image-choose-one">Prepare Docker image (choose one)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-docker.html#build-docker-image">1. Build Docker image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-docker.html#pull-docker-image-from-docker-hub">2. Pull Docker image from Docker hub</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-docker.html#import-docker-image-from-tarball">3. Import Docker image from tarball</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../build/build-docker.html#use-docker-container-to-build-sof">Use Docker container to build SOF</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../build/build-from-scratch.html">Build From Scratch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#currently-supported-targets">Currently Supported Targets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#build-sof-binaries">Build SOF binaries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#create-the-build-environment">Create the build environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-xtensa-cross-compiler-choose-one">Install the xtensa cross compiler (choose one)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-alsa-lib-alsa-utils-alsa-plugins">Install alsa-lib alsa-utils alsa-plugins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-image-builder">Install the image builder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#build-sof-firmware-source-code-and-build-an-image">Build SOF firmware source code and build an image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#build-tools-and-topology-from-sound-open-firmware-tools">Build tools and topology from sound-open-firmware-tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#build-your-kernel">Build your kernel</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#set-up-target-machine">Set up target machine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-kernel">Install the kernel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-rmbox-tools">Install the rmbox tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#set-up-user-group">Set up user group</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#enable-and-test-with-sof">Enable and test with SOF</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../build/build-from-scratch.html#create-a-vm">Create a VM</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#install-the-qemu-vms">Install the Qemu VMs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#create-a-new-ubuntu-vm">Create a new Ubuntu VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#update-the-qemu-scripts">Update the qemu scripts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#update-the-kernel-on-your-vm">Update the kernel on your VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../build/build-from-scratch.html#run-the-driver-and-firmware-on-vms">Run the driver and firmware on VMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_ktest_environment.html">Set up a Ktest-based environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_ktest_environment.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_ktest_environment.html#prerequisites-on-the-target-device">Prerequisites on the target device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_ktest_environment.html#configure-ssh-without-password">Configure SSH without password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_ktest_environment.html#create-a-linux-development-environment">Create a linux development environment</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Set up SOF on Minnowboard Turbot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#minnowboard-resources">Minnowboard resources</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#about-turbot">About Turbot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#schematic">Schematic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bios">BIOS</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#development">Development</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#hardware-rework-connect-external-audio-codec">Hardware Rework &amp; Connect External Audio Codec</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#update-bios-and-insert-oem-key">Update BIOS and Insert OEM Key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#install-linux">Install Linux</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#set-up-sof">Set Up SOF</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#kernel-build">Kernel build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#contact-for-help">Contact for Help</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="setup_up_2_board.html">Set up SOF on Up Squared board with Hifiberry DAC+ (STD)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="setup_up_2_board.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="setup_up_2_board.html#setup-instructions">Setup Instructions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#flash-the-3-6-bios-version-on-the-up-squared-board">1. Flash the 3.6 BIOS version on the Up squared board.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#install-ubilinux-or-ubuntu">2. Install Ubilinux or Ubuntu</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#update-kernel">3. Update kernel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#firmware">4. Firmware</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#topology">5. Topology</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#add-acpi-support-for-hifiberry-dac">6. Add ACPI support for Hifiberry dac+</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#add-sst-drivers-to-blacklist-dsp-conf">7. Add sst drivers to blacklist-dsp.conf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_up_2_board.html#reboot">8. Reboot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#other-guides">Other guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cavs-boot/apollolake/index.html">Apollolake Boot Process</a></li>
 </ul>
 </li>
 </ul>
@@ -267,6 +185,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer_guides/unit_tests.html#preparing-cmocka-package">Preparing cmocka package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developer_guides/unit_tests.html#wrapping-objects-for-unit-tests">Wrapping objects for unit tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer_guides/unit_tests.html#notes">Notes</a></li>
 </ul>
 </li>
@@ -339,7 +258,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">SOF Project</a>
@@ -347,9 +266,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -372,9 +292,9 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../index.html">Getting Started Guide</a> &raquo;</li>
+          <li><a href="../index.html">Getting Started Guides</a> &raquo;</li>
         
-      <li>Set up SOF on Minnowboard Turbot</li>
+      <li>Set up SOF on MinnowBoard Turbot</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -392,10 +312,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="set-up-sof-on-minnowboard-turbot">
-<span id="setup-minnowboard-turbot"></span><h1>Set up SOF on Minnowboard Turbot<a class="headerlink" href="#set-up-sof-on-minnowboard-turbot" title="Permalink to this headline">¶</a></h1>
+<span id="setup-minnowboard-turbot"></span><h1>Set up SOF on MinnowBoard Turbot<a class="headerlink" href="#set-up-sof-on-minnowboard-turbot" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#minnowboard-resources" id="id1">Minnowboard resources</a><ul>
+<li><a class="reference internal" href="#minnowboard-resources" id="id1">MinnowBoard resources</a><ul>
 <li><a class="reference internal" href="#about-turbot" id="id2">About Turbot</a></li>
 <li><a class="reference internal" href="#schematic" id="id3">Schematic</a></li>
 <li><a class="reference internal" href="#bios" id="id4">BIOS</a></li>
@@ -406,22 +326,20 @@
 <li><a class="reference internal" href="#update-bios-and-insert-oem-key" id="id7">Update BIOS and Insert OEM Key</a></li>
 <li><a class="reference internal" href="#install-linux" id="id8">Install Linux</a></li>
 <li><a class="reference internal" href="#set-up-sof" id="id9">Set Up SOF</a><ul>
-<li><a class="reference internal" href="#topology" id="id10">Topology</a></li>
-<li><a class="reference internal" href="#ucm" id="id11">UCM</a></li>
+<li><a class="reference internal" href="#ucm" id="id10">UCM</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#kernel-build" id="id12">Kernel build</a><ul>
-<li><a class="reference internal" href="#kernel-udpate" id="id13">Kernel udpate</a></li>
-<li><a class="reference internal" href="#efi-api" id="id14">EFI API</a></li>
+<li><a class="reference internal" href="#kernel-build" id="id11">Kernel build</a><ul>
+<li><a class="reference internal" href="#kernel-update" id="id12">Kernel update</a></li>
+<li><a class="reference internal" href="#efi-api" id="id13">EFI API</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#contact-for-help" id="id15">Contact for Help</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="minnowboard-resources">
-<h2><a class="toc-backref" href="#id1">Minnowboard resources</a><a class="headerlink" href="#minnowboard-resources" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">MinnowBoard resources</a><a class="headerlink" href="#minnowboard-resources" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="about-turbot">
 <h3><a class="toc-backref" href="#id2">About Turbot</a><a class="headerlink" href="#about-turbot" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://minnowboard.org/minnowboard-turbot/technical-specs">https://minnowboard.org/minnowboard-turbot/technical-specs</a></p>
@@ -447,7 +365,7 @@
 </div>
 <div class="section" id="update-bios-and-insert-oem-key">
 <h3><a class="toc-backref" href="#id7">Update BIOS and Insert OEM Key</a><a class="headerlink" href="#update-bios-and-insert-oem-key" title="Permalink to this headline">¶</a></h3>
-<p>Minnowborad does not need key signing, so no OEM key is needed.</p>
+<p>MinnowBoard does not need key signing, so no OEM key is needed.</p>
 </div>
 <div class="section" id="install-linux">
 <h3><a class="toc-backref" href="#id8">Install Linux</a><a class="headerlink" href="#install-linux" title="Permalink to this headline">¶</a></h3>
@@ -455,79 +373,82 @@
 </div>
 <div class="section" id="set-up-sof">
 <h3><a class="toc-backref" href="#id9">Set Up SOF</a><a class="headerlink" href="#set-up-sof" title="Permalink to this headline">¶</a></h3>
-<p>Please follow the build from scratch <a class="reference internal" href="../build/build-from-scratch.html#build-from-scratch"><span class="std std-ref">instructions</span></a>
+<p>Please follow the build from scratch <a class="reference internal" href="../build-guide/build-from-scratch.html#build-from-scratch"><span class="std std-ref">instructions</span></a>
 for generic set up steps.</p>
 <p>Set up Xtensa config to build with xt-xcc:</p>
 <ol class="arabic">
 <li><p class="first">Install the RD-2012.5 version of Xtensa tools from Xplorer.</p>
 </li>
-<li><p class="first">Download the Xtensa core config for BYT from:
-<a class="reference external" href="https://drive.google.com/open?id=1i5Ynk2VMNTIOwXkZMoKIYzds68sVxkC7">https://drive.google.com/open?id=1i5Ynk2VMNTIOwXkZMoKIYzds68sVxkC7</a></p>
+<li><p class="first">Download the Xtensa <a class="reference external" href="https://drive.google.com/open?id=1i5Ynk2VMNTIOwXkZMoKIYzds68sVxkC7">core config</a> for BYT.</p>
 </li>
 <li><p class="first">Save the core config tarball (Intel_HiFiEP_linux.tgz) in your
 &lt;xtensa-tools-root&gt;/XtDevTools/downloads directory.</p>
 </li>
 <li><p class="first">Unzip and install the tarball.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ tar xvzf Intel<span class="se">\_</span>HiFiEP<span class="se">\_</span>linux.tgz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tar xvzf Intel<span class="se">\_</span>HiFiEP<span class="se">\_</span>linux.tgz
 $ <span class="nb">cd</span> Intel<span class="se">\_</span>HiFiEP
 $ ./install
 </pre></div>
 </div>
 </li>
-<li><p class="first">When prompted enter the Xtensa tools directory as follows:
-&lt;xtensa-tools-root&gt;/XtDevTools/install/tools/RD-2012.5-linux/XtensaTools</p>
+<li><p class="first">When prompted, enter the Xtensa tools directory.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;xtensa-tools-root&gt;/XtDevTools/install/tools/RD-2012.5-linux/XtensaTools</span>
+</pre></div>
+</div>
 </li>
 </ol>
 <p>After you have built and setup SOF:</p>
-<ol class="arabic simple">
-<li>copy the sof-byt.ri to /lib/firmware/intel/ on Minnow Turbot FS</li>
-<li>copy the below supported topology file to /lib/firmware/intel/ as
-sof-byt-“codec name”.tplg(like ‘sof-byt-rt5651.tplg’ or
-‘sof-byt-da7213.tplg’ ) on Minnow Turbot FS.</li>
-</ol>
-<div class="section" id="topology">
-<h4><a class="toc-backref" href="#id10">Topology</a><a class="headerlink" href="#topology" title="Permalink to this headline">¶</a></h4>
-<p>We only support pass-through topology in SOF 1.0.</p>
-<p>URL:git://git.alsa-project.org/sound-open-firmware-tools.git</p>
-<p>Such like:</p>
-<ul class="simple">
-<li>Test-ssp2-passthrough-s16le-s16le-48k-codec.tplg</li>
-<li>Test-ssp2-passthrough-s24le-s24le-48k-codec.tplg</li>
-<li>Test-ssp2-volume-s16le-s16le-48k-codec.tplg</li>
-<li>test-ssp2-volume-s24le-s24le-48k-codec.tplg</li>
-</ul>
+<ol class="arabic">
+<li><p class="first">Copy the*sof-byt.ri* to /lib/firmware/intel/ on Minnow Turbot FS</p>
+</li>
+<li><p class="first">Clone the Sound Open Firmware firmware tools from git://git.alsa-project.org/sound-open-firmware-tools.git and select a topology file like one of the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">test-ssp2-passthrough-s16le-s16le-48k-codec.tplg</span>
+<span class="go">test-ssp2-passthrough-s24le-s24le-48k-codec.tplg</span>
+<span class="go">test-ssp2-volume-s16le-s16le-48k-codec.tplg</span>
+<span class="go">test-ssp2-volume-s24le-s24le-48k-codec.tplg</span>
+</pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We only support pass-through topology in SOF 1.0.</p>
+</div>
+</li>
+<li><p class="first">Copy the topology file to /lib/firmware/intel/ as
+sof-byt-“codec name”.tplg (e.g. sof-byt-rt5651.tplg) to the
+Minnow Turbot FS.</p>
+</li>
+</ol>
 <div class="section" id="ucm">
-<h4><a class="toc-backref" href="#id11">UCM</a><a class="headerlink" href="#ucm" title="Permalink to this headline">¶</a></h4>
-<p>This UCM file is provided by Pierre and work fine for us. it suppot both
-headset mode and line in/out mode.</p>
-<p>URL: <a class="reference external" href="https://github.com/plbossart/UCM.git">https://github.com/plbossart/UCM.git</a></p>
-<p>You can also use alsactl to restore a recommanded asound.state file for
+<h4><a class="toc-backref" href="#id10">UCM</a><a class="headerlink" href="#ucm" title="Permalink to this headline">¶</a></h4>
+<p>Pierre Brossart provides a <a class="reference external" href="https://github.com/plbossart/UCM.git">UCM repository</a> that supports both headset mode and line in/out mode.</p>
+<p>You can also use alsactl to restore a recommended asound.state file for
 the amixer setting.</p>
 <p>asound.state files:
 user&#64;<a class="reference external" href="http://bee/git/audio/reef/board-int">bee:/git/audio/reef/board-int</a></p>
 </div>
 </div>
 <div class="section" id="kernel-build">
-<h3><a class="toc-backref" href="#id12">Kernel build</a><a class="headerlink" href="#kernel-build" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="kernel-udpate">
-<h4><a class="toc-backref" href="#id13">Kernel udpate</a><a class="headerlink" href="#kernel-udpate" title="Permalink to this headline">¶</a></h4>
-<p>Repo: <a class="reference external" href="https://github.com/plbossart/sound.git">https://github.com/plbossart/sound.git</a>
-Branch: heads/topic/sof-v4.14</p>
+<h3><a class="toc-backref" href="#id11">Kernel build</a><a class="headerlink" href="#kernel-build" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="kernel-update">
+<h4><a class="toc-backref" href="#id12">Kernel update</a><a class="headerlink" href="#kernel-update" title="Permalink to this headline">¶</a></h4>
+<p>Repo: <a class="reference external" href="https://github.com/plbossart/sound.git">https://github.com/plbossart/sound.git</a></p>
+<p>Branch: heads/topic/sof-v4.14</p>
 <ol class="arabic">
-<li><p class="first">Select the machine and codec driver in kernel config (Device Drivers &gt;
-Sound card support &gt; Advanced Linux Sound Architecture &gt; ALSA for SoC
-audio support) and make sure ASoC SOF Baytrail and codec RT5651/DA7212
+<li><p class="first">Select the machine and codec driver in kernel config</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Device</span> <span class="n">Drivers</span> <span class="o">&gt;</span> <span class="n">Sound</span> <span class="n">card</span> <span class="n">support</span> <span class="o">&gt;</span> <span class="n">Advanced</span> <span class="n">Linux</span> <span class="n">Sound</span> <span class="n">Architecture</span> <span class="o">&gt;</span> <span class="n">ALSA</span> <span class="k">for</span> <span class="n">SoC</span> <span class="n">audio</span> <span class="n">support</span>
+</pre></div>
+</div>
+<p>Make sure ASoC SOF Baytrail and codec RT5651/DA7212
 are selected.</p>
 <p><a class="confluence-embedded-image reference internal" href="../../_images/minnow_turbot.png"><img alt="image1" class="confluence-embedded-image" src="../../_images/minnow_turbot.png" style="height: 250px;" /></a></p>
 </li>
 <li><p class="first">Build deb package.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>make -j8 <span class="o">&amp;&amp;</span> make -j8 deb-pkg
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make -j8 <span class="o">&amp;&amp;</span> make -j8 deb-pkg
 </pre></div>
 </div>
 </li>
-<li><p class="first">Package all the *.deb files for Minnowboard and install all deb files.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>dpkg -i <span class="se">\*</span>.deb
+<li><p class="first">Package all the *.deb files for MinnowBoard, and install all deb files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ dpkg -i <span class="se">\*</span>.deb
 </pre></div>
 </div>
 </li>
@@ -536,28 +457,32 @@ are selected.</p>
 </ol>
 </div>
 <div class="section" id="efi-api">
-<h4><a class="toc-backref" href="#id14">EFI API</a><a class="headerlink" href="#efi-api" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id13">EFI API</a><a class="headerlink" href="#efi-api" title="Permalink to this headline">¶</a></h4>
 <p>Repo: <a class="reference external" href="https://github.com/plbossart/MinnowBoardMaxFirmware.git">https://github.com/plbossart/MinnowBoardMaxFirmware.git</a></p>
-<p>Clone the repo and build the source code. AudioSsdtUpdate.efi and
-associated .aml files are avaible as pre-compiled binaries under X64/</p>
+<p>Clone the repo and build the source code.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">AudioSsdtUpdate.efi and associated .aml files are avaible as
+pre-compiled binaries under X64/</p>
+</div>
 <p>Steps:</p>
 <ol class="arabic">
 <li><p class="first">Create a startup.nsh file in /boot/efi/</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>vim startup.nsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vim startup.nsh
 </pre></div>
 </div>
 <p>Add the following:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>fs0:
-<span class="nb">cd</span> EFI
-AudioSsdtUpdate.efi <span class="s2">&quot;codecname&quot;</span>.aml<span class="o">(</span>like RT5651.aml or DA7212.aml<span class="o">)</span>
-<span class="nb">cd</span> ubuntu
-grubx64.efi
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ fs0:
+$ <span class="nb">cd</span> EFI
+$ AudioSsdtUpdate.efi <span class="s2">&quot;codecname&quot;</span>.aml<span class="o">(</span>like RT5651.aml or DA7212.aml<span class="o">)</span>
+$ <span class="nb">cd</span> ubuntu
+$ grubx64.efi
 </pre></div>
 </div>
 </li>
 <li><p class="first">Move .aml and .efi  files to EFI directory.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>cp <span class="se">\*</span>.aml /boot/efi/EFI
-cp AudioSsdtUpdate.efi /boot/efi/EFI
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp <span class="se">\*</span>.aml /boot/efi/EFI
+$ cp AudioSsdtUpdate.efi /boot/efi/EFI
 </pre></div>
 </div>
 </li>
@@ -573,18 +498,12 @@ Manager -&gt; Boot Options -&gt; Change Boot Order</li>
 </ol>
 </div>
 </div>
-<div class="section" id="contact-for-help">
-<h3><a class="toc-backref" href="#id15">Contact for Help</a><a class="headerlink" href="#contact-for-help" title="Permalink to this headline">¶</a></h3>
-<p>Xiuli Pan <a class="reference external" href="mailto:xiuli&#46;pan&#37;&#52;&#48;intel&#46;com">xiuli<span>&#46;</span>pan<span>&#64;</span>intel<span>&#46;</span>com</a></p>
-</div>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -594,7 +513,7 @@ Manager -&gt; Boot Options -&gt; Change Boot Order</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Aug 16, 2018.
+      Last updated on Sep 10, 2018.
 
     </p>
   </div> 
@@ -616,6 +535,7 @@ Manager -&gt; Boot Options -&gt; Change Boot Order</li>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'0.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -628,19 +548,13 @@ Manager -&gt; Boot Options -&gt; Change Boot Order</li>
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
