@@ -46,7 +46,7 @@ Get Docker image
 ================
 
 To easily build SOF binaries, we need a Docker image containing all
-of the cross-compiler and build environment dependencies. We can either
+of the cross-compiler and build environment dependenices. We can either
 build a Docker image from a DockerFile or pull an image binary from
 Docker Hub.
 
@@ -187,3 +187,4 @@ The topology files are all in the topology folder. Copy them to the target
 machine's /lib/firmware/intel/ folder. 
 
 The *rmbox* tool is in the *rmbox* folder. Copy it to the target machine's
+/usr/bin directory.
