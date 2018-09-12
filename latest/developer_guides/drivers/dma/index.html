@@ -111,8 +111,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../getting_started/index.html#setting-up-sof-on-hardware">Setting up SOF on hardware</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on Minnowboard Turbot</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">Minnowboard resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on MinnowBoard Turbot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">MinnowBoard resources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../getting_started/setup/setup_minnowboard_turbot.html#development">Development</a></li>
 </ul>
 </li>
@@ -194,7 +194,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-Tos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/index.html#technical-notes">Technical Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../howtos/tech/placeholder.html">Work in Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../howtos/tech/compile_wsl.html">Build on Windows 10 with WSL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../howtos/tech/compile_wsl.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../howtos/tech/compile_wsl.html#enable-32bit-binaries">Enable 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../howtos/tech/compile_wsl.html#fix-stat-in-32bit-binaries">Fix stat in 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../howtos/tech/compile_wsl.html#compile">Compile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/index.html#process-notes">Process Notes</a><ul>
@@ -366,7 +372,7 @@ hide s_dma methods
 dma_ops - s_dma
 s_dma -- dma_plat_data
 s_dma &lt;- dma : provides
-" />
+"/>
 
 </object></p>
 <p class="caption"><span class="caption-number">Figure 9 </span><span class="caption-text">DMA Driver API</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -413,7 +419,7 @@ dma_ops &lt;. plat : (2) calls probe() &#64;init
 
 comp ..&gt; dma_get : (3) obtains dmac
 comp ..&gt; dma_ops : (4) calls API
-" />
+"/>
 
 </object></p>
 <p class="caption"><span class="caption-number">Figure 10 </span><span class="caption-text">DMAC Initialization</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
@@ -446,7 +452,7 @@ client -&gt; dma : dma_start( ch# )
 == Stop ==
 client -&gt; dma : dma_stop( ch# )
 client -&gt; dma : dma_channel_put( ch# )
-" />
+"/>
 
 </object></p>
 <p class="caption"><span class="caption-number">Figure 11 </span><span class="caption-text">Channel Initialization &amp; Data Transfer</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
@@ -483,7 +489,7 @@ implementation may keep some specific private data, attached to the
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 10, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div> 

@@ -111,8 +111,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html#setting-up-sof-on-hardware">Setting up SOF on hardware</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on Minnowboard Turbot</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">Minnowboard resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on MinnowBoard Turbot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">MinnowBoard resources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../getting_started/setup/setup_minnowboard_turbot.html#development">Development</a></li>
 </ul>
 </li>
@@ -194,7 +194,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-Tos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/index.html#technical-notes">Technical Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../howtos/tech/placeholder.html">Work in Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../howtos/tech/compile_wsl.html">Build on Windows 10 with WSL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#enable-32bit-binaries">Enable 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#fix-stat-in-32bit-binaries">Fix stat in 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#compile">Compile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/index.html#process-notes">Process Notes</a><ul>
@@ -315,8 +321,13 @@
 infrastructure and SDK that offers a single code base for all Intel
 hardware platforms. SOF provides infrastructure, real-time control pieces, and
 audio drivers as a community project.</p>
-<p>The firmware and SDK are intended for developers who are interested in audio or signal processing on modern DSPs or who are interested in microkernels that run on small but powerful processors.</p>
-<p>SOF currently targets the Cadence xtensa architecture DSPs found on some Intel-based devices such as the Minnowboard MAX. Sound Open Firmware is modular and generic so it can be ported to other DSP architectures or host platforms.</p>
+<p>The firmware and SDK are intended for developers who are interested in
+audio or signal processing on modern DSPs or who are interested in
+microkernels that run on small but powerful processors.</p>
+<p>SOF currently targets the Cadence xtensa architecture DSPs found on some
+Intel-based devices such as the MinnowBoard MAX. Sound Open Firmware is modular and
+generic so it can be ported to other DSP architectures or host
+platforms.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#components" id="id3">Components</a></li>
@@ -329,24 +340,51 @@ audio drivers as a community project.</p>
 <h2><a class="toc-backref" href="#id3">Components</a><a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>The Sound Open Firmware SDK comprises of five source components:</p>
 <ol class="arabic simple">
-<li><strong>SOF source code.</strong> The firmware is written in C with some architecture-specific assembler; it does not link to external dependencies.</li>
-<li><strong>SOF tools.</strong> These tools are required to convert firmware from the ELF file format to formats understood by the kernel drivers and tools to assist with debugging running firmware images.</li>
-<li><strong>ASoC Linux kernel drivers.</strong> An ASoC kernel driver is required to register the DSP and firmware as a kernel audio device and to expose PCMs, kcontrols etc. This driver can also load any topology data.</li>
-<li><strong>Crosstool-NG toolchain.</strong> Crosstool-NG is used to build a GNU cross toolchain (gcc, gdb, binutils, etc.) that is used to build the firmware binaries. Other compilers and toolchains can also be used to build the firmware.</li>
-<li><strong>Qemu DSP and host emulator.</strong> Qemu is used to provide a functional emulator to simultaneously trace and debug driver and DSP firmware code.</li>
+<li><strong>SOF source code.</strong> The firmware is written in C with some
+architecture-specific assembler; it does not link to external
+dependencies.</li>
+<li><strong>SOF tools.</strong> These tools are required to convert firmware from the
+ELF file format to formats understood by the kernel drivers and tools to
+assist with debugging running firmware images.</li>
+<li><strong>ASoC Linux kernel drivers.</strong> An ASoC kernel driver is required to
+register the DSP and firmware as a kernel audio device and to expose
+PCMs, kcontrols etc. This driver can also load any topology data.</li>
+<li><strong>Crosstool-NG toolchain.</strong> Crosstool-NG is used to build a GNU cross
+toolchain (gcc, gdb, binutils, etc.) that is used to build the firmware
+binaries. Other compilers and toolchains can also be used to build the
+firmware.</li>
+<li><strong>Qemu DSP and host emulator.</strong> Qemu is used to provide a functional
+emulator to simultaneously trace and debug driver and DSP firmware code.</li>
 </ol>
 </div>
 <div class="section" id="sof-architecture">
 <h2><a class="toc-backref" href="#id4">SOF Architecture</a><a class="headerlink" href="#sof-architecture" title="Permalink to this headline">¶</a></h2>
-<p>The diagram below shows the high-level firmware architecture with the Baytrail platform integration. The firmware is divided into four main sections:</p>
+<p>The diagram below shows the high-level firmware architecture with the
+Baytrail platform integration. The firmware is divided into four main
+sections:</p>
 <ol class="arabic">
-<li><p class="first"><strong>Generic microkernel.</strong> The microkernel manages and abstracts the DSP hardware for the rest of the system. It also exports C APIs for memory allocation, scheduling work, event notifications, and power management.</p>
+<li><p class="first"><strong>Generic microkernel.</strong> The microkernel manages and abstracts the
+DSP hardware for the rest of the system. It also exports C APIs for
+memory allocation, scheduling work, event notifications, and power
+management.</p>
 </li>
-<li><p class="first"><strong>Audio components.</strong> The audio components can be used to form an audio processing pipeline from the host DMA buffer to the DSP digital audio interface. Audio components will have a source and sink buffer where they will usually transform or route audio data as part of their processing.</p>
+<li><p class="first"><strong>Audio components.</strong> The audio components can be used to form an
+audio processing pipeline from the host DMA buffer to the DSP digital
+audio interface. Audio components will have a source and sink buffer
+where they will usually transform or route audio data as part of their
+processing.</p>
 </li>
-<li><p class="first"><strong>Audio task.</strong> The audio task manages the audio pipelines at run time; it manages the transportation of data from source to sink component within the pipeline. The pipelines are currently statically defined in the firmware, but infrastructure is now in place to allow the dynamic creation of pipelines from Linux userspace.</p>
+<li><p class="first"><strong>Audio task.</strong> The audio task manages the audio pipelines at run
+time; it manages the transportation of data from source to sink
+component within the pipeline. The pipelines are currently statically
+defined in the firmware, but infrastructure is now in place to allow the
+dynamic creation of pipelines from Linux userspace.</p>
 </li>
-<li><p class="first"><strong>Platform drivers.</strong> The platform drivers are used to control any external IP to the DSP IP. This will usually be things like DMA engines or DAI (Digital Audio Interface) controllers. These drivers are used by the audio components and pipelines to send/receive data to/from the host and external codecs.</p>
+<li><p class="first"><strong>Platform drivers.</strong> The platform drivers are used to control any
+external IP to the DSP IP. This will usually be things like DMA engines
+or DAI (Digital Audio Interface) controllers. These drivers are used by
+the audio components and pipelines to send/receive data to/from the host
+and external codecs.</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/fw-arch-diag.png"><img alt="SOF Architecture" src="../_images/fw-arch-diag.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Figure 1 </span><span class="caption-text"><cite>Sound Open Firmware Architecture</cite></span></p>
@@ -356,15 +394,30 @@ audio drivers as a community project.</p>
 </div>
 <div class="section" id="sof-driver-architecture">
 <h2><a class="toc-backref" href="#id5">SOF Driver Architecture</a><a class="headerlink" href="#sof-driver-architecture" title="Permalink to this headline">¶</a></h2>
-<p>The ASoC driver architecture for Sound Open Firmware is shown in the diagram below. The driver architecture is also split into four layers, like a protocol stack, each with a different purpose.</p>
+<p>The ASoC driver architecture for Sound Open Firmware is shown in the diagram below.
+The driver architecture is also split into four layers, like a protocol
+stack, each with a different purpose.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Machine driver.</strong> The ASoC machine driver does all the machine/board audio hardware integration. It also glues the platform driver and drivers for any codec(s) together so they appear as a single ALSA sound card. Sound Open Firmware can reuse existing upstream machine drivers (as only the platform name needs to be changed) or can have bespoke machine drivers.</p>
+<li><p class="first"><strong>Machine driver.</strong> The ASoC machine driver does all the
+machine/board audio hardware integration. It also glues the platform
+driver and drivers for any codec(s) together so they appear as a single
+ALSA sound card. Sound Open Firmware can reuse existing upstream machine drivers (as
+only the platform name needs to be changed) or can have bespoke machine
+drivers.</p>
 </li>
-<li><p class="first"><strong>Generic PCM Driver.</strong> The PCM driver creates ALSA PCMs, DAPM, and kcontrols based on the topology data loaded at run time. The PCM driver also allocates buffers for DMA and registers with run time PM. It is architecture and platform generic code.</p>
+<li><p class="first"><strong>Generic PCM Driver.</strong> The PCM driver creates ALSA PCMs, DAPM, and
+kcontrols based on the topology data loaded at run time. The PCM driver
+also allocates buffers for DMA and registers with run time PM. It is
+architecture and platform generic code.</p>
 </li>
-<li><p class="first"><strong>Generic IPC driver.</strong> The IPC driver is the messaging bridge between the host and DSP and defines the messaging ABI and protocol. It is architecture and platform generic code.</p>
+<li><p class="first"><strong>Generic IPC driver.</strong> The IPC driver is the messaging bridge
+between the host and DSP and defines the messaging ABI and protocol. It
+is architecture and platform generic code.</p>
 </li>
-<li><p class="first"><strong>DSP Platform Driver.</strong> The platform driver is a platform specific driver that abstracts the low level platform DSP hardware into a common generic API that is used by the upper layers. This includes code that will initialise the DSP and boot the firmware.</p>
+<li><p class="first"><strong>DSP Platform Driver.</strong> The platform driver is a platform specific
+driver that abstracts the low level platform DSP hardware into a common
+generic API that is used by the upper layers. This includes code that
+will initialize the DSP and boot the firmware.</p>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/driver-arch-diag.png"><img alt="SOF Driver Architecture" src="../_images/driver-arch-diag.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Figure 2 </span><span class="caption-text"><cite>Sound Open Firmware Driver Architecture</cite></span></p>
@@ -372,42 +425,98 @@ audio drivers as a community project.</p>
 </li>
 </ol>
 <p>The right-hand side of the diagram shows the mailbox/doorbell mechanism and the DSP.</p>
-<p>The PCM and IPC drivers can be reused without modification on every platform. The platform differentiation will occur via the topology data and firmware. There is also scope for differentiation via the machine driver and platform driver. The ACPI or Device Tree could be used to specify the HW configuration.</p>
+<p>The PCM and IPC drivers can be reused without modification on every
+platform. The platform differentiation will occur via the topology data
+and firmware. There is also scope for differentiation via the machine
+driver and platform driver. The ACPI or Device Tree could be used to
+specify the HW configuration.</p>
 </div>
 <div class="section" id="faq">
 <h2><a class="toc-backref" href="#id6">FAQ</a><a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
-<p><strong>What license does the firmware and SDK use?</strong></p>
-<p>The firmware is released using a standard BSD license with some parts MIT. The SDK is GPL.</p>
-<p><strong>Do I need to open source my firmware code changes?</strong></p>
-<p>No. The firmware BSD and MIT licensed code means you can keep code changes private. Patches are always welcomed if do decide to open source work.</p>
-<p><strong>What DSP architectures are supported?</strong></p>
-<p>Sound Open Firmware currently supports the Cadence/Tensilica Xtensa audio DSP architecture and ISA.</p>
-<p><strong>What host platforms are supported?</strong></p>
-<p>Sound Open Firmware currently supports the Intel Baytrail and Cherrytrail based platforms. This includes devices like the Minnowboard MAX and the ASUS T100 laptop, but should also include any Baytrail or Cherrytrail based devices that have the audio DSP enabled in the BIOS.</p>
-<p>The code has also been designed to easily port to other host platform architectures like ARM, MIPS etc.</p>
-<p><strong>How can I get involved?</strong></p>
-<p>Please join the developer mailing where new development features and patches are discussed. <a class="reference external" href="http://alsa-project.org/mailman/listinfo/sound-open-firmware">http://alsa-project.org/mailman/listinfo/sound-open-firmware</a></p>
-<p><strong>What is the development model?</strong></p>
-<p>Sound Open Firmware has a similar development model to the Linux kernel. Patches are discussed and posted on the mailing list before being merged. The release cadence will likely be every 6 - 8 weeks. There will be a stable release tagged after passing QA then development will continue for the next release.</p>
-<p><strong>Who is working on |SOF|?</strong></p>
-<p>Currently Intel is sponsoring development work on the Minnowboard MAX and other Intel-based platforms.</p>
-<p><strong>How do I add support for DSP architecture X?</strong></p>
-<p>It’s straightforward enough to add support for a new DSP architecture. New architectures usually requires support in the GNU tool chain, although other tool chains can be used, too. It also helps to have qemu support for the architecture in order to provide an emulator.</p>
-<p>The main work in adding the new architecture is duplicating and porting the src/arch directory to your new architecture. The code in the architecture directory mainly deals with architecture abstraction and initialisation of any architecture IP like MMU, IRQs and caches alongside providing optimised version of common C functions (memcpy, memset, etc) for that architecture. Adding a new architecture also usually means adding a new host platform too.</p>
-<p><strong>How do I add support for host platform X?</strong></p>
-<p>Adding a new host platform is a lot simpler than adding a new DSP architecture. A new host platform consists of adding a new src/platform/ directory, together with mappings for memory, IRQs, GPIOs and peripheral devices in the DSP memory space. New drivers may also have to be added (e.g. for DMA, I2S) to the drivers directory.</p>
-<p><strong>How do I port to other OSes?</strong></p>
-<p>There is nothing stopping the firmware working with non Linux based OSes providing a driver exists or can be written for that OS. The main area for potential optimisation in porting to another OS is aligning the IPC (Inter processor Communication) mechanism to the audio driver flow for that OS. Sound Open Firmware has IPC optimised for the ALSA driver flow, but it’s easy enough to reuse this IPC on other OSes or add a completely new IPC for the OS of your choice. The IPC ABI is defined in src/include/uapi/ and the IPC IO logic lives in src/ipc/.</p>
-<p>The current upstream IPC uses a memory mapped doorbell and mailbox to pass messages between the host and DSP. Non memory mapped IO (like I2C) can also be supported by adding new doorbell and mailbox driver in your platform code.</p>
-<p><strong>What audio components are supported?</strong></p>
-<p>Firmware currently supports mixers, volume, DAIs and Host PCMs in the upstream code base. More components are in progress…</p>
-<p><strong>How do I create my own pipelines?</strong></p>
-<p>The current upstream supports creating statically defined pipelines in src/audio/static-pipeline.c. This default pipeline can be changed in this file and in the driver to match any new pipeline topology.</p>
-<p>Dynamic pipeline topology will be supported upstream soon. This will allow pipelines to be defined at run time in the firmware and driver by using the alsa topology framework.</p>
-<p><strong>Can I add my own media encoder/decoders?</strong></p>
-<p>Yes.</p>
-<p><strong>Can I add non audio functions?</strong></p>
-<p>Yes, the instruction sets used by DSPs are also good at non audio processing tasks too. e.g. low power sensor signal processing. Providing your DSP has physical IO ports to connect other non audio devices then it’s possible to process data from these devices too.</p>
+<dl class="docutils">
+<dt>What license does the firmware and SDK use?</dt>
+<dd>The firmware is released using a standard BSD license with some parts
+MIT. The SDK is GPL.</dd>
+<dt>Do I need to open source my firmware code changes?</dt>
+<dd>No. The firmware BSD and MIT licensed code means you can keep code
+changes private. Patches are always welcomed if do decide to open source
+work.</dd>
+<dt>What DSP architectures are supported?</dt>
+<dd>Sound Open Firmware currently supports the Cadence/Tensilica Xtensa audio DSP
+architecture and ISA.</dd>
+<dt>What host platforms are supported?</dt>
+<dd><p class="first">Sound Open Firmware currently supports the Intel Baytrail and Cherrytrail based
+platforms. This includes devices like the MinnowBoard MAX and the ASUS
+T100 laptop, but should also include any Baytrail or Cherrytrail based
+devices that have the audio DSP enabled in the BIOS.</p>
+<p class="last">The code has also been designed to easily port to other host platform
+architectures like ARM, MIPS etc.</p>
+</dd>
+<dt>How can I get involved?</dt>
+<dd>Please join the developer mailing where new development features and
+patches are discussed:
+<a class="reference external" href="http://alsa-project.org/mailman/listinfo/sound-open-firmware">http://alsa-project.org/mailman/listinfo/sound-open-firmware</a></dd>
+<dt>What is the development model?</dt>
+<dd>Sound Open Firmware has a similar development model to the Linux kernel. Patches are
+discussed and posted on the mailing list before being merged. The
+release cadence will likely be every 6 - 8 weeks. There will be a stable
+release tagged after passing QA then development will continue for the
+next release.</dd>
+<dt>Who is working on Sound Open Firmware?</dt>
+<dd>Currently Intel is sponsoring development work on the MinnowBoard MAX
+and other Intel-based platforms.</dd>
+<dt>How do I add support for DSP architecture X?</dt>
+<dd><p class="first">It’s straightforward enough to add support for a new DSP architecture.
+New architectures usually requires support in the GNU tool chain,
+although other tool chains can be used, too. It also helps to have qemu
+support for the architecture in order to provide an emulator.</p>
+<p class="last">The main work in adding the new architecture is duplicating and porting
+the src/arch directory to your new architecture. The code in the
+architecture directory mainly deals with architecture abstraction and
+initialization of any architecture IP like MMU, IRQs and caches
+alongside providing optimized version of common C functions (memcpy,
+memset, etc) for that architecture. Adding a new architecture also
+usually means adding a new host platform too.</p>
+</dd>
+<dt>How do I add support for host platform X?</dt>
+<dd>Adding a new host platform is a lot simpler than adding a new DSP
+architecture. A new host platform consists of adding a new src/platform/
+directory, together with mappings for memory, IRQs, GPIOs and peripheral
+devices in the DSP memory space. New drivers may also have to be added
+(e.g. for DMA, I2S) to the drivers directory.</dd>
+<dt>How do I port to other OSes?</dt>
+<dd><p class="first">There is nothing stopping the firmware working with non Linux based OSes
+providing a driver exists or can be written for that OS. The main area
+for potential optimization in porting to another OS is aligning the IPC
+(Inter processor Communication) mechanism to the audio driver flow for
+that OS. Sound Open Firmware has IPC optimized for the ALSA driver flow,
+but it’s easy enough to reuse this IPC on other OSes or add a completely
+new IPC for the OS of your choice. The IPC ABI is defined in
+src/include/uapi/ and the IPC IO logic lives in src/ipc/.</p>
+<p class="last">The current upstream IPC uses a memory mapped doorbell and mailbox to
+pass messages between the host and DSP. Non memory mapped IO (like I2C)
+can also be supported by adding new doorbell and mailbox driver in your
+platform code.</p>
+</dd>
+<dt>What audio components are supported?</dt>
+<dd>Firmware currently supports mixers, volume, DAIs and Host PCMs in the
+upstream code base. More components are in progress…</dd>
+<dt>How do I create my own pipelines?</dt>
+<dd><p class="first">The current upstream supports creating statically defined pipelines in
+src/audio/static-pipeline.c. This default pipeline can be changed in
+this file and in the driver to match any new pipeline topology.</p>
+<p class="last">Dynamic pipeline topology will be supported upstream soon. This will
+allow pipelines to be defined at run time in the firmware and driver by
+using the alsa topology framework.</p>
+</dd>
+<dt>Can I add my own media encoder/decoders?</dt>
+<dd>Yes.</dd>
+<dt>Can I add non-audio functions?</dt>
+<dd>Yes, the instruction sets used by DSPs are also good at non audio
+processing tasks too. e.g. low power sensor signal processing. Providing
+your DSP has physical IO ports to connect other non audio devices then
+it’s possible to process data from these devices too.</dd>
+</dl>
 </div>
 </div>
 
@@ -423,7 +532,7 @@ audio drivers as a community project.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 10, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div> 

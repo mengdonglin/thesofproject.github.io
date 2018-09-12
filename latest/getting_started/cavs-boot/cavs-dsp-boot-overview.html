@@ -111,8 +111,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#setting-up-sof-on-hardware">Setting up SOF on hardware</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html">Set up SOF on Minnowboard Turbot</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#minnowboard-resources">Minnowboard resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html">Set up SOF on MinnowBoard Turbot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#minnowboard-resources">MinnowBoard resources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../setup/setup_minnowboard_turbot.html#development">Development</a></li>
 </ul>
 </li>
@@ -194,7 +194,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../howtos/index.html#technical-notes">Technical Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../howtos/tech/placeholder.html">Work in Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../howtos/tech/compile_wsl.html">Build on Windows 10 with WSL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/tech/compile_wsl.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/tech/compile_wsl.html#enable-32bit-binaries">Enable 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/tech/compile_wsl.html#fix-stat-in-32bit-binaries">Fix stat in 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../howtos/tech/compile_wsl.html#compile">Compile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../howtos/index.html#process-notes">Process Notes</a><ul>
@@ -368,7 +374,7 @@ Host -&gt; mw0 : wait for(FSR_ROM_INIT_DONE)
 Host &lt;-- mw0
 
 Host -&gt; Host : binaries loading
-" />
+"/>
 
 </object></p>
 </div>
@@ -484,7 +490,7 @@ loop libraries loading
     host &lt;-- fw
     deactivate fw
 end loop
-" />
+"/>
 
 </object></p>
 <p class="caption"><span class="caption-number">Figure 3 </span><span class="caption-text">Loading FW Binaries to ADSP Memory</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -503,7 +509,7 @@ host -&gt; host : retrieve preload size (binary_mft_code) : preload_size
 
 host -&gt; cldma : write (binary_mft_code, mft_size)
 host -&gt; cldma : write (binary_mft_code+mft_size, preload_size-mft_size)
-" />
+"/>
 
 </object></p>
 <p class="caption"><span class="caption-number">Figure 4 </span><span class="caption-text">Writing a Binary</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -543,7 +549,7 @@ rom -&gt; bup_be : boot_entry() &#64;boot_ldr.ep (boot_entry.S)
 				activate fw
 				fw -&gt; fw : call main
 					activate fw
-" />
+"/>
 
 </object></p>
 <p class="caption"><span class="caption-number">Figure 5 </span><span class="caption-text">SOF Boot Loader Flow</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
@@ -563,7 +569,7 @@ rom -&gt; bup_be : boot_entry() &#64;boot_ldr.ep (boot_entry.S)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 10, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div> 

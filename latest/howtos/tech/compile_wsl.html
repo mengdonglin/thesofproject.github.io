@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Work in Progress &mdash; SOF Project 0.1 documentation</title>
+  <title>Build on Windows 10 with WSL &mdash; SOF Project 0.1 documentation</title>
   
 
   
@@ -111,8 +111,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#setting-up-sof-on-hardware">Setting up SOF on hardware</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on Minnowboard Turbot</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">Minnowboard resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html">Set up SOF on MinnowBoard Turbot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#minnowboard-resources">MinnowBoard resources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../getting_started/setup/setup_minnowboard_turbot.html#development">Development</a></li>
 </ul>
 </li>
@@ -194,7 +194,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How-Tos</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#technical-notes">Technical Notes</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Work in Progress</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Build on Windows 10 with WSL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-32bit-binaries">Enable 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fix-stat-in-32bit-binaries">Fix stat in 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile">Compile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#process-notes">Process Notes</a><ul>
@@ -294,7 +300,7 @@
         
           <li><a href="../index.html">How-Tos</a> &raquo;</li>
         
-      <li>Work in Progress</li>
+      <li>Build on Windows 10 with WSL</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -311,9 +317,88 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="work-in-progress">
-<span id="wip"></span><h1>Work in Progress<a class="headerlink" href="#work-in-progress" title="Permalink to this headline">¶</a></h1>
-<p>This is a placeholder doc for technical how-to articles in-progress.</p>
+  <div class="section" id="build-on-windows-10-with-wsl">
+<span id="compile-wsl"></span><h1>Build on Windows 10 with WSL<a class="headerlink" href="#build-on-windows-10-with-wsl" title="Permalink to this headline">¶</a></h1>
+<p>If you want to compile SOF on Windows using 32bit Linux toolchain this guide is for you.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Please download WSL (Windows Subsystem for Linux) from Windows Store.
+This guide is written for Ubuntu WSL.
+You can read how to install WSL there: <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a></p>
+</div>
+<div class="section" id="enable-32bit-binaries">
+<h2>Enable 32bit binaries<a class="headerlink" href="#enable-32bit-binaries" title="Permalink to this headline">¶</a></h2>
+<p>We want to use 32bit toolchain so we need to enable 32bit binaries.</p>
+<p>Install qemu that will run 32 bit binaries and register it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install qemu-user-static
+sudo update-binfmts --install i386 /usr/bin/qemu-i386-static --magic <span class="s1">&#39;\x7fELF\x01\x01\x01\x03\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x03\x00\x01\x00\x00\x00&#39;</span> --mask <span class="s1">&#39;\xff\xff\xff\xff\xff\xff\xff\xfc\xff\xff\xff\xff\xff\xff\xff\xff\xf8\xff\xff\xff\xff\xff\xff\xff&#39;</span>
+</pre></div>
+</div>
+<p>Start service that enables support for 32bit, do it now and <strong>every time</strong> that you want to enable 32 bit support (or just add it to startup scripts if you want to have it enabled on every WSL launch).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service binfmt-support start
+</pre></div>
+</div>
+<p>Add i386 arch for dpkg and install packages needed by most of apps.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 zlib1g-dev:i386
+</pre></div>
+</div>
+</div>
+<div class="section" id="fix-stat-in-32bit-binaries">
+<h2>Fix stat in 32bit binaries<a class="headerlink" href="#fix-stat-in-32bit-binaries" title="Permalink to this headline">¶</a></h2>
+<p>Many of 32bit apps cannot handle 64bit inodes of WSL filesystems.
+We can replace stat() with function that will partially support 64bit inodes by at least giving file properties (for example it will return EOVERFLOW for file size &gt;= 2^32, but at least struct with properties will have some info).</p>
+<p>We will need gcc in next steps, you can install it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install gcc
+</pre></div>
+</div>
+<p>First you need to build shared libs with changed stat that we will use for preload.
+You have to download source code with modified stat here: <a class="reference external" href="https://raw.githubusercontent.com/jajanusz/sof-goodies/master/wsl_32bit_support/inode64.c">https://raw.githubusercontent.com/jajanusz/sof-goodies/master/wsl_32bit_support/inode64.c</a></p>
+<p>Now you can build it with script like below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># info for ld</span>
+
+cat &gt; vers <span class="s">&lt;&lt;EOC</span>
+<span class="s">GLIBC_2.0 {</span>
+<span class="s">global:</span>
+<span class="s">readdir;</span>
+<span class="s">__fxstat;</span>
+<span class="s">__xstat;</span>
+<span class="s">__lxstat;</span>
+<span class="s">};</span>
+<span class="s">EOC</span>
+
+<span class="c1"># build fixed stat for 32bit apps</span>
+
+gcc -c -fPIC -m32 -fno-stack-protector inode64.c
+mkdir -p b32
+ld -shared -melf_i386 --version-script vers -o b32/inode64.so inode64.o
+
+<span class="c1"># build empty lib that does nothing for 64bit apps</span>
+
+mkdir -p b64
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="p">|</span> gcc -xc -fPIC -shared -o b64/inode64.so -
+</pre></div>
+</div>
+<p>Next we have to put these libs in appropriate folders, so ld will pickup 64b lib for 64bit apps and 32b lib with fixed stat for 32bit apps:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ld will pickup 64b lib for 64bit apps and 32b lib with fixed stat for 32bit apps</span>
+
+sudo cp b64/inode64.so /lib/x86_64-linux-gnu/inode64.so
+sudo cp b32/inode64.so /lib/inode64.so
+</pre></div>
+</div>
+<p>Then you have to add our libs to LD_PRELOAD <strong>every time</strong> you want 32bit binaries to use changed stat:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LD_PRELOAD</span><span class="o">=</span>inode64.so
+</pre></div>
+</div>
+</div>
+<div class="section" id="compile">
+<h2>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">¶</a></h2>
+<p>Now just install configurations and build SOF firmware like you would do on Linux.</p>
+</div>
 </div>
 
 
@@ -328,7 +413,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 10, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div> 
