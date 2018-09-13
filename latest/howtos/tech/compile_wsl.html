@@ -196,8 +196,8 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#technical-notes">Technical Notes</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Build on Windows 10 with WSL</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enable-32bit-binaries">Enable 32bit binaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fix-stat-in-32bit-binaries">Fix stat in 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-32-bit-binaries">Enable 32-bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fix-stat-in-32-bit-binaries">Fix stat in 32-bit binaries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#compile">Compile</a></li>
 </ul>
 </li>
@@ -319,44 +319,49 @@
             
   <div class="section" id="build-on-windows-10-with-wsl">
 <span id="compile-wsl"></span><h1>Build on Windows 10 with WSL<a class="headerlink" href="#build-on-windows-10-with-wsl" title="Permalink to this headline">¶</a></h1>
-<p>If you want to compile SOF on Windows using 32bit Linux toolchain this guide is for you.</p>
+<p>Use these instructions to compile SOF on Windows using a 32-bit Linux
+toolchain.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>Please download WSL (Windows Subsystem for Linux) from Windows Store.
-This guide is written for Ubuntu WSL.
-You can read how to install WSL there: <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a></p>
+<p>Download WSL (Windows Subsystem for Linux) from the Windows Store.
+These instructions are written for Ubuntu WSL. Read how to install WSL at: <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a></p>
 </div>
-<div class="section" id="enable-32bit-binaries">
-<h2>Enable 32bit binaries<a class="headerlink" href="#enable-32bit-binaries" title="Permalink to this headline">¶</a></h2>
-<p>We want to use 32bit toolchain so we need to enable 32bit binaries.</p>
-<p>Install qemu that will run 32 bit binaries and register it</p>
+<div class="section" id="enable-32-bit-binaries">
+<h2>Enable 32-bit binaries<a class="headerlink" href="#enable-32-bit-binaries" title="Permalink to this headline">¶</a></h2>
+<p>To use a 32-bit toolchain, enable 32-bit binaries by following these steps.</p>
+<ol class="arabic">
+<li><p class="first">Install QEMU that will run 32-bit binaries and then register it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt install qemu-user-static
-sudo update-binfmts --install i386 /usr/bin/qemu-i386-static --magic <span class="s1">&#39;\x7fELF\x01\x01\x01\x03\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x03\x00\x01\x00\x00\x00&#39;</span> --mask <span class="s1">&#39;\xff\xff\xff\xff\xff\xff\xff\xfc\xff\xff\xff\xff\xff\xff\xff\xff\xf8\xff\xff\xff\xff\xff\xff\xff&#39;</span>
+sudo update-binfmts --install i386 /usr/bin/qemu-i386-static <span class="se">\ </span>--magic <span class="s1">&#39;\x7fELF\x01\x01\x01\x03\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x03\x00\x01\x00\x00\x00&#39;</span> <span class="se">\ </span>--mask <span class="s1">&#39;\xff\xff\xff\xff\xff\xff\xff\xfc\xff\xff\xff\xff\xff\xff\xff\xff\xf8\xff\xff\xff\xff\xff\xff\xff&#39;</span>
 </pre></div>
 </div>
-<p>Start service that enables support for 32bit, do it now and <strong>every time</strong> that you want to enable 32 bit support (or just add it to startup scripts if you want to have it enabled on every WSL launch).</p>
+</li>
+<li><p class="first">Start the service that enables 32-bit support. Start it <strong>every time</strong> you want to enable 32-bit support; you can also add it to startup scripts if you want it to be enabled on every WSL launch.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service binfmt-support start
 </pre></div>
 </div>
-<p>Add i386 arch for dpkg and install packages needed by most of apps.</p>
+</li>
+<li><p class="first">Add i386 arch for dpkg and install packages needed by most apps.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dpkg --add-architecture i386
 sudo apt update
 sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 zlib1g-dev:i386
 </pre></div>
 </div>
+</li>
+</ol>
 </div>
-<div class="section" id="fix-stat-in-32bit-binaries">
-<h2>Fix stat in 32bit binaries<a class="headerlink" href="#fix-stat-in-32bit-binaries" title="Permalink to this headline">¶</a></h2>
-<p>Many of 32bit apps cannot handle 64bit inodes of WSL filesystems.
-We can replace stat() with function that will partially support 64bit inodes by at least giving file properties (for example it will return EOVERFLOW for file size &gt;= 2^32, but at least struct with properties will have some info).</p>
-<p>We will need gcc in next steps, you can install it with:</p>
+<div class="section" id="fix-stat-in-32-bit-binaries">
+<h2>Fix stat in 32-bit binaries<a class="headerlink" href="#fix-stat-in-32-bit-binaries" title="Permalink to this headline">¶</a></h2>
+<p>Many 32-bit apps cannot handle the 64-bit inodes of WSL filesystems. We can replace stat() with a function that partially supports 64-bit inodes by providing useful file properties. For example, even though it will return EOVERFLOW for file sizes &gt;= 2^32, the struct with properties will contain some info.</p>
+<p>The following steps require GCC. Install it by entering:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install gcc
 </pre></div>
 </div>
-<p>First you need to build shared libs with changed stat that we will use for preload.
-You have to download source code with modified stat here: <a class="reference external" href="https://raw.githubusercontent.com/jajanusz/sof-goodies/master/wsl_32bit_support/inode64.c">https://raw.githubusercontent.com/jajanusz/sof-goodies/master/wsl_32bit_support/inode64.c</a></p>
-<p>Now you can build it with script like below:</p>
+<ol class="arabic">
+<li><p class="first">Build shared libs with the changed stat that will be used for preload. Download the source code with the modified stat here: <a class="reference external" href="https://raw.githubusercontent.com/jajanusz/sof-goodies/master/wsl_32bit_support/inode64.c">https://raw.githubusercontent.com/jajanusz/sof-goodies/master/wsl_32bit_support/inode64.c</a></p>
+</li>
+<li><p class="first">Build it using the script below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
 
 <span class="c1"># info for ld</span>
@@ -383,21 +388,25 @@ mkdir -p b64
 <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="p">|</span> gcc -xc -fPIC -shared -o b64/inode64.so -
 </pre></div>
 </div>
-<p>Next we have to put these libs in appropriate folders, so ld will pickup 64b lib for 64bit apps and 32b lib with fixed stat for 32bit apps:</p>
+</li>
+<li><p class="first">Place these libs in appropriate folders so ld will pick up 64b lib for 64-bit apps and 32b lib with fixed stat for 32-bit apps:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ld will pickup 64b lib for 64bit apps and 32b lib with fixed stat for 32bit apps</span>
 
 sudo cp b64/inode64.so /lib/x86_64-linux-gnu/inode64.so
 sudo cp b32/inode64.so /lib/inode64.so
 </pre></div>
 </div>
-<p>Then you have to add our libs to LD_PRELOAD <strong>every time</strong> you want 32bit binaries to use changed stat:</p>
+</li>
+<li><p class="first">Add our libs to LD_PRELOAD <strong>every time</strong> you want 32-bit binaries to use the changed stat:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LD_PRELOAD</span><span class="o">=</span>inode64.so
 </pre></div>
 </div>
+</li>
+</ol>
 </div>
 <div class="section" id="compile">
 <h2>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">¶</a></h2>
-<p>Now just install configurations and build SOF firmware like you would do on Linux.</p>
+<p>Install the configurations and build the SOF firmware as you do on Linux.</p>
 </div>
 </div>
 
@@ -413,7 +422,7 @@ sudo cp b32/inode64.so /lib/inode64.so
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 12, 2018.
+      Last updated on Sep 13, 2018.
 
     </p>
   </div> 

@@ -196,8 +196,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../howtos/index.html#technical-notes">Technical Notes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../howtos/tech/compile_wsl.html">Build on Windows 10 with WSL</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#enable-32bit-binaries">Enable 32bit binaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#fix-stat-in-32bit-binaries">Fix stat in 32bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#enable-32-bit-binaries">Enable 32-bit binaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#fix-stat-in-32-bit-binaries">Fix stat in 32-bit binaries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../howtos/tech/compile_wsl.html#compile">Compile</a></li>
 </ul>
 </li>
@@ -338,14 +338,21 @@ built for the chosen architecture using the <strong>–with-cmocka-prefix</stron
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make check
 </pre></div>
 </div>
-<p>Reconfiguration is not necessary when the cmocka path is set in the configuration script. Use <strong>make</strong> for building the normal APL Binary and
-<strong>make check</strong> to build and run unit tests.</p>
+<p>Reconfiguration is not necessary when the cmocka path is set in the
+configuration script. Use <strong>make</strong> for building the normal APL Binary
+and <strong>make check</strong> to build and run unit tests.</p>
 <div class="section" id="example-running-tests-for-apl">
 <h3>Example: Running tests for APL<a class="headerlink" href="#example-running-tests-for-apl" title="Permalink to this headline">¶</a></h3>
 <p>In order to build tests for the APL platform, use the <a class="reference internal" href="#preparing-cmocka-package">custom version of
-cmocka</a>. Run the <strong>./configure</strong> script with the same parameters as when building APL binaries. You must also add <strong>–with-cmocka-prefix=&lt;path to cmocka&gt;</strong>. For example:</p>
+cmocka</a>. Run the <strong>./configure</strong> script
+with the same parameters as when building APL binaries. You must also
+add <strong>–with-cmocka-prefix=&lt;path to cmocka&gt;</strong>. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./autogen.sh
-./configure --with-arch<span class="o">=</span>xtensa --with-platform<span class="o">=</span>apollolake --with-dsp-core<span class="o">=</span><span class="nv">$XTENSA_CORE</span> --with-root-dir<span class="o">=</span><span class="nv">$CONFIG_PATH</span>/xtensa-elf --host<span class="o">=</span>xtensa-bxt-elf --with-meu<span class="o">=</span><span class="nv">$MEU_PATH</span> --with-key<span class="o">=</span><span class="nv">$PRIVATE_KEY_PATH</span> <span class="nv">CC</span><span class="o">=</span>xt-xcc <span class="nv">OBJCOPY</span><span class="o">=</span>xt-objcopy <span class="nv">OBJDUMP</span><span class="o">=</span>xt-objdump --with-cmocka-prefix<span class="o">=</span>/home/admin/cminstall_apl_2017_8/
+./configure --with-arch<span class="o">=</span>xtensa --with-platform<span class="o">=</span>apollolake <span class="se">\</span>
+   --with-dsp-core<span class="o">=</span><span class="nv">$XTENSA_CORE</span> --with-root-dir<span class="o">=</span><span class="nv">$CONFIG_PATH</span>/xtensa-elf <span class="se">\</span>
+   --host<span class="o">=</span>xtensa-bxt-elf --with-meu<span class="o">=</span><span class="nv">$MEU_PATH</span> <span class="se">\</span>
+   --with-key<span class="o">=</span><span class="nv">$PRIVATE_KEY_PATH</span> <span class="nv">CC</span><span class="o">=</span>xt-xcc <span class="nv">OBJCOPY</span><span class="o">=</span>xt-objcopy <span class="se">\</span>
+   <span class="nv">OBJDUMP</span><span class="o">=</span>xt-objdump --with-cmocka-prefix<span class="o">=</span>/home/admin/cminstall_apl_2017_8/
 make check
 </pre></div>
 </div>
@@ -353,21 +360,20 @@ make check
 </div>
 <div class="section" id="preparing-cmocka-package">
 <h2>Preparing cmocka package<a class="headerlink" href="#preparing-cmocka-package" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Build cmocka with the static library on:</li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>   cmake &lt;cmocka src dir&gt; -DWITH_STATIC_LIB<span class="o">=</span>ON
-
-In order to build cmocka with xt-xcc to link with a DSP binary code,
-<span class="k">do</span> the following:
-
-<span class="c1">#. add another option -DCMAKE_C_COMPILER=xt-xcc</span>
-<span class="c1">#. edit the cmocka build scripts to disable building of shared library</span>
+<ol class="arabic">
+<li><p class="first">Build cmocka with the static library on:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake &lt;cmocka src dir&gt; -DWITH_STATIC_LIB<span class="o">=</span>ON
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li>Create a directory for the package to be referenced by the main <strong>sof</strong> build script and copy the required files there:</li>
+<p>In order to build cmocka with xt-xcc to link with a DSP binary code,
+do the following:</p>
+<ol class="loweralpha simple">
+<li>add another option -DCMAKE_C_COMPILER=xt-xcc</li>
+<li>edit the cmocka build scripts to disable building of shared library</li>
 </ol>
+</li>
+<li><p class="first">Create a directory for the package to be referenced by the main
+<strong>sof</strong> build script and copy the required files there:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /home/&lt;you&gt;/cminstall
 mkdir /home/&lt;you&gt;/cminstall/include
 mkdir /home/&lt;you&gt;/cminstall/lib
@@ -376,12 +382,14 @@ cp cmocka.h /home/&lt;you&gt;/cminstall/include
 cp libcmocka.a /home/&lt;you&gt;/cminstall/lib
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li>Use the target location for the cmocka files when invoking the  <strong>configure</strong> script:</li>
-</ol>
+</li>
+<li><p class="first">Use the target location for the cmocka files when invoking the
+<strong>configure</strong> script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure --with-cmocka-prefix<span class="o">=</span>/home/&lt;you&gt;/cminstall ...
 </pre></div>
 </div>
+</li>
+</ol>
 </div>
 <div class="section" id="wrapping-objects-for-unit-tests">
 <h2>Wrapping objects for unit tests<a class="headerlink" href="#wrapping-objects-for-unit-tests" title="Permalink to this headline">¶</a></h2>
@@ -414,14 +422,21 @@ CFLAGS, however they should be passed in separate variables in the makefile.</p>
 </div>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Use the <strong>make check -j</strong> option while running tests that use xt-run (to speed up tests significantly) by running multiple instances of the xt-run simulator (it also speeds up build if you have many unit tests).</li>
-<li>When you switch platforms, such as from native to APL, use <strong>make clean</strong>; otherwise, <strong>make</strong> will not build binaries for the new platform and your tests will fail.</li>
-<li>To speed up development of new unit tests, run specific tests such as:</li>
-</ol>
+<ol class="arabic">
+<li><p class="first">Use the <strong>make check -j</strong> option while running tests that use xt-run
+(to speed up tests significantly) by running multiple instances of the
+xt-run simulator (it also speeds up build if you have many unit tests).</p>
+</li>
+<li><p class="first">When you switch platforms, such as from native to APL, use <strong>make
+clean</strong>; otherwise, <strong>make</strong> will not build binaries for the new
+platform and your tests will fail.</p>
+</li>
+<li><p class="first">To speed up development of new unit tests, run specific tests such as:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make check <span class="nv">check_PROGRAMS</span><span class="o">=</span><span class="s2">&quot;testname1 testname2&quot;</span>
 </pre></div>
 </div>
+</li>
+</ol>
 </div>
 </div>
 
@@ -437,7 +452,7 @@ CFLAGS, however they should be passed in separate variables in the makefile.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 12, 2018.
+      Last updated on Sep 13, 2018.
 
     </p>
   </div> 
