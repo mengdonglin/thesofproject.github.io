@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>APL Memory &mdash; SOF Project 0.1 documentation</title>
+  <title>Intel Ice Lake &mdash; SOF Project 0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
   <link rel="stylesheet" href="../../../_static/sof-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Intel Cannon Lake" href="../cannonlake/index.html" />
-    <link rel="prev" title="Intel Apollo Lake" href="index.html" /> 
+    <link rel="next" title="Developer Guides" href="../../../developer_guides/index.html" />
+    <link rel="prev" title="CNL Configuration" href="../cannonlake/cnl-config.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -142,8 +142,8 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Supported Platforms</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Intel CAVS Platforms</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="index.html">Intel Apollo Lake</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">APL Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apollolake/index.html">Intel Apollo Lake</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../apollolake/apl-memory.html">APL Memory</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cannonlake/index.html">Intel Cannon Lake</a><ul>
@@ -151,7 +151,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../cannonlake/cnl-config.html">CNL Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../icelake/index.html">Intel Ice Lake</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Intel Ice Lake</a></li>
 </ul>
 </li>
 </ul>
@@ -303,9 +303,7 @@
         
           <li><a href="../index.html">Intel CAVS Platforms</a> &raquo;</li>
         
-          <li><a href="index.html">Intel Apollo Lake</a> &raquo;</li>
-        
-      <li>APL Memory</li>
+      <li>Intel Ice Lake</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -322,97 +320,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="apl-memory">
-<span id="id1"></span><h1>APL Memory<a class="headerlink" href="#apl-memory" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt>8000 0000h</dt>
-<dd>Address aliasing to A000 0000h - BFFF FFFFh range (non L1 cacheable)</dd>
-<dt>9000 0000h</dt>
-<dd>L2 cache alias address (non L1 cacheable).
-HPSRAM alias 9E00 0000h.
-LPSRAM alias 9E80 0000h</dd>
-<dt>A000 0000h</dt>
-<dd>L2 cacheable memory (L1 cacheable).
-Code/data in IMR accessed via L1 and L2 cache.</dd>
-<dt>B000 0000h</dt>
-<dd>L2 uncacheable memory (L1 cacheable).
-Code/data in IMR accessed via L1 cache.</dd>
-<dt>BE00 0000h</dt>
-<dd>L2 local HPSRAM (L1 cacheable). 8 * 64KB</dd>
-<dt>BE80 0000h</dt>
-<dd>L2 local LPSRAM (L1 cacheable). 2 * 64KB</dd>
-</dl>
-<div class="figure" id="id2">
-<img src="../../../_images/graphviz-eaaf2a18492b71d86628598298cb552478d2f919.png" alt="digraph G {
-  node [fontsize=10, shape=&quot;record&quot;]
-  edge [fontsize=10]
-  rankdir=LR
-  splines=ortho
-
-  subgraph clusterDsp { fontsize=10 color=grey
-    dsp_1 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-    dsp_2 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-    dsp_3 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-    dsp_4 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-    dsp_5 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-    dsp_6 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-    dsp_7 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-    dsp_8 [label=&quot;DSP&quot; style=filled color=&quot;#f0f0f0&quot;]
-  }
-
-  subgraph clusterL1 { fontsize=10 color=grey
-    l1_1 [label=&quot;L1&quot; style=filled color=&quot;#e0e0e0&quot;]
-    l1_2 [label=&quot;L1&quot; style=filled color=&quot;#e0e0e0&quot;]
-    l1_5 [label=&quot;L1&quot; style=filled color=&quot;#e0e0e0&quot;]
-    l1_7 [label=&quot;L1&quot; style=filled color=&quot;#e0e0e0&quot;]
-  }
-
-    hpsram_l2_1 [label=&quot;HPSRAM L2&quot; style=filled color=&quot;#d0d0d0&quot;]
-    hpsram_l2_3 [label=&quot;HPSRAM L2&quot; style=filled color=&quot;#d0d0d0&quot;]
-    hpsram_local_5 [label=&quot;HPSRAM\nLocal mem&quot; style=filled color=&quot;#d0d0d0&quot;]
-    hpsram_local_6 [label=&quot;HPSRAM\nLocal mem&quot; style=filled color=&quot;#d0d0d0&quot;]
-
-    lpsram_local_7 [label=&quot;LPSRAM\nLocal mem&quot; style=filled color=&quot;#d0d0d0&quot;]
-    lpsram_local_8 [label=&quot;LPSRAM\nLocal mem&quot; style=filled color=&quot;#d0d0d0&quot;]
-
-  subgraph clusterImr { fontsize=10 color=grey
-    imr_1 [label=&quot;IMR&quot; style=filled color=&quot;#c0c0c0&quot;]
-    imr_2 [label=&quot;IMR&quot; style=filled color=&quot;#c0c0c0&quot;]
-    imr_4 [label=&quot;IMR&quot; style=filled color=&quot;#c0c0c0&quot;]
-    imr_3 [label=&quot;IMR&quot; style=filled color=&quot;#c0c0c0&quot;]
-  }
-
-  /* L1 -&gt; L2 -&gt; IMR */
-  dsp_1 -&gt; l1_1 -&gt; hpsram_l2_1
-  hpsram_l2_1 -&gt; imr_1 [label=&quot;&#64; A000 0000&quot;]
-
-  /* L1 -&gt; IMR */
-  dsp_2 -&gt; l1_2
-  l1_2 -&gt; imr_2 [label=&quot;&#64; B000 0000&quot;]
-
-  /* L2 -&gt; IMR */
-  dsp_3 -&gt; hpsram_l2_3
-  hpsram_l2_3 -&gt; imr_3 [label=&quot;&#64; 8000 0000&quot;]
-
-  /* -&gt; IMR */
-  dsp_4 -&gt; imr_4 [label=&quot;&#64; 9000 0000&quot;]
-
-  /* DSP -&gt; L1 -&gt; HPSRAM */
-  dsp_5 -&gt; l1_5
-  l1_5 -&gt; hpsram_local_5 [label=&quot;&#64; BE00 0000&quot;]
-
-  /* DSP -&gt; HPSRAM */
-  dsp_6 -&gt; hpsram_local_6 [label=&quot;&#64; 9E00 0000&quot;]
-
-  /* DSP -&gt; L1 -&gt; LPSRAM */
-  dsp_7 -&gt; l1_7
-  l1_7 -&gt; lpsram_local_7 [label = &quot;&#64;BE80 0000&quot;]
-
-  /* DSP -&gt; LPSRAM */
-  dsp_8 -&gt; lpsram_local_8 [label = &quot;&#64;9E80 0000&quot;]
-}" />
-<p class="caption"><span class="caption-number">Figure 8 </span><span class="caption-text">APL Memory Map</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+  <div class="section" id="intel-ice-lake">
+<span id="platform-icelake"></span><h1>Intel Ice Lake<a class="headerlink" href="#intel-ice-lake" title="Permalink to this headline">¶</a></h1>
+<p>The Intel Ice Lake (ICL) platform is built on cAVS 2.0 HW and uses Xtensa DSP
+architecture.</p>
 </div>
 
 

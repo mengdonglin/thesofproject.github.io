@@ -151,6 +151,7 @@
 <li class="toctree-l4"><a class="reference internal" href="cannonlake/cnl-config.html">CNL Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="icelake/index.html">Intel Ice Lake</a></li>
 </ul>
 </li>
 </ul>
@@ -319,7 +320,7 @@
             
   <div class="section" id="intel-cavs-platforms">
 <span id="platforms-intel-cavs"></span><h1>Intel CAVS Platforms<a class="headerlink" href="#intel-cavs-platforms" title="Permalink to this headline">¶</a></h1>
-<p>SOF implementation for Intel CAVS HW family.</p>
+<p>Intel CAVS platforms supported by the Sound Open Firmware.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="23%" />
@@ -327,20 +328,25 @@
 <col width="51%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td rowspan="2">cAVS</td>
+<tr class="row-odd"><td rowspan="3">cAVS</td>
 <td>ver. 1.5</td>
 <td>Apollo Lake</td>
 </tr>
 <tr class="row-even"><td>ver. 1.8</td>
 <td>Cannon Lake</td>
 </tr>
+<tr class="row-odd"><td>ver. 2.0</td>
+<td>Ice Lake</td>
+</tr>
 </tbody>
 </table>
+<div class="figure" id="id1">
 <p class="plantuml">
-<object data="../../_images/plantuml-1ccbe7bfba64fadbc346c12628a230ae378cad75.svg" type="image/svg+xml" style="width:427px;height:321px;">
-<img src="../../_images/plantuml-1ccbe7bfba64fadbc346c12628a230ae378cad75.png" alt="package cavs {
-   component 1.5
+<object data="../../_images/plantuml-d3fdb68df6a53fc08018b0de51e9c5efaf88bfbb.svg" type="image/svg+xml" style="width:547px;height:321px;">
+<img src="../../_images/plantuml-d3fdb68df6a53fc08018b0de51e9c5efaf88bfbb.png" alt="package cavs {
+   component 2.0
    component 1.8
+   component 1.5
 }
 
 package arch {
@@ -351,21 +357,27 @@ package arch {
 
 1.5 ..&gt; xtensa_smp
 1.8 ..&gt; xtensa_smp
+2.0 ..&gt; xtensa_smp
 
 package platform {
-   component apollolake
+   component icelake
    component cannonlake
+   component apollolake
 }
 
 apollolake ..&gt; 1.5
 cannonlake ..&gt; 1.8
+icelake ..&gt; 2.0
 "/>
 
 </object></p>
+<p class="caption"><span class="caption-number">Figure 7 </span><span class="caption-text">CAVS Platforms</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="apollolake/index.html">Intel Apollo Lake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cannonlake/index.html">Intel Cannon Lake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="icelake/index.html">Intel Ice Lake</a></li>
 </ul>
 </div>
 </div>
@@ -382,7 +394,7 @@ cannonlake ..&gt; 1.8
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 13, 2018.
+      Last updated on Sep 14, 2018.
 
     </p>
   </div> 

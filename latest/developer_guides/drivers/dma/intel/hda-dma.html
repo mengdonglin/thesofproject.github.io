@@ -151,6 +151,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../platforms/intel-cavs/cannonlake/cnl-config.html">CNL Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../platforms/intel-cavs/icelake/index.html">Intel Ice Lake</a></li>
 </ul>
 </li>
 </ul>
@@ -327,35 +328,34 @@
 <span id="intel-cavs-hda-dma-driver"></span><h1>cAVS HD/A DMA Driver<a class="headerlink" href="#cavs-hd-a-dma-driver" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="probing">
 <h2>Probing<a class="headerlink" href="#probing" title="Permalink to this headline">¶</a></h2>
-<p>There is basic initialization of basic data structures performed. No piece of
+<p>A basic initialization of basic data structures is performed. No piece of
 HD/A HW is touched at this point.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>HD/A DMA works with a single continuous circular buffer only. Therefore the
-SGLs are verified whether they are of the same size and point to a continuous
+<p>HD/A DMA works with a single continuous circular buffer only. Therefore, the
+SGLs are verified if they are of the same size and point to a continuous
 memory space.</p>
-<p>The total buffer size (period size * number of periods) must be a multiple of
+<p>The total buffer size (period size x number of periods) must be a multiple of
 HD/A DMA burst size (32 bytes).</p>
 <p>The initial DMA HW buffer setup takes place.</p>
 </div>
 <div class="section" id="setting-up-callback">
 <h2>Setting up Callback<a class="headerlink" href="#setting-up-callback" title="Permalink to this headline">¶</a></h2>
 <p>A client (a host/dai component for instance) registers a callback by calling
-<code class="docutils literal notranslate"><span class="pre">dma_set_cb()</span></code> to be notified on a completion of transfer of each period of
+<code class="docutils literal notranslate"><span class="pre">dma_set_cb()</span></code> which is notified upon completion of the transfer of each period of
 data.</p>
-<p>Size of the period is specified by SGL elements passed to <code class="docutils literal notranslate"><span class="pre">dma_set_config()</span></code>.</p>
+<p>The size of the period is specified by SGL elements passed to <code class="docutils literal notranslate"><span class="pre">dma_set_config()</span></code>.</p>
 </div>
 <div class="section" id="starting-the-device">
 <h2>Starting the Device<a class="headerlink" href="#starting-the-device" title="Permalink to this headline">¶</a></h2>
-<p>The device is registered in the PM platform driver, to make sure DMI L1 is
+<p>The device is registered in the PM platform driver to ensure that the DMI L1 is
 handled properly.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">It is not required when the PM call is made by the device
 driver, but when the call is moved to the systick handler, the PM
-platform driver must know whether there are any active DMA devices
-registered.</p>
+platform driver must know if any active DMA devices are registered.</p>
 </div>
 <div class="figure" id="id1">
 <p class="plantuml">
@@ -414,13 +414,13 @@ note over hda_sw, hda_fw: &quot;DMA in RESET state&quot;
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 12 </span><span class="caption-text">HD/A DMA Device Start Flow</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 13 </span><span class="caption-text">HD/A DMA Device Start Flow</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="stopping-the-device">
 <h2>Stopping the Device<a class="headerlink" href="#stopping-the-device" title="Permalink to this headline">¶</a></h2>
-<p>HW reset is programmed by setting <code class="docutils literal notranslate"><span class="pre">GEN</span></code> to 0, DSP confirms <code class="docutils literal notranslate"><span class="pre">GBUSY</span></code> is 0,
-otherwise exception is reported to the host.</p>
+<p>HW reset is programmed by setting <code class="docutils literal notranslate"><span class="pre">GEN</span></code> to 0. DSP confirms <code class="docutils literal notranslate"><span class="pre">GBUSY</span></code> is 0;
+otherwise, an exception is reported to the host.</p>
 <div class="figure" id="id2">
 <p class="plantuml">
 <object data="../../../../_images/plantuml-3df581bb51ec3c99dbcbaad84967e07a6e3562ea.svg" type="image/svg+xml" style="width:642px;height:446px;">
@@ -457,20 +457,20 @@ note over hda_sw, hda_fw: &quot;DMA in RUNNING state&quot;
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 13 </span><span class="caption-text">HD/A DMA Device Stop Flow</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 14 </span><span class="caption-text">HD/A DMA Device Stop Flow</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="transferring-data">
 <h2>Transferring Data<a class="headerlink" href="#transferring-data" title="Permalink to this headline">¶</a></h2>
-<p>Transmission is started on the DSP side right after the <code class="docutils literal notranslate"><span class="pre">dma_start()</span></code> is
+<p>Transmission is started on the DSP side after the <code class="docutils literal notranslate"><span class="pre">dma_start()</span></code> is
 called as <code class="docutils literal notranslate"><span class="pre">GEN</span></code> is set to 1 there.</p>
 <div class="section" id="interrupts">
 <h3>Interrupts<a class="headerlink" href="#interrupts" title="Permalink to this headline">¶</a></h3>
-<p>Segment completion interrupts are unavailable therefore the DSP has to
-calculate amount of space/data available in the buffer manually by reading HD/A
+<p>Segment completion interrupts are unavailable; therefore, the DSP has to
+calculate the amount of space/data available in the buffer manually by reading HD/A
 register values.</p>
-<p>Any blocking polling must be done for as short time as possible to release the
-CPU for other tasks. The HD/A driver uses system work queue API to check for IO
+<p>Any blocking polling must be done for as short a time as possible to release the
+CPU for other tasks. The HD/A driver uses the system work queue API to check for IO
 completion in the context of timer callbacks deferred to a point in time when
 the IO operation is expected to finish.</p>
 </div>
@@ -481,29 +481,28 @@ request for a host HD/A DMA to secure the transfer operation.</p>
 </div>
 <div class="section" id="cyclic-vs-non-cyclic-mode-of-work">
 <h3>Cyclic vs. Non-cyclic Mode of Work<a class="headerlink" href="#cyclic-vs-non-cyclic-mode-of-work" title="Permalink to this headline">¶</a></h3>
-<p>There are four types of HD/A DMAs:</p>
+<p>Four types of HD/A DMAs exist:</p>
 <ul class="simple">
-<li>Host Output DMA - host memory to DSP memory,</li>
-<li>Host Input DMA  - DSP memory to host memory,</li>
-<li>Link Output DMA - DSP memory to peripheral device memory,</li>
-<li>Link Input DMA - peripheral device memory to DSP memory.</li>
+<li>Host Output DMA - host memory to DSP memory</li>
+<li>Host Input DMA  - DSP memory to host memory</li>
+<li>Link Output DMA - DSP memory to peripheral device memory</li>
+<li>Link Input DMA - peripheral device memory to DSP memory</li>
 </ul>
-<p>Host DMAs work in non-cyclic mode in SOF, i.e. transfer of a full period is
+<p>Host DMAs work in a non-cyclic mode in SOF, i.e. the transfer of a full period is
 scheduled on demand each time and completes very quickly.</p>
-<p>Link DMAs work in cyclic mode. In case of HD/A DMA it means that DMA pointers
+<p>Link DMAs work in cyclic mode. In the case of HD/A DMA, DMA pointers
 are updated in real-time with a small step.</p>
 <div class="section" id="host-output-dma-on-demand-mode">
-<h4>Host Output DMA (On Demand Mode<a class="headerlink" href="#host-output-dma-on-demand-mode" title="Permalink to this headline">¶</a></h4>
-<p>Host Output DMA provides input data for the DSP on a playback path. At the
-beginning, once the DMA is started, host fills up the entire buffer with data
+<h4>Host Output DMA (On Demand Mode)<a class="headerlink" href="#host-output-dma-on-demand-mode" title="Permalink to this headline">¶</a></h4>
+<p>Host Output DMA provides input data for the DSP on a playback path. In the
+beginning, once the DMA is started, the host fills up the entire buffer with data
 (the buffer size is typically set to two periods of data). Subsequent transfers
-are requested by the DSP by advancing its read pointer, making space for next
+are requested by the DSP by advancing its read pointer, making space for the next
 transfer available to the host side. It takes some time for the initial
 transfer to complete (buffer full is signaled), so the DSP should not expect
-the data is available “instantly” after the DMA is started. It should not wait
-in blocking mode for “buffer full” either. However the second copy operation
-run by the pre-loader task presents a good opportunity to eventually “complete”
-first transfer and reliably commit the data for further processing by the
+the data to be available “instantly” after the DMA is started. It should not wait
+in blocking mode for “buffer full” either. However, the second copy operation
+run by the pre-loader task presents a good opportunity to eventually “complete” the first transfer and reliably commit the data for further processing by the
 pipeline.</p>
 <div class="figure" id="id3">
 <p class="plantuml">
@@ -578,13 +577,13 @@ Once the first period is processed.
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 14 </span><span class="caption-text">Host output startup sequence</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 15 </span><span class="caption-text">Host output startup sequence</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="link-input-output-dma-cyclic-mode">
 <h4>Link Input/Output DMA (Cyclic Mode)<a class="headerlink" href="#link-input-output-dma-cyclic-mode" title="Permalink to this headline">¶</a></h4>
 <p>In order to enable cyclic mode, with no interrupt available, the DMA driver
-schedules a work every 1ms.</p>
+schedules work every 1ms.</p>
 <div class="figure" id="id4">
 <p class="plantuml">
 <object data="../../../../_images/plantuml-cba96e2c60dcb47276e5b3b2387356dc4bc13da3.svg" type="image/svg+xml" style="width:784px;height:499px;">
@@ -622,17 +621,17 @@ deactivate hda_dma
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 15 </span><span class="caption-text">Callback notification for link playback and capture</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 16 </span><span class="caption-text">Callback notification for link playback and capture</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<p>Pass through pipelines (host-dai) with a period size unaligned to HD/A DMA
+<p>Passthrough pipelines (host-dai) with a period size unaligned to HD/A DMA
 burst size (32 bytes) cannot work with 2-periods shared buffer configured. If
 the DSP moves the read pointer by unaligned size of the period, the tail
-(period % burst size) is not transferred until next pointer move.</p>
+(period % burst size) is not transferred until the next pointer move.</p>
 </div>
 </div>
 
@@ -648,7 +647,7 @@ the DSP moves the read pointer by unaligned size of the period, the tail
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 13, 2018.
+      Last updated on Sep 14, 2018.
 
     </p>
   </div> 
