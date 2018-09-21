@@ -142,6 +142,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../platforms/intel-cavs/apollolake/apl-memory.html">APL Memory</a></li>
 </ul>
@@ -175,6 +179,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#programming-flows">Programming Flows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guides/kernel/index.html">Kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/kernel/work-queue.html">Work Queue</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/work-queue.html#basic-work-queue-flow">Basic Work Queue Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/work-queue.html#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
 </ul>
 </li>
 </ul>
@@ -573,11 +585,6 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="c.dma_copy_to_host">
-<span class="target" id="group__sof__dma__drivers_1gae66b486c0689466bd726b0d0a0a2ac0c"></span>int <code class="descname">dma_copy_to_host</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_copy" title="dma_copy">dma_copy</a>  *<em>&nbsp;dc</em>, struct  <a class="reference internal" href="#c.dma_sg_config" title="dma_sg_config">dma_sg_config</a>  *<em>&nbsp;host_sg</em>, int32_t<em>&nbsp;host_offset</em>, void *<em>&nbsp;local_ptr</em>, int32_t<em>&nbsp;size</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_copy_to_host" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
 <dt id="c.dma_copy_to_host_nowait">
 <span class="target" id="group__sof__dma__drivers_1gae847600ce4e92df220afa2455c7c3bdb"></span>int <code class="descname">dma_copy_to_host_nowait</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_copy" title="dma_copy">dma_copy</a>  *<em>&nbsp;dc</em>, struct  <a class="reference internal" href="#c.dma_sg_config" title="dma_sg_config">dma_sg_config</a>  *<em>&nbsp;host_sg</em>, int32_t<em>&nbsp;host_offset</em>, void *<em>&nbsp;local_ptr</em>, int32_t<em>&nbsp;size</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_copy_to_host_nowait" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -900,7 +907,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 14, 2018.
+      Last updated on Sep 21, 2018.
 
     </p>
   </div> 

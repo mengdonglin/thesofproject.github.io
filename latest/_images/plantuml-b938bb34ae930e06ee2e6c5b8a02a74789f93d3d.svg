@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="387px" preserveAspectRatio="none" style="width:710px;height:387px;" version="1.1" viewBox="0 0 710 387" width="710px" zoomAndPan="magnify"><defs><filter height="300%" id="f1s86mo0ywu07q" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class s_work--><rect fill="#FFFFFF" filter="url(#f1s86mo0ywu07q)" height="91.2188" id="s_work" style="stroke: #33335B; stroke-width: 1.5;" width="102" x="375.8911" y="285"/><ellipse cx="390.8911" cy="301" fill="#6FCCDD" rx="11" ry="11" style="stroke: #33335B; stroke-width: 1.0;"/><path d="M393.8599,306.6406 Q393.2817,306.9375 392.6411,307.0781 Q392.0005,307.2344 391.2974,307.2344 Q388.7974,307.2344 387.4692,305.5938 Q386.1567,303.9375 386.1567,300.8125 Q386.1567,297.6875 387.4692,296.0313 Q388.7974,294.375 391.2974,294.375 Q392.0005,294.375 392.6411,294.5313 Q393.2974,294.6875 393.8599,294.9844 L393.8599,297.7031 Q393.2349,297.125 392.6411,296.8594 Q392.0474,296.5781 391.4224,296.5781 Q390.0786,296.5781 389.3911,297.6563 Q388.7036,298.7188 388.7036,300.8125 Q388.7036,302.9063 389.3911,303.9844 Q390.0786,305.0469 391.4224,305.0469 Q392.0474,305.0469 392.6411,304.7813 Q393.2349,304.5 393.8599,303.9219 L393.8599,306.6406 Z "/><text fill="#33335B" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="404.8911" y="305.1543">struct work</text><line style="stroke: #33335B; stroke-width: 1.5;" x1="376.8911" x2="476.8911" y1="317" y2="317"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="13" x="381.8911" y="331.2104">cb</text><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="44" x="381.8911" y="344.0151">cb_data</text><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="43" x="381.8911" y="356.8198">timeout</text><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="28" x="381.8911" y="369.6245">flags</text><!--class flags--><rect fill="#FFFFFF" filter="url(#f1s86mo0ywu07q)" height="65.6094" id="flags" style="stroke: #33335B; stroke-width: 1.5;" width="62" x="512.8911" y="297.5"/><ellipse cx="527.8911" cy="313.5" fill="#EB937F" rx="11" ry="11" style="stroke: #33335B; stroke-width: 1.0;"/><path d="M532.0005,319.5 L524.2817,319.5 L524.2817,307.1094 L532.0005,307.1094 L532.0005,309.2656 L526.7349,309.2656 L526.7349,311.9375 L531.5005,311.9375 L531.5005,314.0938 L526.7349,314.0938 L526.7349,317.3438 L532.0005,317.3438 L532.0005,319.5 Z "/><text fill="#33335B" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="30" x="541.8911" y="317.6543">flags</text><line style="stroke: #33335B; stroke-width: 1.5;" x1="513.8911" x2="573.8911" y1="329.5" y2="329.5"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="31" x="518.8911" y="343.7104">SYNC</text><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="38" x="518.8911" y="356.5151">ASYNC</text><!--class s_wq_timesource--><rect fill="#FFFFFF" filter="url(#f1s86mo0ywu07q)" height="32" id="s_wq_timesource" style="stroke: #33335B; stroke-width: 1.5;" width="224" x="475.8911" y="61"/><ellipse cx="490.8911" cy="77" fill="#6FCCDD" rx="11" ry="11" style="stroke: #33335B; stroke-width: 1.0;"/><path d="M493.8599,82.6406 Q493.2817,82.9375 492.6411,83.0781 Q492.0005,83.2344 491.2974,83.2344 Q488.7974,83.2344 487.4692,81.5938 Q486.1567,79.9375 486.1567,76.8125 Q486.1567,73.6875 487.4692,72.0313 Q488.7974,70.375 491.2974,70.375 Q492.0005,70.375 492.6411,70.5313 Q493.2974,70.6875 493.8599,70.9844 L493.8599,73.7031 Q493.2349,73.125 492.6411,72.8594 Q492.0474,72.5781 491.4224,72.5781 Q490.0786,72.5781 489.3911,73.6563 Q488.7036,74.7188 488.7036,76.8125 Q488.7036,78.9063 489.3911,79.9844 Q490.0786,81.0469 491.4224,81.0469 Q492.0474,81.0469 492.6411,80.7813 Q493.2349,80.5 493.8599,79.9219 L493.8599,82.6406 Z "/><text fill="#33335B" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="192" x="504.8911" y="81.1543">struct work_queue_timesource</text><!--class wq--><rect fill="#FFFFFF" filter="url(#f1s86mo0ywu07q)" height="137.6328" id="wq" style="stroke: #33335B; stroke-width: 1.5;" width="140" x="182.8911" y="8"/><ellipse cx="212.7411" cy="24" fill="#6FCCDD" rx="11" ry="11" style="stroke: #33335B; stroke-width: 1.0;"/><path d="M215.7099,29.6406 Q215.1317,29.9375 214.4911,30.0781 Q213.8505,30.2344 213.1474,30.2344 Q210.6474,30.2344 209.3192,28.5938 Q208.0067,26.9375 208.0067,23.8125 Q208.0067,20.6875 209.3192,19.0313 Q210.6474,17.375 213.1474,17.375 Q213.8505,17.375 214.4911,17.5313 Q215.1474,17.6875 215.7099,17.9844 L215.7099,20.7031 Q215.0849,20.125 214.4911,19.8594 Q213.8974,19.5781 213.2724,19.5781 Q211.9286,19.5781 211.2411,20.6563 Q210.5536,21.7188 210.5536,23.8125 Q210.5536,25.9063 211.2411,26.9844 Q211.9286,28.0469 213.2724,28.0469 Q213.8974,28.0469 214.4911,27.7813 Q215.0849,27.5 215.7099,26.9219 L215.7099,29.6406 Z "/><text fill="#33335B" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="75" x="230.0411" y="28.1543">work_queue</text><line style="stroke: #33335B; stroke-width: 1.5;" x1="183.8911" x2="321.8911" y1="40" y2="40"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="190.8911" y="48.9023"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="202.8911" y="54.2104">work : list</text><line style="stroke: #33335B; stroke-width: 1.5;" x1="183.8911" x2="321.8911" y1="60.8047" y2="60.8047"/><ellipse cx="193.8911" cy="72.707" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="92" x="202.8911" y="75.0151">work_schedule()</text><ellipse cx="193.8911" cy="85.5117" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="202.8911" y="87.8198">work_reschedule()</text><ellipse cx="193.8911" cy="98.3164" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="202.8911" y="100.6245">work_cancel()</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="190.8911" y="108.1211"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="102" x="202.8911" y="113.4292">is_work_pending()</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="190.8911" y="120.9258"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="114" x="202.8911" y="126.2339">work_next_timeout()</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="190.8911" y="133.7305"/><text fill="#33335B" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="202.8911" y="139.0386">run_work()</text><!--class client--><rect fill="#A1A1CA" filter="url(#f1s86mo0ywu07q)" height="32" id="client" style="stroke: #33335B; stroke-width: 1.5;" width="66" x="202.8911" y="314.5"/><rect fill="#A1A1CA" height="32" style="stroke: #33335B; stroke-width: 1.5;" width="66" x="202.8911" y="314.5"/><ellipse cx="217.8911" cy="330.5" fill="#6FCCDD" rx="11" ry="11" style="stroke: #33335B; stroke-width: 1.0;"/><path d="M220.8599,336.1406 Q220.2817,336.4375 219.6411,336.5781 Q219.0005,336.7344 218.2974,336.7344 Q215.7974,336.7344 214.4692,335.0938 Q213.1567,333.4375 213.1567,330.3125 Q213.1567,327.1875 214.4692,325.5313 Q215.7974,323.875 218.2974,323.875 Q219.0005,323.875 219.6411,324.0313 Q220.2974,324.1875 220.8599,324.4844 L220.8599,327.2031 Q220.2349,326.625 219.6411,326.3594 Q219.0474,326.0781 218.4224,326.0781 Q217.0786,326.0781 216.3911,327.1563 Q215.7036,328.2188 215.7036,330.3125 Q215.7036,332.4063 216.3911,333.4844 Q217.0786,334.5469 218.4224,334.5469 Q219.0474,334.5469 219.6411,334.2813 Q220.2349,334 220.8599,333.4219 L220.8599,336.1406 Z "/><text fill="#33335B" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="34" x="231.8911" y="334.6543">client</text><!--link wq to s_work--><path d="M331.848,153.1852 C346.944,170.0353 361.7906,188.4283 373.8911,207 C389.6213,231.1426 402.5091,260.7336 411.636,284.8974 " fill="none" id="wq-s_work" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="322.9497,143.4528,324.0462,150.58,331.047,152.3091,329.9504,145.1819,322.9497,143.4528" style="stroke: #4A4A86; stroke-width: 1.0;"/><!--link wq to s_wq_timesource--><path d="M328.3512,77 C371.759,77 427.1274,77 475.5657,77 " fill="none" id="wq-s_wq_timesource" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="323.1181,77,332.1181,81,328.1181,77,332.1181,73,323.1181,77" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="116" x="341.3911" y="70.0669">provides timer INT</text><!--link s_work to flags--><path d="M478.0786,330.5 C489.6472,330.5 501.2158,330.5 512.7844,330.5 " fill="none" id="s_work-flags" style="stroke: #4A4A86; stroke-width: 1.0;"/><!--link client to s_work--><path d="M269.1608,330.5 C297.0603,330.5 337.5106,330.5 370.462,330.5 " fill="none" id="client-s_work" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="375.6831,330.5,366.6831,326.5,370.6831,330.5,366.6831,334.5,375.6831,330.5" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="287.3911" y="323.5669">(1) creates</text><!--link client to wq--><path d="M236.9739,314.3536 C239.1321,282.1704 244.0903,208.2361 247.9037,151.3705 " fill="none" id="client-wq" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="248.2458,146.27,243.6525,154.9822,247.9112,151.2588,251.6346,155.5175,248.2458,146.27" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="245.8911" y="220.0669">(2) schedules work</text><!--link wq to client--><path d="M182.7997,93.9928 C126.1785,111.8185 50.1541,145.995 13.8911,207 C-30.2342,281.2318 123.0066,314.158 197.5167,325.5386 " fill="none" id="wq-client" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="202.7416,326.3211,194.4335,321.032,197.7968,325.5804,193.2483,328.9437,202.7416,326.3211" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="220" x="14.8911" y="220.0669">(3) calls cb(cb_data) upon timeout</text><!--
+@startuml
+hidefootbox
+skinparam componentStyle uml2
+
+skinparam defaultFontColor	#33335b
+
+skinparam rectangle {
+	color		#d6d6de
+	backgroundColor	#ffffff
+}
+
+skinparam component {
+	backgroundColor	#ffffff
+	borderColor	#33335b
+	arrowColor	#f05772
+}
+
+skinparam interface {
+	backgroundColor	#ffffff
+	borderColor	#f05772
+}
+
+skinparam class {
+	backgroundColor	#ffffff
+	borderColor	#33335b
+	arrowColor	#f05772
+}
+skinparam stereotypeCBackgroundColor	#6fccdd
+
+skinparam sequence {
+	arrowColor		#4a4a86
+	lifeLineBorderColor	#f05772
+	groupBorderColor	#a1a1ca
+	boxBorderColor		#a1a1ca
+	dividerBorderColor	#d6d6de
+	dividerBorderThickness	1
+}
+skinparam participant {
+	borderColor		#33335b
+	backgroundColor		#ffffff
+}
+skinparam actor {
+	borderColor		#33335b
+	backgroundColor		#ffffff
+}
+
+skinparam state {
+	borderColor		#33335b
+	backgroundColor		#ffffff
+}
+
+skinparam node {
+	backgroundColor		#ffffff
+}
+
+skinparam note {
+	backgroundColor 	#f6ed80
+	borderColor		#d6d6de
+}
+class "struct work" as s_work {
+   cb
+   cb_data
+   timeout
+   flags
+}
+hide s_work methods
+
+enum flags {
+   SYNC
+   ASYNC
+}
+hide flags methods
+
+class "struct work_queue_timesource" as s_wq_timesource
+hide s_wq_timesource methods
+hide s_wq_timesource attributes
+
+class "work_queue" as wq {
+   + work_schedule()
+   + work_reschedule()
+   + work_cancel()
+   - is_work_pending()
+   - work_next_timeout()
+   - run_work()
+   - work : list
+}
+
+class client #a1a1ca
+hide client methods
+hide client attributes
+
+wq o- s_work
+wq <- s_wq_timesource : provides timer INT
+
+s_work - flags
+
+client -> s_work : (1) creates
+client - - -> wq : (2) schedules work
+wq - - -> client : (3) calls cb(cb_data) upon timeout
+
+@enduml
+
+PlantUML version 1.2018.06(Mon May 21 10:34:53 GMT 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 10.0.1+10-Ubuntu-3ubuntu1
+Operating System: Linux
+OS Version: 4.4.0-43-Microsoft
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

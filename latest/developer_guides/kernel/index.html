@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Drivers &mdash; SOF Project 0.1 documentation</title>
+  <title>Kernel &mdash; SOF Project 0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
   <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="DMA Drivers" href="dma/index.html" />
-    <link rel="prev" title="Porting Guides" href="../porting.html" /> 
+    <link rel="next" title="Work Queue" href="work-queue.html" />
+    <link rel="prev" title="DAI Drivers" href="../drivers/dai/index.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -166,27 +166,27 @@
 <li class="toctree-l3"><a class="reference internal" href="../porting.html#platform-porting-guide">Platform Porting Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../drivers/index.html">Drivers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/dma/index.html">DMA Drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#intro">Intro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#programming-flows">Programming Flows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#supported-devices">Supported Devices</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/dai/index.html">DAI Drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#intro">Intro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#programming-flows">Programming Flows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#supported-devices">Supported Devices</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../kernel/index.html">Kernel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../kernel/work-queue.html">Work Queue</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kernel/work-queue.html#basic-work-queue-flow">Basic Work Queue Flow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kernel/work-queue.html#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="work-queue.html">Work Queue</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="work-queue.html#basic-work-queue-flow">Basic Work Queue Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="work-queue.html#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
 </ul>
 </li>
 </ul>
@@ -313,7 +313,7 @@
         
           <li><a href="../index.html">Developer Guides</a> &raquo;</li>
         
-      <li>Drivers</li>
+      <li>Kernel</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -330,14 +330,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="drivers">
-<span id="id1"></span><h1>Drivers<a class="headerlink" href="#drivers" title="Permalink to this headline">¶</a></h1>
-<p>All drivers are located at: <em>src/drivers</em>
-The following drivers are available:</p>
+  <div class="section" id="kernel">
+<span id="id1"></span><h1>Kernel<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="dma/index.html">DMA Drivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dai/index.html">DAI Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work-queue.html">Work Queue</a></li>
 </ul>
 </div>
 </div>

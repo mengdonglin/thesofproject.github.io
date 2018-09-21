@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="../../../_static/sof-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Unit Tests" href="../../unit_tests.html" />
+    <link rel="next" title="Kernel" href="../../kernel/index.html" />
     <link rel="prev" title="cAVS HD/A DMA Driver" href="../dma/intel/hda-dma.html" /> 
 
   
@@ -142,6 +142,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/apollolake/apl-memory.html">APL Memory</a></li>
 </ul>
@@ -175,6 +179,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#programming-flows">Programming Flows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#using-dai-driver-api">Using DAI Driver API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../kernel/index.html">Kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../kernel/work-queue.html">Work Queue</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kernel/work-queue.html#basic-work-queue-flow">Basic Work Queue Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kernel/work-queue.html#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
 </ul>
 </li>
 </ul>
@@ -379,7 +391,7 @@ s_dai &lt;- dai : provides
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 17 </span><span class="caption-text">DAI Driver API</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 18 </span><span class="caption-text">DAI Driver API</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="programming-flows">
@@ -465,7 +477,7 @@ implementation may keep some specific private data attached to the
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 14, 2018.
+      Last updated on Sep 21, 2018.
 
     </p>
   </div> 

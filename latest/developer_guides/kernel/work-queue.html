@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Drivers &mdash; SOF Project 0.1 documentation</title>
+  <title>Work Queue &mdash; SOF Project 0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
   <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="DMA Drivers" href="dma/index.html" />
-    <link rel="prev" title="Porting Guides" href="../porting.html" /> 
+    <link rel="next" title="Unit Tests" href="../unit_tests.html" />
+    <link rel="prev" title="Kernel" href="index.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -166,27 +166,27 @@
 <li class="toctree-l3"><a class="reference internal" href="../porting.html#platform-porting-guide">Platform Porting Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dma/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../drivers/index.html">Drivers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/dma/index.html">DMA Drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#intro">Intro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#programming-flows">Programming Flows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#supported-devices">Supported Devices</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/dai/index.html">DAI Drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#intro">Intro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#programming-flows">Programming Flows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#supported-devices">Supported Devices</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../kernel/index.html">Kernel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../kernel/work-queue.html">Work Queue</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kernel/work-queue.html#basic-work-queue-flow">Basic Work Queue Flow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kernel/work-queue.html#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Kernel</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Work Queue</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-work-queue-flow">Basic Work Queue Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
 </ul>
 </li>
 </ul>
@@ -313,7 +313,9 @@
         
           <li><a href="../index.html">Developer Guides</a> &raquo;</li>
         
-      <li>Drivers</li>
+          <li><a href="index.html">Kernel</a> &raquo;</li>
+        
+      <li>Work Queue</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -330,15 +332,102 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="drivers">
-<span id="id1"></span><h1>Drivers<a class="headerlink" href="#drivers" title="Permalink to this headline">¶</a></h1>
-<p>All drivers are located at: <em>src/drivers</em>
-The following drivers are available:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dma/index.html">DMA Drivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dai/index.html">DAI Drivers</a></li>
-</ul>
+  <div class="section" id="work-queue">
+<span id="id1"></span><h1>Work Queue<a class="headerlink" href="#work-queue" title="Permalink to this headline">¶</a></h1>
+<p>A work queue service provides a timer API for other FW parts. A timer API client (a component, device, etc.) registers a callback and specifies when the callback should be invoked.</p>
+<p>Refer to TBD for full API specification.</p>
+<p>A source of time for the work queue is implemented by the specific platform
+and depends on the underlying architecture and the HW capabilities which
+determine the resolution of the timer.</p>
+<div class="figure" id="id2">
+<p class="plantuml">
+<object data="../../_images/plantuml-b938bb34ae930e06ee2e6c5b8a02a74789f93d3d.svg" type="image/svg+xml" style="width:710px;height:387px;">
+<img src="../../_images/plantuml-b938bb34ae930e06ee2e6c5b8a02a74789f93d3d.png" alt="class &quot;struct work&quot; as s_work {
+   cb
+   cb_data
+   timeout
+   flags
+}
+hide s_work methods
+
+enum flags {
+   SYNC
+   ASYNC
+}
+hide flags methods
+
+class &quot;struct work_queue_timesource&quot; as s_wq_timesource
+hide s_wq_timesource methods
+hide s_wq_timesource attributes
+
+class &quot;work_queue&quot; as wq {
+   + work_schedule()
+   + work_reschedule()
+   + work_cancel()
+   - is_work_pending()
+   - work_next_timeout()
+   - run_work()
+   - work : list
+}
+
+class client #a1a1ca
+hide client methods
+hide client attributes
+
+wq o- s_work
+wq &lt;- s_wq_timesource : provides timer INT
+
+s_work - flags
+
+client -&gt; s_work : (1) creates
+client ---&gt; wq : (2) schedules work
+wq ---&gt; client : (3) calls cb(cb_data) upon timeout
+"/>
+
+</object></p>
+<p class="caption"><span class="caption-number">Figure 19 </span><span class="caption-text">Work queue dependencies</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="basic-work-queue-flow">
+<h2>Basic Work Queue Flow<a class="headerlink" href="#basic-work-queue-flow" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id3">
+<p class="plantuml">
+<object data="../../_images/plantuml-07969c726b586a38a70aed1e52033e720ae61394.svg" type="image/svg+xml" style="width:491px;height:519px;">
+<img src="../../_images/plantuml-07969c726b586a38a70aed1e52033e720ae61394.png" alt="actor client as c
+
+participant work_queue as wq
+participant timer as t
+
+-&gt; wq : work_new_queue
+   wq -&gt; t : timer_register(queue_run)
+&lt;-- wq
+
+c -&gt; wq : work_schedule(&amp;work)
+   activate wq
+
+   wq -&gt; wq : queue_reschedule()
+   activate wq
+      wq -&gt; wq : queue_get_next_timeout() : timeout
+      wq -&gt; t : work_set_timer(timeout)
+   deactivate wq
+c &lt;-- wq
+deactivate wq
+...
+wq &lt;- t : queue_run()
+   activate wq
+   loop is_work_pending()
+      wq -&gt; wq : run_work()
+   end loop
+   wq -&gt; wq : queue_reschedule()
+"/>
+
+</object></p>
+<p class="caption"><span class="caption-number">Figure 20 </span><span class="caption-text">Basic work queue flow</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="extensions-for-smp-architectures">
+<h2>Extensions for SMP Architectures<a class="headerlink" href="#extensions-for-smp-architectures" title="Permalink to this headline">¶</a></h2>
+<p>CPUs with platforms built on the SMP architecture contain only one work queue instance. A client registers its callback in the queue instance
+that is running on the CPU that the callback is supposed to run.</p>
 </div>
 </div>
 
