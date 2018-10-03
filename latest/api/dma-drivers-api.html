@@ -184,9 +184,34 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer_guides/kernel/index.html">Kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/kernel/mem-mgmt.html">Memory Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/mem-mgmt.html#heap-memory-zones">Heap Memory Zones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/mem-mgmt.html#system-zone">System Zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/mem-mgmt.html#runtime-zone">Runtime Zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/mem-mgmt.html#buffer-zone">Buffer Zone</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../developer_guides/kernel/work-queue.html">Work Queue</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/work-queue.html#basic-work-queue-flow">Basic Work Queue Flow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer_guides/kernel/work-queue.html#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guides/apps/index.html">Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/apps/components/index.html">Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/components/new-comp-guide.html">Writing a New Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/components/component-api.html">Component API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/components/component-mgmt-api.html">Managing the Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/apps/pipelines/index.html">Pipelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/pipelines/index.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/pipelines/index.html#executing-an-operation">Executing an Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/pipelines/index.html#resetting-pipeline">Resetting Pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/pipelines/index.html#configuring-audio-parameters-preparing-for-use">Configuring Audio Parameters &amp; Preparing for Use</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/pipelines/index.html#scheduling">Scheduling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/apps/pipelines/index.html#processing">Processing</a></li>
 </ul>
 </li>
 </ul>
@@ -200,6 +225,24 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer_guides/unit_tests.html#preparing-cmocka-package">Preparing cmocka package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer_guides/unit_tests.html#wrapping-objects-for-unit-tests">Wrapping objects for unit tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer_guides/unit_tests.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guides/topology/topology.html">SOF Topology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/topology/topology.html#topology-ingredients">1. Topology Ingredients</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#widgets">1.1 Widgets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#tokens-vendor-tuples">1.2 Tokens/Vendor Tuples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#kcontrols">1.3 Kcontrols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#pipelines">1.4 Pipelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#backend-dai">1.5 Backend DAI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#backend-dai-link-config">1.6 Backend DAI link Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/topology/topology.html#how-to-create-a-new-topology">2. How to create a new topology?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#example-topology-with-single-pipeline">2.1 Example topology with single pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/topology/topology.html#example-topology-with-multiple-pipelines">2.2 Example topology with multiple pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/topology/topology.html#acronyms">3. Acronyms</a></li>
 </ul>
 </li>
 </ul>
@@ -485,14 +528,27 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
-<dt id="c.dma_get">
-<span class="target" id="group__sof__dma__drivers_1gaf02d232948f4d220b0b99ad66aa725fe"></span>struct <a class="reference internal" href="#c.dma" title="dma">dma</a>* <code class="descname">dma_get</code><span class="sig-paren">(</span>uint32_t<em>&nbsp;dir</em>, uint32_t<em>&nbsp;caps</em>, uint32_t<em>&nbsp;dev</em>, uint32_t<em>&nbsp;flags</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="c.dma_install">
+<span class="target" id="group__sof__dma__drivers_1ga512f66690b60665582d13921e0e7654b"></span>void <code class="descname">dma_install</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma" title="dma">dma</a>  *<em>&nbsp;dma_array</em>, size_t<em>&nbsp;num_dmas</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plugs platform specific DMA array once initialized into the lib. </p>
+<p>Lib serves the DMAs to other FW elements by <a class="reference internal" href="#group__sof__dma__drivers_1gaf02d232948f4d220b0b99ad66aa725fe"><span class="std std-ref">dma_get()</span></a></p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dma_array</span></code>: Array of DMAs. </li>
+<li><code class="docutils literal notranslate"><span class="pre">num_dmas</span></code>: Number of elements in dma_array. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
 
 <dl class="function">
-<dt id="c.dmac_init">
-<span class="target" id="group__sof__dma__drivers_1gae6151053e6f422f87ec3af16435cc843"></span>int <code class="descname">dmac_init</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#c.dmac_init" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="c.dma_get">
+<span class="target" id="group__sof__dma__drivers_1gaf02d232948f4d220b0b99ad66aa725fe"></span>struct <a class="reference internal" href="#c.dma" title="dma">dma</a>* <code class="descname">dma_get</code><span class="sig-paren">(</span>uint32_t<em>&nbsp;dir</em>, uint32_t<em>&nbsp;caps</em>, uint32_t<em>&nbsp;dev</em>, uint32_t<em>&nbsp;flags</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to request a platform DMAC. </p>
+<p>Users can request DMAC based on dev type, copy direction, capabilities and access privilege. For exclusive access, ret DMAC with no channels draining. For shared access, ret DMAC with the least number of channels draining. </p>
+</dd></dl>
 
 <dl class="function">
 <dt id="c.dma_channel_get">
@@ -907,7 +963,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 21, 2018.
+      Last updated on Oct 02, 2018.
 
     </p>
   </div> 

@@ -184,9 +184,34 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kernel/index.html">Kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kernel/mem-mgmt.html">Memory Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kernel/mem-mgmt.html#heap-memory-zones">Heap Memory Zones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kernel/mem-mgmt.html#system-zone">System Zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kernel/mem-mgmt.html#runtime-zone">Runtime Zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kernel/mem-mgmt.html#buffer-zone">Buffer Zone</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kernel/work-queue.html">Work Queue</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kernel/work-queue.html#basic-work-queue-flow">Basic Work Queue Flow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kernel/work-queue.html#extensions-for-smp-architectures">Extensions for SMP Architectures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps/index.html">Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps/components/index.html">Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps/components/new-comp-guide.html">Writing a New Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/components/component-api.html">Component API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/components/component-mgmt-api.html">Managing the Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="apps/pipelines/index.html">Pipelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps/pipelines/index.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/pipelines/index.html#executing-an-operation">Executing an Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/pipelines/index.html#resetting-pipeline">Resetting Pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/pipelines/index.html#configuring-audio-parameters-preparing-for-use">Configuring Audio Parameters &amp; Preparing for Use</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/pipelines/index.html#scheduling">Scheduling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/pipelines/index.html#processing">Processing</a></li>
 </ul>
 </li>
 </ul>
@@ -200,6 +225,24 @@
 <li class="toctree-l3"><a class="reference internal" href="unit_tests.html#preparing-cmocka-package">Preparing cmocka package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="unit_tests.html#wrapping-objects-for-unit-tests">Wrapping objects for unit tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="unit_tests.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="topology/topology.html">SOF Topology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="topology/topology.html#topology-ingredients">1. Topology Ingredients</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#widgets">1.1 Widgets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#tokens-vendor-tuples">1.2 Tokens/Vendor Tuples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#kcontrols">1.3 Kcontrols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#pipelines">1.4 Pipelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#backend-dai">1.5 Backend DAI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#backend-dai-link-config">1.6 Backend DAI link Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="topology/topology.html#how-to-create-a-new-topology">2. How to create a new topology?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#example-topology-with-single-pipeline">2.1 Example topology with single pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topology/topology.html#example-topology-with-multiple-pipelines">2.2 Example topology with multiple pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="topology/topology.html#acronyms">3. Acronyms</a></li>
 </ul>
 </li>
 </ul>
@@ -354,7 +397,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Sep 21, 2018.
+      Last updated on Oct 02, 2018.
 
     </p>
   </div> 

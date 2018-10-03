@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="410px" preserveAspectRatio="none" style="width:343px;height:410px;" version="1.1" viewBox="0 0 343 410" width="343px" zoomAndPan="magnify"><defs><filter height="300%" id="f13ig5hrccghf6" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="16" cy="28" fill="#000000" filter="url(#f13ig5hrccghf6)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#FFFFFF" filter="url(#f13ig5hrccghf6)" height="40" rx="12.5" ry="12.5" style="stroke: #33335B; stroke-width: 1.5;" width="58" x="185" y="8"/><text fill="#33335B" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="48" x="190" y="32.8467">READY</text><rect fill="#FFFFFF" filter="url(#f13ig5hrccghf6)" height="40" rx="12.5" ry="12.5" style="stroke: #33335B; stroke-width: 1.5;" width="75" x="175.5" y="125"/><text fill="#33335B" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="180.5" y="149.8467">PREPARE</text><rect fill="#FFFFFF" filter="url(#f13ig5hrccghf6)" height="40" rx="12.5" ry="12.5" style="stroke: #33335B; stroke-width: 1.5;" width="59" x="128.5" y="242"/><text fill="#33335B" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="49" x="133.5" y="266.8467">ACTIVE</text><rect fill="#FFFFFF" filter="url(#f13ig5hrccghf6)" height="40" rx="12.5" ry="12.5" style="stroke: #33335B; stroke-width: 1.5;" width="67" x="160.5" y="359"/><text fill="#33335B" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="57" x="165.5" y="383.8467">PAUSED</text><!--link *start to READY--><path d="M26.0911,28 C54.0154,28 133.2911,28 179.465,28 " fill="none" id="*start-READY" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="184.6512,28,175.6512,24,179.6512,28,175.6512,32,184.6512,28" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="122" x="44.5" y="21.0669">comp_ops.new()</text><!--link READY to PREPARE--><path d="M184.8364,47.3087 C175.0395,55.4915 165.2688,65.9408 160,78 C152.9983,94.0254 163.6907,109.5024 177.2628,121.5364 " fill="none" id="READY-PREPARE" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="181.1549,124.8369,176.8778,115.9652,177.3415,121.603,171.7037,122.0667,181.1549,124.8369" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="59" x="161" y="91.0669">prepare</text><!--link PREPARE to READY--><path d="M219.004,124.7617 C221.3815,115.7405 223.8252,104.929 225,95 C226.6361,81.1723 224.4203,65.8403 221.5589,53.3363 " fill="none" id="PREPARE-READY" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="220.3025,48.1633,218.54,57.8532,221.4828,53.022,226.314,55.9647,220.3025,48.1633" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="33" x="227" y="91.0669">reset</text><!--link PREPARE to ACTIVE--><path d="M175.2369,158.8028 C159.2019,166.7629 142.1307,178.5259 133,195 C125.5379,208.4634 131.1678,224.6013 138.9588,237.6651 " fill="none" id="PREPARE-ACTIVE" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="141.668,241.9693,140.2589,232.2218,139.0045,237.7378,133.4884,236.4834,141.668,241.9693" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="35" x="134" y="208.0669">start</text><!--link ACTIVE to PREPARE--><path d="M167.5155,241.7579 C176.9027,221.7887 191.2695,191.2266 201.3384,169.8074 " fill="none" id="ACTIVE-PREPARE" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="203.5452,165.113,196.0964,171.5562,201.4181,169.638,203.3363,174.9596,203.5452,165.113" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="190" y="208.0669">stop, xrun</text><!--link PAUSED to ACTIVE--><path d="M173.4307,358.9841 C166.1335,350.5043 158.7948,340.0352 155,329 C150.4205,315.683 150.8378,299.9945 152.5525,287.1477 " fill="none" id="PAUSED-ACTIVE" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="153.2953,282.1941,148.0047,290.5013,152.5537,287.1388,155.9162,291.6878,153.2953,282.1941" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="30" x="156" y="325.0669">start</text><!--link ACTIVE to PAUSED--><path d="M128.3356,271.2647 C97.7312,282.4653 56.7198,303.0797 74,329 C91.9732,355.9598 127.5271,368.4064 155.2908,374.1389 " fill="none" id="ACTIVE-PAUSED" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="160.3782,375.1332,152.3127,369.481,155.4711,374.1741,150.778,377.3325,160.3782,375.1332" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="75" y="325.0669">pause</text><!--link PAUSED to ACTIVE--><path d="M195.8524,358.8621 C196.4405,345.293 195.9278,327.1715 191,312 C188.0721,302.9859 183.0474,294.0538 177.7895,286.2875 " fill="none" id="PAUSED-ACTIVE" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="174.8563,282.0996,176.7431,291.766,177.7247,286.195,183.2957,287.1766,174.8563,282.0996" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="47" x="196" y="325.0669">release</text><!--link PAUSED to PREPARE--><path d="M225.8747,358.8455 C235.9209,350.8225 245.9627,340.6953 252,329 C275.9579,282.5897 260.5529,264.172 263,212 C263.354,204.4527 265.8914,201.9804 263,195 C258.9224,185.1558 251.862,176.2392 244.3103,168.7528 " fill="none" id="PAUSED-PREPARE" style="stroke: #4A4A86; stroke-width: 1.0;"/><polygon fill="#4A4A86" points="240.5745,165.1948,244.3331,174.2982,244.1952,168.6431,249.8504,168.5051,240.5745,165.1948" style="stroke: #4A4A86; stroke-width: 1.0;"/><text fill="#33335B" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="267" y="266.5669">stop, xrun</text><!--
+@startuml
+hidefootbox
+skinparam componentStyle uml2
+
+skinparam defaultFontColor	#33335b
+
+skinparam rectangle {
+	color		#d6d6de
+	backgroundColor	#ffffff
+}
+
+skinparam component {
+	backgroundColor	#ffffff
+	borderColor	#33335b
+	arrowColor	#f05772
+}
+
+skinparam interface {
+	backgroundColor	#ffffff
+	borderColor	#f05772
+}
+
+skinparam class {
+	backgroundColor	#ffffff
+	borderColor	#33335b
+	arrowColor	#f05772
+}
+skinparam stereotypeCBackgroundColor	#6fccdd
+
+skinparam sequence {
+	arrowColor		#4a4a86
+	lifeLineBorderColor	#f05772
+	groupBorderColor	#a1a1ca
+	boxBorderColor		#a1a1ca
+	dividerBorderColor	#d6d6de
+	dividerBorderThickness	1
+}
+skinparam participant {
+	borderColor		#33335b
+	backgroundColor		#ffffff
+}
+skinparam actor {
+	borderColor		#33335b
+	backgroundColor		#ffffff
+}
+
+skinparam state {
+	borderColor		#33335b
+	backgroundColor		#ffffff
+}
+
+skinparam node {
+	backgroundColor		#ffffff
+}
+
+skinparam note {
+	backgroundColor 	#f6ed80
+	borderColor		#d6d6de
+}
+hide empty description
+[*] -right-> READY : <b>comp_ops.new()</b>
+
+READY -right-> PREPARE : <b>prepare</b>
+
+PREPARE - -> ACTIVE : <b>start</b>
+PAUSED - -> ACTIVE : start
+
+ACTIVE - -> PREPARE : stop, xrun
+PAUSED - -> PREPARE : stop, xrun
+
+ACTIVE -> PAUSED : pause
+
+PAUSED - -> ACTIVE : release
+
+PREPARE - -> READY : reset
+
+@enduml
+
+PlantUML version 1.2018.06(Mon May 21 10:34:53 GMT 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 10.0.1+10-Ubuntu-3ubuntu1
+Operating System: Linux
+OS Version: 4.4.0-43-Microsoft
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
