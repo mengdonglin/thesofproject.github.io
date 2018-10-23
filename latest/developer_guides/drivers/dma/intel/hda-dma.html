@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Drivers</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html">DMA Drivers</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#api">API</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -469,7 +496,7 @@ note over hda_sw, hda_fw: &quot;DMA in RESET state&quot;
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 15 </span><span class="caption-text">HD/A DMA Device Start Flow</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 17 </span><span class="caption-text">HD/A DMA Device Start Flow</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="stopping-the-device">
@@ -512,7 +539,7 @@ note over hda_sw, hda_fw: &quot;DMA in RUNNING state&quot;
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 16 </span><span class="caption-text">HD/A DMA Device Stop Flow</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 18 </span><span class="caption-text">HD/A DMA Device Stop Flow</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="transferring-data">
@@ -632,7 +659,7 @@ Once the first period is processed.
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 17 </span><span class="caption-text">Host output startup sequence</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19 </span><span class="caption-text">Host output startup sequence</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="link-input-output-dma-cyclic-mode">
@@ -676,7 +703,7 @@ deactivate hda_dma
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 18 </span><span class="caption-text">Callback notification for link playback and capture</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 20 </span><span class="caption-text">Callback notification for link playback and capture</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -702,7 +729,7 @@ the DSP moves the read pointer by unaligned size of the period, the tail
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../drivers/index.html">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../drivers/dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../drivers/dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/index.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -412,15 +439,14 @@ heap size configuration and mappings.</dd>
    clients:kernel -&gt; zones:sys;
    clients:drv -&gt; zones:sys_rt [style = dotted];
 }</p></object>
-<p class="caption"><span class="caption-number">Figure 20 </span><span class="caption-text">Memory Zones</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 22 </span><span class="caption-text">Memory Zones</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="system-zone">
 <h2>System Zone<a class="headerlink" href="#system-zone" title="Permalink to this headline">¶</a></h2>
 <p>System zone receives a series of allocations during the system initialization
 phase. Since no memory is freed until the system (core) goes down, the
-allocation mechanism may be simple, maintaining an offset to the beginning of
-free space left is sufficient.</p>
+allocation mechanism may be simple, ensuring that a sufficient offset to the beginning of free space left is maintained.</p>
 <div class="figure" id="id2">
 <object data="../../_images/graphviz-901d6dfd72d1ed7355328f60209ad08db8d721a7.svg" type="image/svg+xml">
             <p class="warning">digraph system_zone {
@@ -472,28 +498,25 @@ free space left is sufficient.</p>
    scheduler_1 -&gt; s1:b0:nw;
    work_1 -&gt; s1:b1:nw;
 }</p></object>
-<p class="caption"><span class="caption-number">Figure 21 </span><span class="caption-text">System Zone</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 23 </span><span class="caption-text">System Zone</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>All system level components (schedulers, work queues, etc.) allocate their
 memory blocks from the system heap. Separation between the system heap and
-runtime heap(s) may be further hardened in case an access control for user mode
-vs. kernel mode is supported by the architecture/platform.</p>
+runtime heap(s) may be further hardened in case an access control for user mode vs. kernel mode is supported by the architecture/platform.</p>
 <div class="section" id="extensions-for-smp-architectures">
 <h3>Extensions for SMP Architectures<a class="headerlink" href="#extensions-for-smp-architectures" title="Permalink to this headline">¶</a></h3>
-<p>Each CPU (core) may own a dedicated system heap. The memory assigned for system
-heaps is distributed asymmetrically on CAVS platforms: a large heap for the
-master core (#0) and smaller ones for other cores (#1+).</p>
-<p>When a core goes down, the entire heap may be freed by moving back the free
+<p>Each CPU (core) may own a dedicated system heap. The memory assigned for system heaps is distributed asymmetrically on CAVS platforms: a large heap for the master core (#0) and smaller ones for other cores (#1+).</p>
+<p>When a core goes down, the entire heap can be freed by moving back the free
 space offset to the beginning of the heap.</p>
-<p>The heap may be aligned with memory bank(s) to provide better control over
+<p>The heap can be aligned with memory bank(s) to provide better control over
 the power consumption. Once a core goes down, memory banks allocated for
-its system heap may be powered off as well.</p>
+its system heap can be powered off as well.</p>
 </div>
 </div>
 <div class="section" id="runtime-zone">
 <h2>Runtime Zone<a class="headerlink" href="#runtime-zone" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Provides flexible <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> operations</li>
+<li>Provides flexible <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> operations.</li>
 <li>Since the runtime zone is separated from the system zone, any adjustments
 and complex usage scenarios do not interface with the system allocations.</li>
 </ul>
@@ -532,7 +555,7 @@ and complex usage scenarios do not interface with the system allocations.</li>
    comp_2 -&gt; rt0:1:nw;
 
 }</p></object>
-<p class="caption"><span class="caption-number">Figure 22 </span><span class="caption-text">Runtime Zone</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 24 </span><span class="caption-text">Runtime Zone</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="buffer-zone">
@@ -552,7 +575,7 @@ and complex usage scenarios do not interface with the system allocations.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

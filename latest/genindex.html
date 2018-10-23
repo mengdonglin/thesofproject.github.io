@@ -129,6 +129,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -139,10 +148,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -166,18 +191,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="developer_guides/drivers/index.html">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="developer_guides/drivers/dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dma/index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="developer_guides/drivers/dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer_guides/drivers/index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer_guides/drivers/index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer_guides/drivers/index.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dma/index.html">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer_guides/drivers/dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -242,6 +260,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer_guides/topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer_guides/debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer_guides/debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer_guides/debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer_guides/debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer_guides/debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -391,6 +418,10 @@
 </li>
       <li><a href="api/dai-drivers-api.html#c.dai_probe">dai_probe (C function)</a>
 </li>
+      <li><a href="api/dai-drivers-api.html#c.dai_put">dai_put (C function)</a>
+</li>
+      <li><a href="api/dai-drivers-api.html#c.dai_remove">dai_remove (C function)</a>
+</li>
       <li><a href="api/dai-drivers-api.html#c.dai_set_config">dai_set_config (C function)</a>
 </li>
       <li><a href="api/dai-drivers-api.html#c.dai_set_loopback_mode">dai_set_loopback_mode (C function)</a>
@@ -411,12 +442,12 @@
 </li>
       <li><a href="api/dma-drivers-api.html#c.dma_copy_new">dma_copy_new (C function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dma-drivers-api.html#c.dma_copy_set_stream_tag">dma_copy_set_stream_tag (C function)</a>
 </li>
       <li><a href="api/dma-drivers-api.html#c.dma_copy_to_host_nowait">dma_copy_to_host_nowait (C function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/dma-drivers-api.html#c.dma_get">dma_get (C function)</a>
 </li>
       <li><a href="api/dma-drivers-api.html#c.dma_install">dma_install (C function)</a>
@@ -429,13 +460,27 @@
 </li>
       <li><a href="api/dma-drivers-api.html#c.dma_probe">dma_probe (C function)</a>
 </li>
+      <li><a href="api/dma-drivers-api.html#c.dma_put">dma_put (C function)</a>
+</li>
       <li><a href="api/dma-drivers-api.html#c.dma_release">dma_release (C function)</a>
+</li>
+      <li><a href="api/dma-drivers-api.html#c.dma_remove">dma_remove (C function)</a>
 </li>
       <li><a href="api/dma-drivers-api.html#c.dma_set_cb">dma_set_cb (C function)</a>
 </li>
       <li><a href="api/dma-drivers-api.html#c.dma_set_config">dma_set_config (C function)</a>
 </li>
+      <li><a href="api/dma-drivers-api.html#c.dma_sg_alloc">dma_sg_alloc (C function)</a>
+</li>
+      <li><a href="api/dma-drivers-api.html#c.dma_sg_cache_inv">dma_sg_cache_inv (C function)</a>
+</li>
+      <li><a href="api/dma-drivers-api.html#c.dma_sg_cache_wb_inv">dma_sg_cache_wb_inv (C function)</a>
+</li>
+      <li><a href="api/dma-drivers-api.html#c.dma_sg_free">dma_sg_free (C function)</a>
+</li>
       <li><a href="api/dma-drivers-api.html#c.dma_sg_get_size">dma_sg_get_size (C function)</a>
+</li>
+      <li><a href="api/dma-drivers-api.html#c.dma_sg_init">dma_sg_init (C function)</a>
 </li>
       <li><a href="api/dma-drivers-api.html#c.dma_start">dma_start (C function)</a>
 </li>
@@ -471,7 +516,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

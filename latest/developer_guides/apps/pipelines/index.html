@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../drivers/index.html">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../drivers/dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dma/index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../drivers/dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../drivers/index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../drivers/index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../drivers/index.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../drivers/dma/index.html">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../drivers/dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -409,7 +436,7 @@ pipeline - task : &quot;pipe_task&quot;
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 28 </span><span class="caption-text">Pipeline structure</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 30 </span><span class="caption-text">Pipeline structure</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="creating-a-pipeline">
 <h2>Creating a Pipeline<a class="headerlink" href="#creating-a-pipeline" title="Permalink to this headline">¶</a></h2>
@@ -426,16 +453,16 @@ pipeline - task : &quot;pipe_task&quot;
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 29 </span><span class="caption-text">Creating a pipeline</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 31 </span><span class="caption-text">Creating a pipeline</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The scheduling component (<code class="docutils literal notranslate"><span class="pre">sched_comp</span></code>) is configured by the driver inside
-the IPC request. It is usually set to dai component id for pipelines that
-are attached to a dai instance and are driven by that dai IO events.</p>
+the IPC request. It is usually set to the dai component id for pipelines that
+are attached to a dai instance and are driven by that dai’s IO events.</p>
 </div>
 <div class="section" id="executing-an-operation">
 <h2>Executing an Operation<a class="headerlink" href="#executing-an-operation" title="Permalink to this headline">¶</a></h2>
 <p>Most of the pipeline functions sets the operation id and executes a common
-routine, either <code class="docutils literal notranslate"><span class="pre">component_op_downstream()</span></code> in case of playback path or
+routine, either <code class="docutils literal notranslate"><span class="pre">component_op_downstream()</span></code> in case of a playback path or
 <code class="docutils literal notranslate"><span class="pre">component_op_upstream()</span></code> otherwise.</p>
 <div class="figure" id="id3">
 <p class="plantuml">
@@ -452,7 +479,7 @@ routine, either <code class="docutils literal notranslate"><span class="pre">com
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 30 </span><span class="caption-text">Pipeline Operation</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 32 </span><span class="caption-text">Pipeline Operation</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="propagating-the-operation-downstream">
 <h3>Propagating the Operation Downstream<a class="headerlink" href="#propagating-the-operation-downstream" title="Permalink to this headline">¶</a></h3>
@@ -484,13 +511,12 @@ participant &quot;component&quot; as comp
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 31 </span><span class="caption-text">Going downstream</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 33 </span><span class="caption-text">Going downstream</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="propagating-the-operation-upstream">
 <h3>Propagating the Operation Upstream<a class="headerlink" href="#propagating-the-operation-upstream" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">comp_op_upstream()</span></code> algorithm is identical except for the loop at the end
-that runs over the sources and calls itself recursively for producers</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">comp_op_upstream()</span></code> algorithm is identical except for the loop at the end that runs over the sources and calls itself recursively for producers.</p>
 </div>
 </div>
 <div class="section" id="resetting-pipeline">
@@ -506,7 +532,7 @@ that runs over the sources and calls itself recursively for producers</p>
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 32 </span><span class="caption-text">Resetting a pipeline</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 34 </span><span class="caption-text">Resetting a pipeline</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="configuring-audio-parameters-preparing-for-use">
@@ -537,15 +563,12 @@ deactivate ipc
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 33 </span><span class="caption-text">Configuring audio parameters</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 35 </span><span class="caption-text">Configuring audio parameters</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="scheduling">
 <h2>Scheduling<a class="headerlink" href="#scheduling" title="Permalink to this headline">¶</a></h2>
-<p>A pipeline’s task (see _Processing_) may be scheduled at certain point in time
-using <code class="docutils literal notranslate"><span class="pre">pipeline_schedule_copy(start)</span></code>. In order to schedule next stream copy
-operation in idle (see pre-loader), <code class="docutils literal notranslate"><span class="pre">pipeline_schedule_copy_idle()</span></code> should
-be used.</p>
+<p>A pipeline’s task (see _Processing_) may be scheduled at a certain point in time using <code class="docutils literal notranslate"><span class="pre">pipeline_schedule_copy(start)</span></code>. In order to schedule the next stream copy operation in idle (see pre-loader), <code class="docutils literal notranslate"><span class="pre">pipeline_schedule_copy_idle()</span></code> should be used.</p>
 </div>
 <div class="section" id="processing">
 <h2>Processing<a class="headerlink" href="#processing" title="Permalink to this headline">¶</a></h2>
@@ -570,7 +593,7 @@ deactivate ppl
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 34 </span><span class="caption-text">Pipeline task routine called by the scheduler</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 36 </span><span class="caption-text">Pipeline task routine called by the scheduler</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -587,7 +610,7 @@ deactivate ppl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

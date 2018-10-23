@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer_guides/drivers/index.html">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/index.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer_guides/topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guides/debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -439,7 +466,14 @@
 <dl class="define">
 <dt id="c.DAI_FLAGS_IRQ_CB">
 <span class="target" id="group__sof__dai__drivers_1ga64353c2363fef05caa6707e4fc0fb697"></span><code class="descname">DAI_FLAGS_IRQ_CB</code><a class="headerlink" href="#c.DAI_FLAGS_IRQ_CB" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>IRQ used for copy() timer. </p>
+</dd></dl>
+
+<dl class="define">
+<dt id="c.DAI_CREAT">
+<span class="target" id="group__sof__dai__drivers_1ga8c720c310f408b2f97ce014562d6a910"></span><code class="descname">DAI_CREAT</code><a class="headerlink" href="#c.DAI_CREAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the device does not exist it will be created. </p>
+</dd></dl>
 
 <dl class="define">
 <dt id="c.dai_set_drvdata">
@@ -468,40 +502,12 @@
 
 </div>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Enums</p>
-<dl class="enum">
-<dt id="c.sof_dai_drivers::dai_type">
-<span class="target" id="group__sof__dai__drivers_1gac95242d83a2c2b477fcb9eb3da420797"></span><em class="property">enum </em><code class="descname">dai_type</code><a class="headerlink" href="#c.sof_dai_drivers::dai_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>DAI Type. </p>
-<p><em>Values:</em></p>
-<dl class="enumvalue">
-<dt id="c.sof_dai_drivers::DAI_TYPE_INTEL_SSP">
-<span class="target" id="group__sof__dai__drivers_1ggac95242d83a2c2b477fcb9eb3da420797a1119e0ed849af97e5b82658ed5a4f8f7"></span><code class="descname">DAI_TYPE_INTEL_SSP</code> = 0<a class="headerlink" href="#c.sof_dai_drivers::DAI_TYPE_INTEL_SSP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Intel SSP </p>
-</dd></dl>
-
-<dl class="enumvalue">
-<dt id="c.sof_dai_drivers::DAI_TYPE_INTEL_HDA">
-<span class="target" id="group__sof__dai__drivers_1ggac95242d83a2c2b477fcb9eb3da420797a3fc202089727f2bf225968bef3476119"></span><code class="descname">DAI_TYPE_INTEL_HDA</code><a class="headerlink" href="#c.sof_dai_drivers::DAI_TYPE_INTEL_HDA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Intel HD/A </p>
-</dd></dl>
-
-<dl class="enumvalue">
-<dt id="c.sof_dai_drivers::DAI_TYPE_INTEL_DMIC">
-<span class="target" id="group__sof__dai__drivers_1ggac95242d83a2c2b477fcb9eb3da420797a5898e4174f8506f454da62fec3ac79cc"></span><code class="descname">DAI_TYPE_INTEL_DMIC</code><a class="headerlink" href="#c.sof_dai_drivers::DAI_TYPE_INTEL_DMIC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Intel DMIC </p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
 <dt id="c.dai_install">
 <span class="target" id="group__sof__dai__drivers_1ga8a2df89240a4aa71ec7d562831815fb0"></span>void <code class="descname">dai_install</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dai_type_info" title="dai_type_info">dai_type_info</a>  *<em>&nbsp;dai_type_array</em>, size_t<em>&nbsp;num_dai_types</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dai_install" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plugs platform specific DAI array once initialized into the lib. </p>
-<p>Lib serves the DAIs to other FW elements with <a class="reference internal" href="#group__sof__dai__drivers_1ga8714d9a0d856cdab9310780004f13627"><span class="std std-ref">dai_get()</span></a></p>
+<p>Lib serves the DAIs to other FW elements with <a class="reference internal" href="#group__sof__dai__drivers_1ga8a7c7d07d53d7b51c51319491cec8f89"><span class="std std-ref">dai_get()</span></a></p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
@@ -515,13 +521,28 @@
 
 <dl class="function">
 <dt id="c.dai_get">
-<span class="target" id="group__sof__dai__drivers_1ga8714d9a0d856cdab9310780004f13627"></span>struct <a class="reference internal" href="#c.dai" title="dai">dai</a>* <code class="descname">dai_get</code><span class="sig-paren">(</span>uint32_t<em>&nbsp;type</em>, uint32_t<em>&nbsp;index</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dai_get" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="group__sof__dai__drivers_1ga8a7c7d07d53d7b51c51319491cec8f89"></span>struct <a class="reference internal" href="#c.dai" title="dai">dai</a>* <code class="descname">dai_get</code><span class="sig-paren">(</span>uint32_t<em>&nbsp;type</em>, uint32_t<em>&nbsp;index</em>, uint32_t<em>&nbsp;flags</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dai_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>API to request a platform DAI. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">type</span></code>: Type of requested DAI. </li>
 <li><code class="docutils literal notranslate"><span class="pre">index</span></code>: Index of requested DAI. </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: Flags (CREATE) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.dai_put">
+<span class="target" id="group__sof__dai__drivers_1ga4ab9be7493d1ee6cde04dd52dfcdbd39"></span>void <code class="descname">dai_put</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dai" title="dai">dai</a>  *<em>&nbsp;dai</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dai_put" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to release a platform DAI. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dai</span></code>: DAI to relese. </li>
 </ul>
 </dd>
 </dl>
@@ -564,6 +585,12 @@
 <dd><p>Digital Audio interface Probe. </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="c.dai_remove">
+<span class="target" id="group__sof__dai__drivers_1ga1d0f644d2330e8bf9f659b9647b041ab"></span>static int <code class="descname">dai_remove</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dai" title="dai">dai</a>  *<em>&nbsp;dai</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dai_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Digital Audio interface Remove. </p>
+</dd></dl>
+
 </div>
 <dl class="struct">
 <dt id="c.dai_ops">
@@ -594,6 +621,11 @@
 <dl class="variable">
 <dt id="c.dai_ops::probe">
 <span class="target" id="structdai__ops_1a3806a29e7ed54297572319b174b7e1fd"></span>int<code class="descname">probe)</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.dai" title="dai">dai</a><em>&nbsp;*dai</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dai_ops::probe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt id="c.dai_ops::remove">
+<span class="target" id="structdai__ops_1a041ec8983fe085f2c5fcb9a907a62d42"></span>int<code class="descname">remove)</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.dai" title="dai">dai</a><em>&nbsp;*dai</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dai_ops::remove" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="variable">
@@ -695,12 +727,25 @@
 <dl class="variable">
 <dt id="c.dai::type">
 <span class="target" id="structdai_1af2c31c3c94dcd77001f876154797ffda"></span>uint32_t <code class="descname">type</code><a class="headerlink" href="#c.dai::type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>type, one of SOF_DAI_… </p>
+</dd></dl>
 
 <dl class="variable">
 <dt id="c.dai::index">
 <span class="target" id="structdai_1a2f9d4b34cefcb3607fbcfab97e36bb3c"></span>uint32_t <code class="descname">index</code><a class="headerlink" href="#c.dai::index" title="Permalink to this definition">¶</a></dt>
+<dd><p>index </p>
+</dd></dl>
+
+<dl class="variable">
+<dt id="c.dai::lock">
+<span class="target" id="structdai_1aeabe11742429ee46b59801f544a07ee7"></span>spinlock_t <code class="descname">lock</code><a class="headerlink" href="#c.dai::lock" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="variable">
+<dt id="c.dai::sref">
+<span class="target" id="structdai_1a08d77d6e827bd675fb79496a5db8f441"></span>int <code class="descname">sref</code><a class="headerlink" href="#c.dai::sref" title="Permalink to this definition">¶</a></dt>
+<dd><p>simple ref counter, guarded by lock </p>
+</dd></dl>
 
 <dl class="variable">
 <dt id="c.dai::plat_data">
@@ -715,11 +760,6 @@
 <dl class="variable">
 <dt id="c.dai::private">
 <span class="target" id="structdai_1a2c1c5865937839151a4c5e4ea69add1c"></span>void* <code class="descname">private</code><a class="headerlink" href="#c.dai::private" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="variable">
-<dt id="c.dai::private_size">
-<span class="target" id="structdai_1a2474287cd46b2eabb735384d1700dd0f"></span>uint32_t <code class="descname">private_size</code><a class="headerlink" href="#c.dai::private_size" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -768,7 +808,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Drivers</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../dma/index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#api">API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../dma/index.html">DMA Drivers</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -385,11 +412,12 @@
 the platform.</p>
 <div class="figure" id="id2">
 <p class="plantuml">
-<object data="../../../_images/plantuml-7dfe138a69ab0fb2e46f8680028afb9be0c243a0.svg" type="image/svg+xml" style="width:712px;height:453px;">
-<img src="../../../_images/plantuml-7dfe138a69ab0fb2e46f8680028afb9be0c243a0.png" alt="class dai {
+<object data="../../../_images/plantuml-f61899c84319a3b1cd27423c6edd7685fd69c6b1.svg" type="image/svg+xml" style="width:712px;height:466px;">
+<img src="../../../_images/plantuml-f61899c84319a3b1cd27423c6edd7685fd69c6b1.png" alt="class lib {
    struct dai *dai_get(uint32_t type, uint32_t index)
+   dai_put(struct dai*)
 }
-hide dai attributes
+hide lib attributes
 
 class dai_ops {
    set_config()
@@ -397,6 +425,7 @@ class dai_ops {
    pm_context_restore()
    pm_context_store()
    probe()
+   remove()
    set_loopback_mode()
 }
 hide dai_ops attributes
@@ -430,20 +459,19 @@ hide s_dai_plat_fifo_data methods
 dai_ops - s_dai
 s_dai -- s_dai_plat_data
 s_dai_plat_data -- s_dai_plat_fifo_data
-s_dai &lt;- dai : provides
+s_dai &lt;- lib : provides
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 19 </span><span class="caption-text">DAI Driver API</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 21 </span><span class="caption-text">DAI Driver API</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="programming-flows">
 <h2>Programming Flows<a class="headerlink" href="#programming-flows" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dai-initialization">
 <h3>DAI Initialization<a class="headerlink" href="#dai-initialization" title="Permalink to this headline">¶</a></h3>
-<p>When ADSP enters D0, the dai instances are probed by calling <code class="docutils literal notranslate"><span class="pre">dai_probe()</span></code>.
-It is important to keep the bare minimum early initialization code inside the
-probe implementation, with no power impact. Defer actions such as clock ungating until the device is requested by the client for use.</p>
+<p>When ADSP enters D0, the dai instances are registered in the list maintained
+by the <em>lib</em>.</p>
 </div>
 <div class="section" id="configuration-commands">
 <h3>Configuration &amp; Commands<a class="headerlink" href="#configuration-commands" title="Permalink to this headline">¶</a></h3>
@@ -520,7 +548,7 @@ implementation may keep some specific private data attached to the
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

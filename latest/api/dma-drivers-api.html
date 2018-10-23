@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer_guides/drivers/index.html">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/drivers/index.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dma/index.html">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/drivers/dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer_guides/topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guides/debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer_guides/debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer_guides/debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -551,6 +578,20 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="c.dma_put">
+<span class="target" id="group__sof__dma__drivers_1ga914a405c794c3d15951c9ce1ca7559a7"></span>void <code class="descname">dma_put</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma" title="dma">dma</a>  *<em>&nbsp;dma</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_put" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to release a platform DMAC. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dma</span></code>: DMAC to relese. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="c.dma_channel_get">
 <span class="target" id="group__sof__dma__drivers_1ga94aff1794ffba1012f02bc59031501dd"></span>static int <code class="descname">dma_channel_get</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma" title="dma">dma</a>  *<em>&nbsp;dma</em>, int<em>&nbsp;req_channel</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_channel_get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -616,9 +657,50 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="c.dma_sg_get_size">
-<span class="target" id="group__sof__dma__drivers_1ga64eb7e05a2dcf6a6ee25fff8068218fc"></span>static uint32_t <code class="descname">dma_sg_get_size</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_sg_config" title="dma_sg_config">dma_sg_config</a>  *<em>&nbsp;sg</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_sg_get_size" title="Permalink to this definition">¶</a></dt>
+<dt id="c.dma_remove">
+<span class="target" id="group__sof__dma__drivers_1ga6ee305623db28a238dcacf54014be16f"></span>static int <code class="descname">dma_remove</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma" title="dma">dma</a>  *<em>&nbsp;dma</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_remove" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="function">
+<dt id="c.dma_sg_init">
+<span class="target" id="group__sof__dma__drivers_1gaa1aa98af6edbdbe20b7b9fdc47c73778"></span>static void <code class="descname">dma_sg_init</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_sg_elem_array" title="dma_sg_elem_array">dma_sg_elem_array</a>  *<em>&nbsp;ea</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_sg_init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.dma_sg_alloc">
+<span class="target" id="group__sof__dma__drivers_1ga0b5424eae865c8ddd6ef7ec20bc1f432"></span>int <code class="descname">dma_sg_alloc</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_sg_elem_array" title="dma_sg_elem_array">dma_sg_elem_array</a>  *<em>&nbsp;ea</em>, int<em>&nbsp;zone</em>, uint32_t<em>&nbsp;direction</em>, uint32_t<em>&nbsp;buffer_count</em>, uint32_t<em>&nbsp;buffer_bytes</em>, uintptr_t<em>&nbsp;dma_buffer_addr</em>, uintptr_t<em>&nbsp;external_addr</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_sg_alloc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.dma_sg_free">
+<span class="target" id="group__sof__dma__drivers_1gab9bd83e3704b73c5390761af545cdb7f"></span>void <code class="descname">dma_sg_free</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_sg_elem_array" title="dma_sg_elem_array">dma_sg_elem_array</a>  *<em>&nbsp;ea</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_sg_free" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.dma_sg_cache_wb_inv">
+<span class="target" id="group__sof__dma__drivers_1gaec6bad3a1c4fb0dc34190f83eabd1d7c"></span>static void <code class="descname">dma_sg_cache_wb_inv</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_sg_elem_array" title="dma_sg_elem_array">dma_sg_elem_array</a>  *<em>&nbsp;ea</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_sg_cache_wb_inv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.dma_sg_cache_inv">
+<span class="target" id="group__sof__dma__drivers_1ga08a03e3c85cdfcb971a2231ae8338041"></span>static void <code class="descname">dma_sg_cache_inv</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_sg_elem_array" title="dma_sg_elem_array">dma_sg_elem_array</a>  *<em>&nbsp;ea</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_sg_cache_inv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.dma_sg_get_size">
+<span class="target" id="group__sof__dma__drivers_1ga60f2105725f3ebbbe13e7a89687ce49c"></span>static uint32_t <code class="descname">dma_sg_get_size</code><span class="sig-paren">(</span>struct  <a class="reference internal" href="#c.dma_sg_elem_array" title="dma_sg_elem_array">dma_sg_elem_array</a>  *<em>&nbsp;ea</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_sg_get_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the total size of SG buffer. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Size of the buffer. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">ea</span></code>: Array of SG elements. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="c.dma_copy_new">
@@ -654,27 +736,47 @@
 <dl class="struct">
 <dt id="c.dma_sg_elem">
 <span class="target" id="structdma__sg__elem"></span><em class="property">struct </em><code class="descname">dma_sg_elem</code><a class="headerlink" href="#c.dma_sg_elem" title="Permalink to this definition">¶</a></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><em>#include &lt;dma.h&gt;</em><p>Element of SG list (as array item). </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="variable">
 <dt id="c.dma_sg_elem::src">
 <span class="target" id="structdma__sg__elem_1a3865345c769883461d025b41d9f48613"></span>uint32_t <code class="descname">src</code><a class="headerlink" href="#c.dma_sg_elem::src" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>source address </p>
+</dd></dl>
 
 <dl class="variable">
 <dt id="c.dma_sg_elem::dest">
 <span class="target" id="structdma__sg__elem_1a291bd50ec3df14fe87603bb6a39775c6"></span>uint32_t <code class="descname">dest</code><a class="headerlink" href="#c.dma_sg_elem::dest" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>destination address </p>
+</dd></dl>
 
 <dl class="variable">
 <dt id="c.dma_sg_elem::size">
 <span class="target" id="structdma__sg__elem_1acf2a3a7da760d5810bcce6370fa3fd56"></span>uint32_t <code class="descname">size</code><a class="headerlink" href="#c.dma_sg_elem::size" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>size (in bytes) </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="struct">
+<dt id="c.dma_sg_elem_array">
+<span class="target" id="structdma__sg__elem__array"></span><em class="property">struct </em><code class="descname">dma_sg_elem_array</code><a class="headerlink" href="#c.dma_sg_elem_array" title="Permalink to this definition">¶</a></dt>
+<dd><em>#include &lt;dma.h&gt;</em><p>SG elem array. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="variable">
+<dt id="c.dma_sg_elem_array::count">
+<span class="target" id="structdma__sg__elem__array_1a0c5f58258d9f6ddb54c7d14ae7a6e836"></span>uint32_t <code class="descname">count</code><a class="headerlink" href="#c.dma_sg_elem_array::count" title="Permalink to this definition">¶</a></dt>
+<dd><p>number of elements in elems </p>
+</dd></dl>
 
 <dl class="variable">
-<dt id="c.dma_sg_elem::list">
-<span class="target" id="structdma__sg__elem_1a206e88227fd9ba59c39f0137c5ec5776"></span>struct list_item <code class="descname">list</code><a class="headerlink" href="#c.dma_sg_elem::list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="c.dma_sg_elem_array::elems">
+<span class="target" id="structdma__sg__elem__array_1a1b146b2f90e3fc73fa80d4bf588f4448"></span>struct <a class="reference internal" href="#c.dma_sg_elem" title="dma_sg_elem">dma_sg_elem</a>* <code class="descname">elems</code><a class="headerlink" href="#c.dma_sg_elem_array::elems" title="Permalink to this definition">¶</a></dt>
+<dd><p>elements </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -720,8 +822,13 @@
 <dd></dd></dl>
 
 <dl class="variable">
-<dt id="c.dma_sg_config::elem_list">
-<span class="target" id="structdma__sg__config_1a3a30288fef3adf5784f2875203e76a1e"></span>struct list_item <code class="descname">elem_list</code><a class="headerlink" href="#c.dma_sg_config::elem_list" title="Permalink to this definition">¶</a></dt>
+<dt id="c.dma_sg_config::timer_delay">
+<span class="target" id="structdma__sg__config_1a93a72f2f7342a173fa7b477dd9f08c2a"></span>uint32_t <code class="descname">timer_delay</code><a class="headerlink" href="#c.dma_sg_config::timer_delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="variable">
+<dt id="c.dma_sg_config::elem_array">
+<span class="target" id="structdma__sg__config_1a733c143b9788f41e8f39dc9bde40d1cb"></span>struct <a class="reference internal" href="#c.dma_sg_elem_array" title="dma_sg_elem_array">dma_sg_elem_array</a> <code class="descname">elem_array</code><a class="headerlink" href="#c.dma_sg_config::elem_array" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -830,6 +937,11 @@
 <span class="target" id="structdma__ops_1afb32bff21dee601b19ebd216ab3e629e"></span>int<code class="descname">probe)</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.dma" title="dma">dma</a><em>&nbsp;*dma</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_ops::probe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="variable">
+<dt id="c.dma_ops::remove">
+<span class="target" id="structdma__ops_1a991d28f0ed48310755c21bb795443895"></span>int<code class="descname">remove)</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.dma" title="dma">dma</a><em>&nbsp;*dma</em><span class="sig-paren">)</span><a class="headerlink" href="#c.dma_ops::remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 </dd></dl>
 
@@ -902,6 +1014,12 @@
 <dd></dd></dl>
 
 <dl class="variable">
+<dt id="c.dma::sref">
+<span class="target" id="structdma_1a32e028498e4ad6f15232b92376886998"></span>int <code class="descname">sref</code><a class="headerlink" href="#c.dma::sref" title="Permalink to this definition">¶</a></dt>
+<dd><p>simple ref counter, guarded by lock </p>
+</dd></dl>
+
+<dl class="variable">
 <dt id="c.dma::ops">
 <span class="target" id="structdma_1a50e4d368ea54f27ff2fc594b30e2b237"></span>const struct <a class="reference internal" href="#c.dma_ops" title="dma_ops">dma_ops</a>* <code class="descname">ops</code><a class="headerlink" href="#c.dma::ops" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -914,11 +1032,6 @@
 <dl class="variable">
 <dt id="c.dma::private">
 <span class="target" id="structdma_1aa08d4876ad038da9cb08a8ced70073e4"></span>void* <code class="descname">private</code><a class="headerlink" href="#c.dma::private" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="variable">
-<dt id="c.dma::private_size">
-<span class="target" id="structdma_1a75a0d69c760c0eaf4360fb6b6ace79c0"></span>uint32_t <code class="descname">private_size</code><a class="headerlink" href="#c.dma::private_size" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -963,7 +1076,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

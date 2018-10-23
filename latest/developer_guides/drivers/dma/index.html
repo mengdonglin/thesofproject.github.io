@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Drivers</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#api">API</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../topology/topology.html#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -384,62 +411,66 @@
 <p>Access to the DMA Controllers (DMAC) available on the platform is provided by
 the <code class="docutils literal notranslate"><span class="pre">dma_get()</span></code> function implemented by the <em>library</em> code. Reference to a
 DMAC instance obtained from <code class="docutils literal notranslate"><span class="pre">dma_get()</span></code> is represented by a pointer to
-<code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">dma</span></code>. Each <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">dma</span></code> instance provides the <code class="docutils literal notranslate"><span class="pre">dma_ops</span></code> API used by the DMA clients to set up and run the DMA transmission.</p>
+<code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">dma</span></code>. Each <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">dma</span></code> instance provides the <code class="docutils literal notranslate"><span class="pre">dma_ops</span></code> API used
+by the DMA clients to set up and run the DMA transmission.</p>
 <div class="figure" id="id2">
 <p class="plantuml">
-<object data="../../../_images/plantuml-89b395bf366bb78f82c3fef0bee53fc53a7932bc.svg" type="image/svg+xml" style="width:630px;height:365px;">
-<img src="../../../_images/plantuml-89b395bf366bb78f82c3fef0bee53fc53a7932bc.png" alt="class dma {
-	dma_get(dmac_id) : struct dma*
+<object data="../../../_images/plantuml-1a73f6f14b8f80b61d383197a76e7423dd2fab4f.svg" type="image/svg+xml" style="width:630px;height:378px;">
+<img src="../../../_images/plantuml-1a73f6f14b8f80b61d383197a76e7423dd2fab4f.png" alt="class lib {
+   dma_get(dmac_id) : struct dma*
+   dma_put(struct dma*)
 }
-hide dma attributes
+hide lib attributes
 
 class dma_ops {
-	channel_get()
-	channel_put()
-	start()
-	stop()
-	pause()
-	release()
-	status()
-	set_config()
-	set_cb()
-	pm_context_restore()
-	probe()
+   channel_get()
+   channel_put()
+   start()
+   stop()
+   pause()
+   release()
+   status()
+   set_config()
+   set_cb()
+   pm_context_restore()
+   probe()
+   remove()
 }
 hide dma_ops attributes
 
 class dma_plat_data {
-	id : uint32_t
-	base : uint32_t
-	channels : uint32_t
-	irq : uint32_t
-	drv_plat_data : void *
+   id : uint32_t
+   base : uint32_t
+   channels : uint32_t
+   irq : uint32_t
+   drv_plat_data : void *
 }
 hide dma_plat_data methods
 
 class &quot;struct dma&quot; as s_dma {
-	plat_data : dma_plat_data
-	lock : spinlock_t
-	ops : const dma_ops *
-	private : void *
+   plat_data : dma_plat_data
+   lock : spinlock_t
+   ops : const dma_ops *
+   private : void *
 }
 hide s_dma methods
 
 dma_ops - s_dma
 s_dma -- dma_plat_data
-s_dma &lt;- dma : provides
+s_dma &lt;- lib : provides
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 12 </span><span class="caption-text">DMA Driver API</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 15 </span><span class="caption-text">DMA Driver API</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="programming-flows">
 <h2>Programming Flows<a class="headerlink" href="#programming-flows" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dmac-initialization">
 <h3>DMAC Initialization<a class="headerlink" href="#dmac-initialization" title="Permalink to this headline">¶</a></h3>
-<p>In a one-time initialization phase, the ADSP goes to the D0 device power state. In this fully functional state, the platform registers its DMA drivers in the list maintained by the <em>lib</em> at startup.</p>
-<p>It is important to keep the bare minimum early initialization code during the probe implementation, with no power impact.</p>
+<p>In a one-time initialization phase, the ADSP goes to the D0 device power state.
+In this fully functional state, the platform registers its DMA drivers in the
+list maintained by the <em>lib</em> at startup.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A static array of <code class="docutils literal notranslate"><span class="pre">dma</span></code> instances declared in the platform’s code
@@ -449,41 +480,10 @@ on the platform, using capability registers if provided by the HW.</p>
 <p>Any component from the <em>audio</em> package may use a DMA engine by obtaining a
 reference to the <code class="docutils literal notranslate"><span class="pre">dma_ops</span></code> interface from the <em>lib</em>’s list. This flow may
 happen an unlimited number of times during ADSP D0.</p>
-<div class="figure" id="id3">
-<p class="plantuml">
-<object data="../../../_images/plantuml-2fa24d6f371f12ba4d28576c9656e6c99dface1d.svg" type="image/svg+xml" style="width:554px;height:358px;">
-<img src="../../../_images/plantuml-2fa24d6f371f12ba4d28576c9656e6c99dface1d.png" alt="
-package audio {
-    component &quot;&lt;comp&gt;&quot; as comp
-}
-
-interface dma_get
-component &quot;lib::\ndma&quot; as lib_dma
-
-lib_dma -up- dma_get
-
-interface dma_ops
-
-component &quot;drivers::dma::\n&lt;dma impl&gt;&quot; as dma_impl
-dma_impl -up- dma_ops
-
-component &quot;platform&quot; as plat
-
-lib_dma &lt;. dma_impl : (1) registered\nby platform
-
-dma_ops &lt;. plat : (2) calls probe() &#64;init
-
-comp ..&gt; dma_get : (3) obtains dmac
-comp ..&gt; dma_ops : (4) calls API
-"/>
-
-</object></p>
-<p class="caption"><span class="caption-number">Figure 13 </span><span class="caption-text">DMAC Initialization</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
 </div>
 <div class="section" id="channel-initialization-data-transfer">
 <h3>Channel Initialization &amp; Data Transfer<a class="headerlink" href="#channel-initialization-data-transfer" title="Permalink to this headline">¶</a></h3>
-<div class="figure" id="id4">
+<div class="figure" id="id3">
 <p class="plantuml">
 <object data="../../../_images/plantuml-badf8069f0d2d18d948d97483c923d160ca9c312.svg" type="image/svg+xml" style="width:303px;height:533px;">
 <img src="../../../_images/plantuml-badf8069f0d2d18d948d97483c923d160ca9c312.png" alt="participant client
@@ -511,7 +511,7 @@ client -&gt; dma : dma_channel_put( ch# )
 "/>
 
 </object></p>
-<p class="caption"><span class="caption-number">Figure 14 </span><span class="caption-text">Channel Initialization &amp; Data Transfer</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 16 </span><span class="caption-text">Channel Initialization &amp; Data Transfer</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>In case the host co-manages the DMA HW and the channel is “allocated” by the
 host side, the FW component must wait until its <code class="docutils literal notranslate"><span class="pre">params()</span></code> API is called
@@ -553,7 +553,7 @@ implementation may keep some specific private data, attached to the
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 

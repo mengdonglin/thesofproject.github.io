@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="../../_static/sof-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Release Notes" href="../../release_notes.html" />
+    <link rel="next" title="Debugability" href="../debugability/index.html" />
     <link rel="prev" title="Unit Tests" href="../unit_tests.html" /> 
 
   
@@ -130,6 +130,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#audio-processing-components">Audio processing components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html">How to use sof-eqctl tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html#find-out-effect-numids">Find out effect numids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html#example-equalizer-settings">Example equalizer settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting_started/effects/how-to-use-sof-eqctl-tool.html#help">Help</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#other-guides">Other guides</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../getting_started/cavs-boot/index.html">Booting up CAVS ADSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../getting_started/cavs-boot/cavs-dsp-boot-overview.html">Overview</a></li>
@@ -140,10 +149,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../architectures/index.html">Supported Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../architectures/host/index.html">Host Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../architectures/xtensa-dsp/index.html">Xtensa DSP Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architectures/xtensa-dsp/up/index.html">Uniprocessor Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html">Symmetric Multiprocessing Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#using-smp-architecture">Using SMP architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../architectures/xtensa-dsp/smp/index.html#communication-between-cores">Communication between cores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../platforms/index.html">Supported Platforms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../platforms/intel-cavs/index.html">Intel CAVS Platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../platforms/intel-cavs/commons/index.html">CAVS Commons</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../platforms/intel-cavs/commons/work-queue.html">Work Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../platforms/intel-cavs/commons/multicore-processing.html">Multicore Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../platforms/intel-cavs/apollolake/index.html">Intel Apollo Lake</a><ul>
@@ -167,18 +192,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../drivers/index.html">Drivers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../drivers/dma/index.html">DMA Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#using-dma-driver-api">Using DMA Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html#supported-devices">Supported Devices</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../drivers/dai/index.html">DAI Drivers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#intro">Intro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#programming-flows">Programming Flows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#using-dai-driver-api">Using DAI Driver API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html#supported-devices">Supported Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/index.html#registering-the-devices">Registering the Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/index.html#probing-on-demand">Probing on Demand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/index.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dma/index.html">DMA Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/dai/index.html">DAI Drivers</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +261,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#acronyms">3. Acronyms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../debugability/index.html">Debugability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../debugability/traces/index.html">Traces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../debugability/traces/index.html#building-processing-traces">Building &amp; Processing Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../debugability/traces/index.html#enabling-traces">Enabling Traces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../debugability/traces/index.html#adding-traces">Adding Traces</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -455,26 +482,13 @@ tokens.m4 file as follows:</p>
 <div class="line"><strong>periods_source</strong>: Number of source periods</div>
 <div class="line"><strong>preload</strong>: preload count</div>
 <div class="line"><strong>kcontrol0…kcontroln</strong>: list of kcontrols associated with the widget</div>
-<div class="line"><br /></div>
 </div>
 <p>The W_PGA macro expands to include the following sections:</p>
-<div class="line-block">
-<div class="line"><strong>SectionWidget</strong>: This includes the pipeline information, type of widget,
-data section and the mixers associated with the widget.</div>
-<div class="line"><strong>SectionData</strong>: This includes the configuration data for the widget. Note
-that there are 2 data sections. The first one is for including the
-common widget tokens such as sink period count, source period count
-and preload count which are “word” tokens. The second one is for
-including the audio format for the component which is of type
-“string”. Note that tokens are different types need to be specified in
-different sections even though they belong to the same sof_comp_tokens
-array definition.</div>
-<div class="line"><strong>SectionVendorTuples:</strong> This section includes the tokens and their
-respective values.</div>
-<div class="line"><strong>Mixer</strong>: The mixer section includes the list of kcontrols associated</div>
-</div>
-<p>with the widget. Kcontrols are defined using the macros depending on
-type. More details can be found in the Kcontrols section.</p>
+<p><strong>SectionWidget</strong>: This includes the pipeline information, type of widget,
+data section and the mixers associated with the widget.
+<strong>SectionData</strong>: This includes the configuration data for the widget. Note that there are 2 data sections. The first one is for including the common widget tokens such as sink period count, source period count and preload count which are “word” tokens. The second one is for including the audio format for the component which is of type “string”. Note that tokens are different types need to be specified in different sections even though they belong to the same sof_comp_tokens array definition.
+<strong>SectionVendorTuples</strong>: This section includes the tokens and their respective values.
+<strong>Mixer</strong>: The mixer section includes the list of kcontrols associated with the widget. Kcontrols are defined using the macros depending on type. More details can be found in the Kcontrols section.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>define<span class="o">(</span><span class="sb">`</span>W_PGA<span class="s1">&#39;,</span>
 <span class="s1">`SectionVendorTuples.&quot;&#39;</span>N_PGA<span class="o">(</span><span class="nv">$1</span><span class="o">)</span><span class="sb">`</span>_tuples_w<span class="s2">&quot; {&#39;</span>
 <span class="s2">`       tokens &quot;</span>sof_comp_tokens<span class="s2">&quot;&#39;</span>
@@ -574,7 +588,6 @@ described in pipe-volume-plalyback.m4)</p>
 <div class="line"><strong>max period size</strong>: 16384</div>
 <div class="line"><strong>min buffer size</strong>: 65536</div>
 <div class="line"><strong>max buffer size</strong>: 65536</div>
-<div class="line"><br /></div>
 </div>
 <p>The DAI component in the pipeline is defined using a separate pipeline
 corresponding to whether it is a capture or a playback
@@ -632,7 +645,6 @@ driver. Note that the link ID is a linearly incrementing number
 starting at 0 irrespective of DAI type</div>
 <div class="line"><strong>name</strong>: CPU DAI name as defined in the SOF driver</div>
 <div class="line"><strong>config</strong>: configuration details depending on the type of DAI.</div>
-<div class="line"><br /></div>
 </div>
 <p>The configuration parameters for SSP’s are defined using the following
 macro:</p>
@@ -649,7 +661,6 @@ macro:</p>
 <div class="line"><strong>ssp_config_data</strong>: includes sample valid bits and mclk ID. Some SoC’s
 have more then one mclk exposed. So the right mclk ID needs to be
 specified. If omitted, this defaults to 0.</div>
-<div class="line"><br /></div>
 </div>
 <p>The configuration parameters for DMIC’s are defined using the
 following macro:</p>
@@ -701,7 +712,6 @@ macro. The macro is defined as follows:</p>
 <div class="line"><strong>deadline</strong>: deadline for pipeline schedule</div>
 <div class="line"><strong>priority</strong>: pipeline priority</div>
 <div class="line"><strong>core</strong>: core ID</div>
-<div class="line"><br /></div>
 </div>
 <p>Example: In order to add an audio playback pipeline with a volume component:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>host PCM_P --&gt; B0 --&gt; Volume <span class="m">0</span> --&gt; B1 --&gt; sink DAI0
@@ -924,7 +934,7 @@ DAI_CONFIG<span class="o">(</span>DMIC, <span class="m">0</span>, <span class="m
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 02, 2018.
+      Last updated on Oct 23, 2018.
 
     </p>
   </div> 
