@@ -274,7 +274,22 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-code-location">Source Code Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#current-release-v1-2-sept-2018">Current Release: v1.2 (Sept 2018)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker-availability">Docker availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-unit-tests">API unit tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intel-gemini-lake-platform-support">Intel Gemini Lake platform support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#travis-ci-support">Travis CI support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dsp-to-host-dma-tracing-support">DSP-to-Host DMA tracing support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#userspace-application-support-for-test-benching-processing-algorithms">Userspace application support for test benching processing algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intel-dmic-support-on-apollo-lake-and-gemini-lake">Intel DMIC support on Apollo Lake and Gemini Lake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xtensa-hifi-simd-optimizations">Xtensa HiFi SIMD optimizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerous-additional-stress-test-hardening-patches">Numerous additional stress test hardening patches</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="howtos/index.html">How-Tos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="howtos/index.html#technical-notes">Technical Notes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="howtos/tech/compile_wsl.html">Build on Windows 10 with WSL</a><ul>
@@ -400,6 +415,57 @@
             
   <div class="section" id="release-notes">
 <span id="id1"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<p>Sound Open Firmware (SOF) is an open source audio Data Signal Processing (DSP) firmware infrastructure and SDK that offers a single code base for all Intel hardware platforms. Sound Open Firmware provides infrastructure, real-time control pieces, and audio drivers as a community project. Visit the <a class="reference internal" href="introduction/index.html#introduction"><span class="std std-ref">SOF Introduction</span></a> for more information.</p>
+<div class="section" id="source-code-location">
+<h2>Source Code Location<a class="headerlink" href="#source-code-location" title="Permalink to this headline">¶</a></h2>
+<p>All project SOF source code is maintained in the <a class="reference external" href="https://github.com/thesofproject">https://github.com/thesofproject</a> repository and includes folders for SOF, SOF tools and topologies, Linux kernel, and documentation. Download the source code as a zip or tar.gz file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/thesofproject/sof.git
+$ <span class="nb">cd</span> sof
+$ git checkout -b stable-1.2 origin/stable-1.2
+</pre></div>
+</div>
+</div>
+<div class="section" id="current-release-v1-2-sept-2018">
+<h2>Current Release: v1.2 (Sept 2018)<a class="headerlink" href="#current-release-v1-2-sept-2018" title="Permalink to this headline">¶</a></h2>
+<p>The following features are available in v1.2.</p>
+<div class="section" id="docker-availability">
+<h3>Docker availability<a class="headerlink" href="#docker-availability" title="Permalink to this headline">¶</a></h3>
+<p>SOF and SDK can now be built inside a Docker container. This
+removes the need to install git versions of ALSA dependencies locally.</p>
+</div>
+<div class="section" id="api-unit-tests">
+<h3>API unit tests<a class="headerlink" href="#api-unit-tests" title="Permalink to this headline">¶</a></h3>
+<p>A unit test suite, based on the cmocka library, enables fast and reliable regression testing of the core APIs.</p>
+</div>
+<div class="section" id="intel-gemini-lake-platform-support">
+<h3>Intel Gemini Lake platform support<a class="headerlink" href="#intel-gemini-lake-platform-support" title="Permalink to this headline">¶</a></h3>
+<p>PCM playback/capture and PDM DMIC are now supported on the Intel Gemini Lake platform.</p>
+</div>
+<div class="section" id="travis-ci-support">
+<h3>Travis CI support<a class="headerlink" href="#travis-ci-support" title="Permalink to this headline">¶</a></h3>
+<p>The continuous integration process enhanced by builds and tests run by Travis for every code change provides immediate feedback.</p>
+</div>
+<div class="section" id="dsp-to-host-dma-tracing-support">
+<h3>DSP-to-Host DMA tracing support<a class="headerlink" href="#dsp-to-host-dma-tracing-support" title="Permalink to this headline">¶</a></h3>
+<p>A DMA tracing mechanism has been added to provide high-frequency trace output. Bandwidth for the code traces increases significantly by transmitting the data through the DSP-to-Host DMA.</p>
+</div>
+<div class="section" id="userspace-application-support-for-test-benching-processing-algorithms">
+<h3>Userspace application support for test benching processing algorithms<a class="headerlink" href="#userspace-application-support-for-test-benching-processing-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Sound Open Firmware can now be built as an x86 library that can be linked to userspace applications that can parse audio processing pipelines/topologies. This enables verifying functionality of audio components that are part of the pipeline.</p>
+</div>
+<div class="section" id="intel-dmic-support-on-apollo-lake-and-gemini-lake">
+<h3>Intel DMIC support on Apollo Lake and Gemini Lake<a class="headerlink" href="#intel-dmic-support-on-apollo-lake-and-gemini-lake" title="Permalink to this headline">¶</a></h3>
+<p>The DMIC driver has been added to support the directly-attached PDM (Pulse Density Modulation) type of digital microphones. A digital microphone’s array can be connected directly to the Intel System on Chip (SoC) for minimized system power consumption and lowest delay. Sound Open Firmware topology parameters for PDM bus characteristics enable support for a wide range of microphone models and operating modes.</p>
+</div>
+<div class="section" id="xtensa-hifi-simd-optimizations">
+<h3>Xtensa HiFi SIMD optimizations<a class="headerlink" href="#xtensa-hifi-simd-optimizations" title="Permalink to this headline">¶</a></h3>
+<p>The SIMD optimizations for volume, FIR, and SCR processing components typically reduce the power consumption and execution time of algorithms processing that is similar to generic C code. Note that this requires an xt-xcc compiler.</p>
+</div>
+<div class="section" id="numerous-additional-stress-test-hardening-patches">
+<h3>Numerous additional stress test hardening patches<a class="headerlink" href="#numerous-additional-stress-test-hardening-patches" title="Permalink to this headline">¶</a></h3>
+<p>Both the stability and robustness of PCM playback/capture are greatly improved via numerous stress tests.</p>
+</div>
+</div>
 </div>
 
 
@@ -414,7 +480,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, SOF Project.
-      Last updated on Oct 23, 2018.
+      Last updated on Oct 26, 2018.
 
     </p>
   </div> 
